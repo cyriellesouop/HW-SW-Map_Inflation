@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Oct 24 16:27:16 2025
+# Process ID         : 324328
+# Current directory  : /home/audrey/Documents/convolution/coding/sim/work
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_adder/xsim_script.tcl}
+# Log file           : /home/audrey/Documents/convolution/coding/sim/work/xsim.log
+# Journal file       : /home/audrey/Documents/convolution/coding/sim/work/xsim.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3561.159 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 10257 MB
+#-----------------------------------------------------------
+source xsim.dir/work.tb_adder/xsim_script.tcl
+# xsim {work.tb_adder} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+a 000101 , b 000111 =   s 001100 |  c 0 
+a 000000 , b 001111 =   s 001111 |  c 0 
+a xxxxxx , b 000010 =   s xxxxxx |  c x 
+a 000110 , b zzzzzz =   s xxxxxx |  c x 
+a xxxxxx , b zzzzzz =   s xxxxxx |  c x 
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 24 16:27:19 2025...

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_top.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0 ps"></ZoomStartTime>
+      <ZoomEndTime time="13 ps"></ZoomEndTime>
+      <Cursor1Time time="0 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="131"></NameColumnWidth>
+      <ValueColumnWidth column_width="196"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject type="logic" fp_name="/tb_top/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/weight_array">
+      <obj_property name="ElementShortName">weight_array[3:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_array[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/wr_weight_en">
+      <obj_property name="ElementShortName">wr_weight_en</obj_property>
+      <obj_property name="ObjectShortName">wr_weight_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/fifoIn_axis_tvalid">
+      <obj_property name="ElementShortName">fifoIn_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">fifoIn_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/fifoIn_axis_tdata">
+      <obj_property name="ElementShortName">fifoIn_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifoIn_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/fifoOut_axim_tready">
+      <obj_property name="ElementShortName">fifoOut_axim_tready</obj_property>
+      <obj_property name="ObjectShortName">fifoOut_axim_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/is_last">
+      <obj_property name="ElementShortName">is_last</obj_property>
+      <obj_property name="ObjectShortName">is_last</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/fifoIn_axis_tready">
+      <obj_property name="ElementShortName">fifoIn_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">fifoIn_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/fifoOut_axim_tvalid">
+      <obj_property name="ElementShortName">fifoOut_axim_tvalid</obj_property>
+      <obj_property name="ObjectShortName">fifoOut_axim_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/fifoOut_axim_tdata">
+      <obj_property name="ElementShortName">fifoOut_axim_tdata[10:0]</obj_property>
+      <obj_property name="ObjectShortName">fifoOut_axim_tdata[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/PERIOD">
+      <obj_property name="ElementShortName">PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/WEIGHT_WIDTH">
+      <obj_property name="ElementShortName">WEIGHT_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WEIGHT_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DATA_WIDTH">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/KERNEL_SIZE">
+      <obj_property name="ElementShortName">KERNEL_SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">KERNEL_SIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/ADDRESS_WIDTH">
+      <obj_property name="ElementShortName">ADDRESS_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDRESS_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider18" type="divider">
+      <obj_property name="label">FIFOIN</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group17">
+      <obj_property name="label">fifoIn</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/WR">
+         <obj_property name="ElementShortName">WR</obj_property>
+         <obj_property name="ObjectShortName">WR</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/dataIn">
+         <obj_property name="ElementShortName">dataIn[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/full">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/RD">
+         <obj_property name="ElementShortName">RD</obj_property>
+         <obj_property name="ObjectShortName">RD</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/dataOut">
+         <obj_property name="ElementShortName">dataOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/empty">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/wr_addr">
+         <obj_property name="ElementShortName">wr_addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">wr_addr[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/rd_addr">
+         <obj_property name="ElementShortName">rd_addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_addr[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[31:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/wr_cnt">
+         <obj_property name="ElementShortName">wr_cnt</obj_property>
+         <obj_property name="ObjectShortName">wr_cnt</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/fifoIn/fifo_inst/rd_cnt">
+         <obj_property name="ElementShortName">rd_cnt</obj_property>
+         <obj_property name="ObjectShortName">rd_cnt</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/DATAWIDTH">
+         <obj_property name="ElementShortName">DATAWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATAWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/DEPTH">
+         <obj_property name="ElementShortName">DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEPTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/fifoIn/fifo_inst/PTR_WIDTH">
+         <obj_property name="ElementShortName">PTR_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PTR_WIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider35" type="divider">
+      <obj_property name="label">PE_ARRAY_INST</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group36">
+      <obj_property name="label">PE_ARRAY</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/weight_array">
+         <obj_property name="ElementShortName">weight_array[3:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_array[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/wr_weight_en">
+         <obj_property name="ElementShortName">wr_weight_en</obj_property>
+         <obj_property name="ObjectShortName">wr_weight_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/dataIn">
+         <obj_property name="ElementShortName">dataIn[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/wr_dataIn_en">
+         <obj_property name="ElementShortName">wr_dataIn_en</obj_property>
+         <obj_property name="ObjectShortName">wr_dataIn_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/wr_weight_done">
+         <obj_property name="ElementShortName">wr_weight_done</obj_property>
+         <obj_property name="ObjectShortName">wr_weight_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/pe_array_done">
+         <obj_property name="ElementShortName">pe_array_done</obj_property>
+         <obj_property name="ObjectShortName">pe_array_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/dataOut">
+         <obj_property name="ElementShortName">dataOut[17:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[17:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/weight_mem">
+         <obj_property name="ElementShortName">weight_mem[0:3][0:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_mem[0:3][0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/data_wire">
+         <obj_property name="ElementShortName">data_wire[0:1][0:1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_wire[0:1][0:1][7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/result_wire">
+         <obj_property name="ElementShortName">result_wire[0:1][0:1][9:0]</obj_property>
+         <obj_property name="ObjectShortName">result_wire[0:1][0:1][9:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/done_wire">
+         <obj_property name="ElementShortName">done_wire[0:1][0:1]</obj_property>
+         <obj_property name="ObjectShortName">done_wire[0:1][0:1]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/r">
+         <obj_property name="ElementShortName">r[3:0]</obj_property>
+         <obj_property name="ObjectShortName">r[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/c">
+         <obj_property name="ElementShortName">c[1:0]</obj_property>
+         <obj_property name="ObjectShortName">c[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/counter">
+         <obj_property name="ElementShortName">counter[1:0]</obj_property>
+         <obj_property name="ObjectShortName">counter[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[0].prev_result ">
+         <obj_property name="ElementShortName">\ROW[0].COL[0].prev_result [9:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[0].prev_result [9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[0].pe_dataIn ">
+         <obj_property name="ElementShortName">\ROW[0].COL[0].pe_dataIn [7:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[0].pe_dataIn [7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[0].pe_en ">
+         <obj_property name="ElementShortName">\ROW[0].COL[0].pe_en </obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[0].pe_en </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[1].prev_result ">
+         <obj_property name="ElementShortName">\ROW[0].COL[1].prev_result [9:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[1].prev_result [9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[1].pe_dataIn ">
+         <obj_property name="ElementShortName">\ROW[0].COL[1].pe_dataIn [7:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[1].pe_dataIn [7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/\ROW[0].COL[1].pe_en ">
+         <obj_property name="ElementShortName">\ROW[0].COL[1].pe_en </obj_property>
+         <obj_property name="ObjectShortName">\ROW[0].COL[1].pe_en </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[0].prev_result ">
+         <obj_property name="ElementShortName">\ROW[1].COL[0].prev_result [9:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[0].prev_result [9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[0].pe_dataIn ">
+         <obj_property name="ElementShortName">\ROW[1].COL[0].pe_dataIn [7:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[0].pe_dataIn [7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[0].pe_en ">
+         <obj_property name="ElementShortName">\ROW[1].COL[0].pe_en </obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[0].pe_en </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[1].prev_result ">
+         <obj_property name="ElementShortName">\ROW[1].COL[1].prev_result [9:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[1].prev_result [9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[1].pe_dataIn ">
+         <obj_property name="ElementShortName">\ROW[1].COL[1].pe_dataIn [7:0]</obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[1].pe_dataIn [7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/\ROW[1].COL[1].pe_en ">
+         <obj_property name="ElementShortName">\ROW[1].COL[1].pe_en </obj_property>
+         <obj_property name="ObjectShortName">\ROW[1].COL[1].pe_en </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top/DUT/pe_array_inst/all_done">
+         <obj_property name="ElementShortName">all_done</obj_property>
+         <obj_property name="ObjectShortName">all_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/WEIGHT_WIDTH">
+         <obj_property name="ElementShortName">WEIGHT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WEIGHT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/DATA_WIDTH">
+         <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/KERNEL_SIZE">
+         <obj_property name="ElementShortName">KERNEL_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">KERNEL_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/RESULT_WIDTH">
+         <obj_property name="ElementShortName">RESULT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">RESULT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/DUT/pe_array_inst/KERNEL_DIM">
+         <obj_property name="ElementShortName">KERNEL_DIM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">KERNEL_DIM[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,288 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date             : Fri Oct 24 16:28:20 2025
+| Host             : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
+| Command          : report_power_opt -file power_opt.rpt
+| Design           : pe_array
+| Device           : xc7s50csga324-2
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power optimization report
+
+Table of Contents
+-----------------
+1. Summary
+2. Recommendations
+3. Hierarchical Information
+3.1 BRAMs
+3.2 SRLs
+3.3 Slice Registers
+3.3.1 User Gated Slice Registers
+3.3.2 Tool Gated Slice Registers
+3.4 XPM URAMs
+
+1. Summary
+----------
+
++---------------------------+-------+------------+------------+----------------+
+| Elements                  | TOTAL | USER GATED | TOOL GATED | % GATED(Total) |
++---------------------------+-------+------------+------------+----------------+
+| Number of BRAMs           | 0     | 0          | 0          | 0.000          |
+| Number of SRLs            | 0     | 0          | 0          | 0.000          |
+| Number of Slice Registers | 239   | 207        | 0          | 86.611         |
+| Number of XPM URAMs       | 0     | 0          | 0          | 0.000          |
++---------------------------+-------+------------+------------+----------------+
+
+
+2. Recommendations
+------------------
+
+No specific recommendations for this design.
+
+3. Hierarchical Information
+---------------------------
+
+3.1 BRAMs
+---------
+
+None
+
+3.2 SRLs
+--------
+
+None
+
+3.3 Slice Registers
+-------------------
+
+3.3.1 User Gated Slice Registers
+--------------------------------
+
++------------------------------------------+---------+-------------------------------------------+
+| Cell Name                                | CE Port | CE Net Name                               |
++------------------------------------------+---------+-------------------------------------------+
+| ROW[0].COL[0].PE_inst/dataOut_reg[0]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[1]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[2]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[3]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[4]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[5]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[6]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/dataOut_reg[7]     | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[0]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[1]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[2]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[3]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[4]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[5]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[6]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/mult_r_reg[7]      | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[0] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[1] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[2] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[3] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[4] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[5] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[6] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[0].PE_inst/next_result_reg[7] | CE      | ROW[0].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[0].COL[1].PE_inst/dataOut_reg[0]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[1]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[2]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[3]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[4]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[5]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[6]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/dataOut_reg[7]     | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[0]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[1]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[2]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[3]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[4]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[5]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[6]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/mult_r_reg[7]      | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[0] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[1] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[2] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[3] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[4] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[5] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[6] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[1].PE_inst/next_result_reg[7] | CE      | ROW[0].COL[1].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[0]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[1]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[2]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[3]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[4]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[5]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[6]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/dataOut_reg[7]     | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[0]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[1]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[2]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[3]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[4]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[5]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[6]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/mult_r_reg[7]      | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[0] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[1] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[2] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[3] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[4] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[5] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[6] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[0].COL[2].PE_inst/next_result_reg[7] | CE      | ROW[0].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[0].PE_inst/dataOut_reg[0]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[1]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[2]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[3]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[4]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[5]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[6]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/dataOut_reg[7]     | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[0]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[1]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[2]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[3]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[4]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[5]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[6]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/mult_r_reg[7]      | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[0] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[1] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[2] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[3] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[4] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[5] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[6] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[7] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[0].PE_inst/next_result_reg[8] | CE      | ROW[1].COL[0].PE_inst/dataOut_reg[0]_0[0] |
+| ROW[1].COL[1].PE_inst/dataOut_reg[0]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[1]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[2]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[3]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[4]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[5]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[6]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/dataOut_reg[7]     | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[0]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[1]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[2]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[3]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[4]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[5]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[6]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/mult_r_reg[7]      | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[0] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[1] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[2] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[3] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[4] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[5] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[6] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[7] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[1].PE_inst/next_result_reg[8] | CE      | ROW[1].COL[1].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[0]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[1]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[2]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[3]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[4]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[5]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[6]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/dataOut_reg[7]     | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[0]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[1]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[2]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[3]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[4]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[5]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[6]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/mult_r_reg[7]      | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[0] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[1] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[2] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[3] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[4] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[5] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[6] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[7] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[1].COL[2].PE_inst/next_result_reg[8] | CE      | ROW[1].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[0]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[1]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[2]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[3]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[4]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[5]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[6]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/mult_r_reg[7]      | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[0] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[1] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[2] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[3] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[4] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[5] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[6] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[7] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[0].PE_inst/next_result_reg[8] | CE      | ROW[2].COL[0].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[0]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[1]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[2]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[3]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[4]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[5]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[6]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/mult_r_reg[7]      | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[0] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[1] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[2] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[3] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[4] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[5] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[6] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[7] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[1].PE_inst/next_result_reg[8] | CE      | ROW[2].COL[1].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[0]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[1]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[2]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[3]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[4]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[5]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[6]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/mult_r_reg[7]      | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[0] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[1] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[2] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[3] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[4] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[5] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[6] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[7] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| ROW[2].COL[2].PE_inst/next_result_reg[8] | CE      | ROW[2].COL[2].PE_inst/E[0]                |
+| weight_mem_reg[0][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[1][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[2][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[3][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[4][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[5][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[6][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[7][0]                     | CE      | wr_weight_en_IBUF                         |
+| weight_mem_reg[8][0]                     | CE      | wr_weight_en_IBUF                         |
++------------------------------------------+---------+-------------------------------------------+
+
+
+3.3.2 Tool Gated Slice Registers
+--------------------------------
+
+None
+
+3.4 XPM URAMs
+-------------
+
+None
+

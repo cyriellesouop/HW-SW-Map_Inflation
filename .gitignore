@@ -1,0 +1,40 @@
+############################
+# Vivado – IGNORE GENERATED
+############################
+
+# Project & runs
+*.xpr
+*.xpr.lock
+*.jou
+*.str
+
+# Generated directories
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/sources_1/ip/
+*.srcs/sources_1/bd/*/ip/
+*.srcs/sources_1/bd/*/hdl/
+
+# Bitstreams
+*.bin
+*.ltx
+
+# SDK / Vitis
+*.sdk/
+*.sysdef
+*.hdf
+
+# Simulation (various)
+xsim.dir/
+*.pb
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*~
+

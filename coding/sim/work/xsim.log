@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Oct 24 16:27:21 2025
+# Process ID         : 324384
+# Current directory  : /home/audrey/Documents/convolution/coding/sim/work
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_pe_array/xsim_script.tcl}
+# Log file           : /home/audrey/Documents/convolution/coding/sim/work/xsim.log
+# Journal file       : /home/audrey/Documents/convolution/coding/sim/work/xsim.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3668.144 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 10232 MB
+#-----------------------------------------------------------
+source xsim.dir/work.tb_pe_array/xsim_script.tcl
+# xsim {work.tb_pe_array} -autoloadwcfg -tclbatch {./../../sim.tcl}
+Time resolution is 1 ps
+source ./../../sim.tcl
+## open_saif myTop.saif
+## log_saif /tb_pe_array/DUT/*
+## run -all
+TEST 0 PASSED! Random data: 11000000011100001110000100000000011100001011000000100000101000001001
+TEST 1 PASSED! Random data: 1110000000100000111000000010000001000000000000010100000100100000000
+TEST 2 PASSED! Random data: 10010000001000000010000010010000101100000011000010000000001000000100
+TEST 3 PASSED! Random data: 10100000101000000110000011000000000100000000000001110000001100000001
+TEST 4 PASSED! Random data: 11010000111000001010000011000000110100001101000011000000100000000001
+TEST 5 PASSED! Random data: 1010000101000001101000000000000110100000011000000010000100100000100
+TEST 6 PASSED! Random data: 11010000100100000000000001110000100100001001000010110000110100001001
+TEST 7 PASSED! Random data: 100000110000001010000010110000010100000101000011000001000000000000
+TEST 8 PASSED! Random data: 1000000100100000100000010010000110000000010000010000000111100001011
+TEST 9 PASSED! Random data: 10110000011000001110000011010000110100000100000001110000011100001001
+622000 ALL THE TEST HAS PASSED !!! 
+$finish called at time : 1622 ns : File "/home/audrey/Documents/convolution/coding/tb_pe_array.v" Line 159
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 24 16:27:25 2025...

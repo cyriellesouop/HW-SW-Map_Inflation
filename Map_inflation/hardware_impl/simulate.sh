@@ -1,37 +1,54 @@
 #! /bin/sh
 
 rm -rf xsim.dir
-rm -f *.log *.jou *.wdb
+rm -f *.log *.jou *.wdb *.str *.pb
 
 
-xvlog fifo.v
+#xvlog fifo.v
 
-xvlog fifo_axis.v
+#xvlog fifo_axis.v
 
-xvlog adder_tree.v
+#xvlog axis_unpack_data.v
 
-#xvlog tb_adder_tree.v
+#xvlog top_fifo.v
+
+#xvlog tb_top_fifo.v
+
+#xelab tb_top_fifo -debug all
+
+#xsim tb_top_fifo -R
+
+
+#xvlog -sv axim_reg.sv
+
+#xvlog -sv tb_axim_reg.v
+
+#xelab tb_axim_reg --debug all
+
+#xsim tb_axim_reg -R
+
 
 xvlog pe.v
 
-xvlog pe_array.v
+xvlog adder_tree.v
 
-xvlog -sv fsm.sv
+xvlog delay.v
 
-xvlog top.v
+xvlog pe_wrapper.v
 
-xvlog tb_top.v
+xvlog tb_pe.v
 
-#xvlog tb_fsm.v
+xvlog tb_pe_wrapper.v
 
-xvlog tb_pe_array.v
+xelab tb_pe_wrapper -debug all
 
-xelab tb_pe_array -debug all
+xsim tb_pe_wrapper -R
 
-xsim tb_pe_array -R
+#xvlog adder_tree.v
 
-#xelab  tb_top -debug all
- 
-#xsim  tb_top  -R
+#xvlog tb_adder.v
 
+#xelab tb_adder -debug all
+
+#xsim tb_adder -R
 

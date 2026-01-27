@@ -1,0 +1,421 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Dec 21 22:27:41 2025
+# Process ID         : 224817
+# Current directory  : /home/audrey/Documents/Verilog_course/sim_mb_customIP
+# Command line       : vivado
+# Log file           : /home/audrey/Documents/Verilog_course/sim_mb_customIP/vivado.log
+# Journal file       : /home/audrey/Documents/Verilog_course/sim_mb_customIP/vivado.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3508.175 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 13202 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
+update_compile_order -fileset sources_1
+open_bd_design {/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>...
+Successfully read diagram <design_1> from block design file </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { all {1} axi_intc {0} axi_periph {Enabled} cache {None} clk {New Clocking Wizard} compress {1} cores {1} debug_module {Debug Only} disable {1} ecc {None} local_mem {64KB} preset {None}}  [get_bd_cells microblaze_0]
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+apply_bd_automation: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 7936.711 ; gain = 192.176 ; free physical = 4091 ; free virtual = 12814
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:sim_clk_gen:1.0 sim_clk_gen_0
+endgroup
+set_property CONFIG.CLOCK_TYPE {Differential} [get_bd_cells sim_clk_gen_0]
+connect_bd_intf_net [get_bd_intf_pins sim_clk_gen_0/diff_clk] [get_bd_intf_pins clk_wiz_1/CLK_IN1_D]
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { all {1} axi_intc {0} axi_periph {Disabled} cache {None} clk {/clk_wiz_1/clk_out1 (100 MHz)} compress {1} cores {1} debug_module {Debug Only} disable {1} ecc {None} local_mem {64KB} preset {None}}  [get_bd_cells microblaze_0]
+INFO: [xilinx.com:ip:microblaze:11.0-100] MicroBlaze Conversion Block Automation dismissed. It can be activated again with "set_property CONFIG.C_ENABLE_CONVERSION 1 [get_bd_cells /microblaze_0]".
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_1/reset]
+INFO: [BoardRule 102-10] create_bd_port -dir I reset_rtl_0 -type rst
+INFO: [BoardRule 102-7] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+INFO: [BoardRule 102-15] connect_bd_net /reset_rtl_0 /clk_wiz_1/reset
+INFO: [BoardRule 102-19] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
+INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilvector_logic:1.0 for the IP type xilinx.com:ip:util_vector_logic:2.0 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:util_vector_logic:2.0 may be deprecated in future releases. More information on inline hdl IP is available in UG994 
+endgroup
+set_property location {1 123 -180} [get_bd_cells util_vector_logic_0]
+set_property -dict [list \
+  CONFIG.C_OPERATION {not} \
+  CONFIG.C_SIZE {1} \
+] [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
+connect_bd_net [get_bd_ports reset_rtl_0] [get_bd_pins util_vector_logic_0/Op1]
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0
+endgroup
+set_property location {5 1372 338} [get_bd_cells axi_uartlite_0]
+set_property CONFIG.C_BAUDRATE {115200} [get_bd_cells axi_uartlite_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/microblaze_0 (Periph)} Slave {/axi_uartlite_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_uartlite_0/S_AXI]
+Slave segment '/axi_uartlite_0/S_AXI/Reg' is being assigned into address space '/microblaze_0/Data' at <0x4060_0000 [ 64K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_uartlite_0/UART]
+INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 uart_rtl_0
+INFO: [BoardRule 102-9] connect_bd_intf_net /uart_rtl_0 /axi_uartlite_0/UART
+endgroup
+regenerate_bd_layout
+create_bd_port -dir O clk_out
+startgroup
+connect_bd_net [get_bd_ports clk_out] [get_bd_pins clk_wiz_1/clk_out1]
+endgroup
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property -dict [list \
+  CONFIG.C_ALL_INPUTS {0} \
+  CONFIG.C_ALL_OUTPUTS {1} \
+] [get_bd_cells axi_gpio_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
+INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_rtl_0
+INFO: [BoardRule 102-9] connect_bd_intf_net /gpio_rtl_0 /axi_gpio_0/GPIO
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+Slave segment '/axi_gpio_0/S_AXI/Reg' is being assigned into address space '/microblaze_0/Data' at <0x4000_0000 [ 64K ]>.
+endgroup
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+set_property  ip_repo_paths  /home/audrey/Documents/Verilog_course/IP_project/ip_repo/simpleCpu_1_0 [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/audrey/Documents/Verilog_course/IP_project/ip_repo/simpleCpu_1_0'.
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:simpleCpu:1.0 simpleCpu_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/simpleCpu_0/S00_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins simpleCpu_0/S00_AXI]
+Slave segment '/simpleCpu_0/S00_AXI/S00_AXI_reg' is being assigned into address space '/microblaze_0/Data' at <0x44A0_0000 [ 64K ]>.
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+validate_bd_design
+INFO: [BD 5-943] Reserving offset range <0x4060_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x44A0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Low-Area Mode.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+INFO: [xilinx.com:ip:microblaze:11.0-9] /microblaze_0: Setting C_BASE_VECTORS to 0x00000000.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 8305.254 ; gain = 66.680 ; free physical = 4271 ; free virtual = 12651
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+make_wrapper -files [get_files /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -norecurse /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+set_property name uart [get_bd_intf_ports uart_rtl_0]
+set_property name gpio [get_bd_intf_ports gpio_rtl_0]
+set_property name rst [get_bd_ports reset_rtl_0]
+save_bd_design
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+make_wrapper -files [get_files /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 5-943] Reserving offset range <0x4060_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x44A0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Low-Area Mode.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+INFO: [xilinx.com:ip:microblaze:11.0-9] /microblaze_0: Setting C_BASE_VECTORS to 0x00000000.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+make_wrapper: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8561.699 ; gain = 0.000 ; free physical = 4207 ; free virtual = 12592
+generate_target all [get_files  /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_clk_wiz_1_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sim_clk_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_vector_logic_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+Exporting to file /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block simpleCpu_0 .
+Exporting to file /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 8582.699 ; gain = 0.000 ; free physical = 4306 ; free virtual = 12752
+catch { config_ip_cache -export [get_ips -all design_1_microblaze_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_microblaze_0_0
+catch { config_ip_cache -export [get_ips -all design_1_dlmb_v10_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_v10_0
+catch { config_ip_cache -export [get_ips -all design_1_ilmb_v10_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_v10_0
+catch { config_ip_cache -export [get_ips -all design_1_dlmb_bram_if_cntlr_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_bram_if_cntlr_0
+catch { config_ip_cache -export [get_ips -all design_1_ilmb_bram_if_cntlr_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_bram_if_cntlr_0
+catch { config_ip_cache -export [get_ips -all design_1_lmb_bram_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_lmb_bram_0
+catch { config_ip_cache -export [get_ips -all design_1_mdm_1_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_mdm_1_0
+catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_1_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_clk_wiz_1_0
+catch { config_ip_cache -export [get_ips -all design_1_rst_clk_wiz_1_100M_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_rst_clk_wiz_1_100M_0
+catch { config_ip_cache -export [get_ips -all design_1_util_vector_logic_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_util_vector_logic_0_0
+catch { config_ip_cache -export [get_ips -all design_1_axi_uartlite_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_uartlite_0_0
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_smc_0
+catch { config_ip_cache -export [get_ips -all design_1_axi_gpio_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_gpio_0_0
+catch { config_ip_cache -export [get_ips -all design_1_simpleCpu_0_0] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_simpleCpu_0_0
+export_ip_user_files -of_objects [get_files /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_axi_gpio_0_0_synth_1 design_1_axi_smc_0_synth_1 design_1_axi_uartlite_0_0_synth_1 design_1_clk_wiz_1_0_synth_1 design_1_dlmb_bram_if_cntlr_0_synth_1 design_1_dlmb_v10_0_synth_1 design_1_ilmb_bram_if_cntlr_0_synth_1 design_1_ilmb_v10_0_synth_1 design_1_lmb_bram_0_synth_1 design_1_mdm_1_0_synth_1 design_1_microblaze_0_0_synth_1 design_1_rst_clk_wiz_1_100M_0_synth_1 design_1_simpleCpu_0_0_synth_1 design_1_util_vector_logic_0_0_synth_1
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_gpio_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_smc_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_uartlite_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_clk_wiz_1_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_v10_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_v10_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_lmb_bram_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_mdm_1_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_microblaze_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_rst_clk_wiz_1_100M_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_simpleCpu_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_util_vector_logic_0_0
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+[Sun Dec 21 22:53:43 2025] Launched design_1_axi_gpio_0_0_synth_1, design_1_axi_smc_0_synth_1, design_1_axi_uartlite_0_0_synth_1, design_1_clk_wiz_1_0_synth_1, design_1_dlmb_bram_if_cntlr_0_synth_1, design_1_dlmb_v10_0_synth_1, design_1_ilmb_bram_if_cntlr_0_synth_1, design_1_ilmb_v10_0_synth_1, design_1_lmb_bram_0_synth_1, design_1_mdm_1_0_synth_1, design_1_microblaze_0_0_synth_1, design_1_rst_clk_wiz_1_100M_0_synth_1, design_1_simpleCpu_0_0_synth_1, design_1_util_vector_logic_0_0_synth_1...
+Run output will be captured here:
+design_1_axi_gpio_0_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_axi_gpio_0_0_synth_1/runme.log
+design_1_axi_smc_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_axi_uartlite_0_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_axi_uartlite_0_0_synth_1/runme.log
+design_1_clk_wiz_1_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_clk_wiz_1_0_synth_1/runme.log
+design_1_dlmb_bram_if_cntlr_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_dlmb_bram_if_cntlr_0_synth_1/runme.log
+design_1_dlmb_v10_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_dlmb_v10_0_synth_1/runme.log
+design_1_ilmb_bram_if_cntlr_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_ilmb_bram_if_cntlr_0_synth_1/runme.log
+design_1_ilmb_v10_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_ilmb_v10_0_synth_1/runme.log
+design_1_lmb_bram_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_lmb_bram_0_synth_1/runme.log
+design_1_mdm_1_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_mdm_1_0_synth_1/runme.log
+design_1_microblaze_0_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_microblaze_0_0_synth_1/runme.log
+design_1_rst_clk_wiz_1_100M_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_rst_clk_wiz_1_100M_0_synth_1/runme.log
+design_1_simpleCpu_0_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_simpleCpu_0_0_synth_1/runme.log
+design_1_util_vector_logic_0_0_synth_1: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.runs/design_1_util_vector_logic_0_0_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.cache/compile_simlib/modelsim} {questa=/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.cache/compile_simlib/questa} {xcelium=/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.cache/compile_simlib/xcelium} {vcs=/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.cache/compile_simlib/vcs} {riviera=/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.cache/compile_simlib/riviera}] -of_objects [get_files /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.ip_user_files -ipstatic_source_dir /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+write_bd_tcl -force /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/design_1.tcl
+WARNING: [BD 41-2937] The design that will be created by this Tcl script contains the following user IPs:
+/simpleCpu_0
+Please add the following user repository(s):
+/home/audrey/Documents/Verilog_course/IP_project/ip_repo/simpleCpu_1_0
+before sourcing this Tcl script or use write_project_tcl.
+INFO: [BD 5-148] Tcl file written out </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/design_1.tcl>.
+
+write_hw_platform -fixed -force -file /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/design_1_wrapper.xsa
+INFO: [Project 1-1918] Creating Hardware Platform: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/design_1_wrapper.xsa ...
+INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Project 1-1941] Successfully created Hardware Platform: /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/design_1_wrapper.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (/home/audrey/Xilinx/Vivado/2024.2/data/embeddedsw) loading 0 seconds
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse /home/audrey/Documents/Verilog_course/IP_microblaze_artix/project_1/project_1.srcs/sim_1/new/my_testbench.v
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+INFO: [Common 17-14] Message 'filemgmt 56-199' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sim_1/imports/new/my_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sim_1/imports/new/my_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sim_1/imports/new/my_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/synth/design_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sim_1/imports/new/my_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:]
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 22 03:09:07 2025...

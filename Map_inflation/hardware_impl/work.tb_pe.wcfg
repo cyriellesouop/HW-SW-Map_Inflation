@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_pe.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_pe" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0 ps"></ZoomStartTime>
+      <ZoomEndTime time="9 ps"></ZoomEndTime>
+      <Cursor1Time time="0 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/tb_pe/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pe/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pe/pe_en">
+      <obj_property name="ElementShortName">pe_en</obj_property>
+      <obj_property name="ObjectShortName">pe_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/pe_input">
+      <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/pe_weight">
+      <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_weight[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/pe_pixel_out">
+      <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/pe_output">
+      <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/vec">
+      <obj_property name="ElementShortName">vec[16:0]</obj_property>
+      <obj_property name="ObjectShortName">vec[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/errors">
+      <obj_property name="ElementShortName">errors[15:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pe/idx">
+      <obj_property name="ElementShortName">idx[16:0]</obj_property>
+      <obj_property name="ObjectShortName">idx[16:0]</obj_property>
+   </wvobject>
+</wave_config>

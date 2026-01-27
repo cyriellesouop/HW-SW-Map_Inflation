@@ -1,0 +1,65 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Dec 21 22:19:41 2025
+# Process ID         : 223925
+# Current directory  : /home/audrey/Documents/Verilog_course/sim_mb_customIP
+# Command line       : vivado
+# Log file           : /home/audrey/Documents/Verilog_course/sim_mb_customIP/vivado.log
+# Journal file       : /home/audrey/Documents/Verilog_course/sim_mb_customIP/vivado.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3633.991 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 13189 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project project_1 /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1 -part xc7s50csga324-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
+create_bd_design "design_1"
+Wrote  : </home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { all {1} axi_intc {0} axi_periph {Enabled} cache {None} clk {New Clocking Wizard} compress {1} cores {1} debug_module {Debug Only} disable {1} ecc {None} local_mem {64KB} preset {None}}  [get_bd_cells microblaze_0]
+INFO: [Common 17-365] Interrupt caught but 'apply_bd_automation' cannot be canceled. Please wait for command to finish.
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+create_bd_cell: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7965.469 ; gain = 168.523 ; free physical = 3327 ; free virtual = 11663
+apply_bd_automation: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 7968.438 ; gain = 219.391 ; free physical = 3319 ; free virtual = 11655
+INFO: [Common 17-681] Processing pending cancel.
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:sim_clk_gen:1.0 sim_clk_gen_0
+endgroup
+set_property CONFIG.CLOCK_TYPE {Differential} [get_bd_cells sim_clk_gen_0]
+set_property location {1 76 134} [get_bd_cells sim_clk_gen_0]
+connect_bd_intf_net [get_bd_intf_pins sim_clk_gen_0/diff_clk] [get_bd_intf_pins clk_wiz_1/CLK_IN1_D]
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { all {1} axi_intc {0} axi_periph {Disabled} cache {None} clk {/clk_wiz_1/clk_out1 (100 MHz)} compress {0} cores {1} debug_module {Debug Only} disable {1} ecc {None} local_mem {64KB} preset {None}}  [get_bd_cells microblaze_0]
+INFO: [xilinx.com:ip:microblaze:11.0-100] MicroBlaze Conversion Block Automation dismissed. It can be activated again with "set_property CONFIG.C_ENABLE_CONVERSION 1 [get_bd_cells /microblaze_0]".
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins clk_wiz_1/reset]
+undo
+INFO: [Common 17-17] undo 'apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins clk_wiz_1/reset]'

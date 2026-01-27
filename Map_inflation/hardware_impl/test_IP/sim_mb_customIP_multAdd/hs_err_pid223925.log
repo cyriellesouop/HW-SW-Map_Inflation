@@ -1,0 +1,10 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/home/audrey/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/lib//server/libjvm.so(+0xe4f55c) [0x76e7bc84f55c]
+/home/audrey/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/lib//server/libjvm.so(JVM_handle_linux_signal+0x23e) [0x76e7bc85002e]
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x76e7f6c42520]
+/home/audrey/Xilinx/Vivado/2024.2/lib/lnx64.o/libxv_ip.so(HXGUIParameter::getEnabled() const+0x4) [0x76e7db58c504]
+/home/audrey/Xilinx/Vivado/2024.2/lib/lnx64.o/libxv_ip.so(Java_ui_frmwork_xguifrmwrki_HXGuiParam_1getEnabled+0x18) [0x76e7db615cf8]
+[0x76e7ab743980]

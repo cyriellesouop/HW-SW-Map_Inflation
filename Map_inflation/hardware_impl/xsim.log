@@ -1,0 +1,137 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Jan 25 05:25:28 2026
+# Process ID         : 337769
+# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_pe_wrapper/xsim_script.tcl}
+# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.log
+# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3500.551 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 4927 MB
+#-----------------------------------------------------------
+source xsim.dir/work.tb_pe_wrapper/xsim_script.tcl
+# xsim {work.tb_pe_wrapper} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+
+========================================
+  PE Wrapper Testbench - Wavefront Test
+========================================
+
+--- Initializing Weights ---
+Row 0 weights: [1 1 1]
+Row 1 weights: [2 2 2]
+Row 2 weights: [3 3 3]
+
+--- Injecting Test Data ---
+38000 Test 0: dataIn = [0 1 2]
+  Row 0 expected sum: 3
+  Row 1 expected sum: 6
+  Row 2 expected sum: 9
+42000 Test 1: dataIn = [1 2 3]
+  Row 0 expected sum: 6
+  Row 1 expected sum: 12
+  Row 2 expected sum: 18
+46000 Test 2: dataIn = [2 3 4]
+  Row 0 expected sum: 9
+  Row 1 expected sum: 18
+  Row 2 expected sum: 27
+50000 Test 3: dataIn = [3 4 5]
+[CAPTURE] Cycle 0: Captured dataOut = 000000000000000
+  Row 0 expected sum: 12
+  Row 1 expected sum: 24
+  Row 2 expected sum: 36
+54000 Test 4: dataIn = [4 5 6]
+[CAPTURE] Cycle 1: Captured dataOut = 000000000000003
+  Row 0 expected sum: 15
+  Row 1 expected sum: 30
+  Row 2 expected sum: 45
+
+--- Flushing Pipeline ---
+[CAPTURE] Cycle 2: Captured dataOut = 000000000000006
+[CAPTURE] Cycle 3: Captured dataOut = 000000000300009
+[CAPTURE] Cycle 4: Captured dataOut = 00000000060000c
+[CAPTURE] Cycle 5: Captured dataOut = 00002400090000f
+[CAPTURE] Cycle 6: Captured dataOut = 000048000c0000f
+[CAPTURE] Cycle 7: Captured dataOut = 00006c000f0000f
+[CAPTURE] Cycle 8: Captured dataOut = 000090000f0000f
+[CAPTURE] Cycle 9: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 10: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 11: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 12: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 13: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 14: Captured dataOut = 0000b4000f0000f
+[CAPTURE] Cycle 15: Captured dataOut = 0000b4000f0000f
+
+========================================
+  Cycle-by-Cycle Verification
+========================================
+
+122000 Cycle 0:
+  Row 0: [pipeline filling/flushing] = X
+  Row 1: [pipeline filling/flushing] = X
+  Row 2: [pipeline filling/flushing] = X
+MATCH: 000000000000000
+
+122000 Cycle 1:
+  Row 0: Test 0 result = 3 (0x00003)
+  Row 1: [pipeline filling/flushing] = X
+  Row 2: [pipeline filling/flushing] = X
+MATCH: 000000000000003
+
+122000 Cycle 2:
+  Row 0: Test 1 result = 6 (0x00006)
+  Row 1: [pipeline filling/flushing] = X
+  Row 2: [pipeline filling/flushing] = X
+MATCH: 000000000000006
+
+122000 Cycle 3:
+  Row 0: Test 2 result = 9 (0x00009)
+  Row 1: Test 0 result = 6 (0x00006)
+  Row 2: [pipeline filling/flushing] = X
+MATCH: 000000000300009
+
+122000 Cycle 4:
+  Row 0: Test 3 result = 12 (0x0000c)
+  Row 1: Test 1 result = 12 (0x0000c)
+  Row 2: [pipeline filling/flushing] = X
+MATCH: 00000000060000c
+
+122000 Cycle 5:
+  Row 0: Test 4 result = 15 (0x0000f)
+  Row 1: Test 2 result = 18 (0x00012)
+  Row 2: Test 0 result = 9 (0x00009)
+MATCH: 00002400090000f
+
+122000 Cycle 6:
+  Row 0: [pipeline filling/flushing] = X
+  Row 1: Test 3 result = 24 (0x00018)
+  Row 2: Test 1 result = 18 (0x00012)
+MISMATCH: Expected: 000048000c00000, Actual 000048000c0000f 
+
+Row 0: Expected 0 (0x00000), Got 15 (0x0000f)
+122000 Cycle 7:
+  Row 0: [pipeline filling/flushing] = X
+  Row 1: Test 4 result = 30 (0x0001e)
+  Row 2: Test 2 result = 27 (0x0001b)
+MISMATCH: Expected: 00006c000f00000, Actual 00006c000f0000f 
+
+Row 0: Expected 0 (0x00000), Got 15 (0x0000f)
+
+========================================
+FAILURE: 2 mismatches found
+$finish called at time : 322 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_pe_wrapper.v" Line 229
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Jan 25 05:25:32 2026...

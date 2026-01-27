@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_adder.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_adder" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="203.499 ns"></ZoomEndTime>
+      <Cursor1Time time="46.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="3" />
+   <wvobject type="group" fp_name="group39">
+      <obj_property name="label">TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_adder/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder/adder_en">
+         <obj_property name="ElementShortName">adder_en</obj_property>
+         <obj_property name="ObjectShortName">adder_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/adder_dataIn">
+         <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/adder_dataOut">
+         <obj_property name="ElementShortName">adder_dataOut[18:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataOut[18:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/input_queue">
+         <obj_property name="ElementShortName">input_queue[0:1][47:0]</obj_property>
+         <obj_property name="ObjectShortName">input_queue[0:1][47:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/output_queue">
+         <obj_property name="ElementShortName">output_queue[0:-1][18:0]</obj_property>
+         <obj_property name="ObjectShortName">output_queue[0:-1][18:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/expected_queue">
+         <obj_property name="ElementShortName">expected_queue[0:-1][18:0]</obj_property>
+         <obj_property name="ObjectShortName">expected_queue[0:-1][18:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/vec">
+         <obj_property name="ElementShortName">vec[31:0]</obj_property>
+         <obj_property name="ObjectShortName">vec[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/output_idx">
+         <obj_property name="ElementShortName">output_idx[31:0]</obj_property>
+         <obj_property name="ObjectShortName">output_idx[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/check_idx">
+         <obj_property name="ElementShortName">check_idx[31:0]</obj_property>
+         <obj_property name="ObjectShortName">check_idx[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/errors">
+         <obj_property name="ElementShortName">errors[31:0]</obj_property>
+         <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/total_tests">
+         <obj_property name="ElementShortName">total_tests[31:0]</obj_property>
+         <obj_property name="ObjectShortName">total_tests[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/KERNEL_SIZE">
+         <obj_property name="ElementShortName">KERNEL_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">KERNEL_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/DATA_WIDTH">
+         <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/WEIGHT_WIDTH">
+         <obj_property name="ElementShortName">WEIGHT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WEIGHT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/PRODUCT_WIDTH">
+         <obj_property name="ElementShortName">PRODUCT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PRODUCT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/INPUT_WIDTH">
+         <obj_property name="ElementShortName">INPUT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INPUT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/PARTIAL_SUM_WIDTH">
+         <obj_property name="ElementShortName">PARTIAL_SUM_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PARTIAL_SUM_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/FINAL_OUT_WIDTH">
+         <obj_property name="ElementShortName">FINAL_OUT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">FINAL_OUT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/PERIOD">
+         <obj_property name="ElementShortName">PERIOD[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PERIOD[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/NUM_TESTS">
+         <obj_property name="ElementShortName">NUM_TESTS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_TESTS[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/PIPELINE_DEPTH">
+         <obj_property name="ElementShortName">PIPELINE_DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PIPELINE_DEPTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider21" type="divider">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group22">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_adder/dut/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder/dut/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder/dut/adder_en">
+         <obj_property name="ElementShortName">adder_en</obj_property>
+         <obj_property name="ObjectShortName">adder_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/adder_dataIn">
+         <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/adder_dataOut">
+         <obj_property name="ElementShortName">adder_dataOut[18:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataOut[18:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/unpacked_products">
+         <obj_property name="ElementShortName">unpacked_products[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">unpacked_products[0:2][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/full_sum">
+         <obj_property name="ElementShortName">full_sum[17:0]</obj_property>
+         <obj_property name="ObjectShortName">full_sum[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/i">
+         <obj_property name="ElementShortName">i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/j">
+         <obj_property name="ElementShortName">j[3:0]</obj_property>
+         <obj_property name="ObjectShortName">j[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder/dut/output_en">
+         <obj_property name="ElementShortName">output_en</obj_property>
+         <obj_property name="ObjectShortName">output_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/KERNEL_SIZE">
+         <obj_property name="ElementShortName">KERNEL_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">KERNEL_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/DATA_WIDTH">
+         <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/WEIGHT_WIDTH">
+         <obj_property name="ElementShortName">WEIGHT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WEIGHT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/PRODUCT_WIDTH">
+         <obj_property name="ElementShortName">PRODUCT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PRODUCT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/PARTIAL_SUM_WIDTH">
+         <obj_property name="ElementShortName">PARTIAL_SUM_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PARTIAL_SUM_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder/dut/FINAL_OUT_WIDTH">
+         <obj_property name="ElementShortName">FINAL_OUT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">FINAL_OUT_WIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

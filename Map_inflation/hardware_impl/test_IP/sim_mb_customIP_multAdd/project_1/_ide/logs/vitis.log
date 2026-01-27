@@ -1,0 +1,117 @@
+23:51:45 INFO  : updated workspace path: 
+23:51:45 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+23:51:55 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey6626026706913874889
+23:51:55 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey16840557527527847810 -r /tmp/rigel_lopper_audrey6626026706913874889/.repo.yaml && deactivate
+23:51:55 INFO  : Embedded Template List generated successfully
+23:52:29 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+23:52:29 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP/vitis_ws
+23:11:12 INFO  : updated workspace path: 
+23:11:12 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+23:11:23 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey1904853462141267602
+23:11:23 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey1682182773911419615 -r /tmp/rigel_lopper_audrey1904853462141267602/.repo.yaml && deactivate
+23:11:24 INFO  : Embedded Template List generated successfully
+23:12:19 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+00:12:32 INFO  : updated workspace path: 
+00:12:32 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+00:12:39 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey2008813720680585872
+00:12:39 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey17733827544180278959 -r /tmp/rigel_lopper_audrey2008813720680585872/.repo.yaml && deactivate
+00:12:39 INFO  : Embedded Template List generated successfully
+00:12:48 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+00:12:48 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP/vitis_ws
+00:48:04 INFO  : updated workspace path: 
+00:48:04 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+00:48:06 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey10471019991152597107
+00:48:06 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey1477471123197911154 -r /tmp/rigel_lopper_audrey10471019991152597107/.repo.yaml && deactivate
+00:48:06 INFO  : Embedded Template List generated successfully
+00:48:23 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+00:48:25 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey7562054277874412470
+00:48:25 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey4801795190300335425 -r /tmp/rigel_lopper_audrey7562054277874412470/.repo.yaml && deactivate
+00:48:25 INFO  : Embedded Template List generated successfully
+00:48:29 INFO  : XSDB server has started successfully from frontend.
+00:48:29 INFO  : It has taken  5secs.
+00:48:30 INFO  : Connection to XSDB Server established.
+00:48:30 INFO  : It has taken  1secs.
+00:48:30 INFO  : Done
+01:02:29 INFO  : updated workspace path: 
+01:02:29 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+01:02:31 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey16189252101067947999
+01:02:31 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey2478788318512906850 -r /tmp/rigel_lopper_audrey16189252101067947999/.repo.yaml && deactivate
+01:02:31 INFO  : Embedded Template List generated successfully
+01:03:00 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+01:03:00 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws
+21:14:09 INFO  : updated workspace path: 
+21:14:09 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+21:14:14 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey6816359516829189220
+21:14:14 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey9923252530959991818 -r /tmp/rigel_lopper_audrey6816359516829189220/.repo.yaml && deactivate
+21:14:15 INFO  : Embedded Template List generated successfully
+21:17:07 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+14:26:54 INFO  : updated workspace path: 
+14:26:54 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+14:27:00 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey16096093395313504014
+14:27:00 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey6408609869221664833 -r /tmp/rigel_lopper_audrey16096093395313504014/.repo.yaml && deactivate
+14:27:00 INFO  : Embedded Template List generated successfully
+15:03:02 INFO  : updated workspace path: 
+15:03:02 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+15:03:07 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey4347768056887255098
+15:03:07 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey1072175699715491937 -r /tmp/rigel_lopper_audrey4347768056887255098/.repo.yaml && deactivate
+15:03:08 INFO  : Embedded Template List generated successfully
+15:05:12 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+15:05:13 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult
+23:40:40 INFO  : updated workspace path: 
+23:40:40 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+23:40:42 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey9630783847583992015
+23:40:42 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey15625346759938806655 -r /tmp/rigel_lopper_audrey9630783847583992015/.repo.yaml && deactivate
+23:40:42 INFO  : Embedded Template List generated successfully
+23:40:48 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+23:40:48 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult
+21:44:44 INFO  : updated workspace path: 
+21:44:44 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+21:44:52 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey13661261357749699818
+21:44:52 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey2799022778424808113 -r /tmp/rigel_lopper_audrey13661261357749699818/.repo.yaml && deactivate
+21:44:53 INFO  : Embedded Template List generated successfully
+21:48:40 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+21:48:40 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult
+22:42:04 INFO  : updated workspace path: 
+22:42:04 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+22:42:11 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey11173082330368765885
+22:42:11 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey2304411953900826363 -r /tmp/rigel_lopper_audrey11173082330368765885/.repo.yaml && deactivate
+22:42:12 INFO  : Embedded Template List generated successfully
+22:42:33 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:15 INFO  : updated workspace path: 
+12:57:15 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:20 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey7089680684956470337
+12:57:20 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey4551950190424433361 -r /tmp/rigel_lopper_audrey7089680684956470337/.repo.yaml && deactivate
+12:57:20 INFO  : Embedded Template List generated successfully
+12:57:22 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:22 ERROR : Failed to set workspace '/home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult'. The path is already in use by another Vitis server
+12:57:24 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey7281949265319023831
+12:57:24 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey8122780531668091540 -r /tmp/rigel_lopper_audrey7281949265319023831/.repo.yaml && deactivate
+12:57:24 INFO  : Embedded Template List generated successfully
+12:57:31 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:31 INFO  : updated workspace path: 
+12:57:33 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey15874219348222664690
+12:57:33 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey5402933327080796664 -r /tmp/rigel_lopper_audrey15874219348222664690/.repo.yaml && deactivate
+12:57:33 INFO  : Embedded Template List generated successfully
+12:57:33 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:35 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey10512931760904151753
+12:57:35 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey5329098259017377031 -r /tmp/rigel_lopper_audrey10512931760904151753/.repo.yaml && deactivate
+12:57:35 INFO  : Embedded Template List generated successfully
+12:57:38 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:38 ERROR : Failed to set workspace '/home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult'. The path is already in use by another Vitis server
+12:57:40 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey1767913655555611842
+12:57:40 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey11991431492244467226 -r /tmp/rigel_lopper_audrey1767913655555611842/.repo.yaml && deactivate
+12:57:40 INFO  : Embedded Template List generated successfully
+12:57:51 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:51 INFO  : updated workspace path: 
+12:57:53 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey4627411394715722110
+12:57:53 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey3006804935591110339 -r /tmp/rigel_lopper_audrey4627411394715722110/.repo.yaml && deactivate
+12:57:54 INFO  : Embedded Template List generated successfully
+12:57:54 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:57:56 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey917294746758149692
+12:57:56 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey10732848293716924800 -r /tmp/rigel_lopper_audrey917294746758149692/.repo.yaml && deactivate
+12:57:56 INFO  : Embedded Template List generated successfully
+12:58:03 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+12:58:03 ERROR : Failed to set workspace '/home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/vitis_ws_new_mult'. The path is already in use by another Vitis server
+12:58:05 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey3508631263441916486
+12:58:05 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey14957393128542069668 -r /tmp/rigel_lopper_audrey3508631263441916486/.repo.yaml && deactivate
+12:58:06 INFO  : Embedded Template List generated successfully

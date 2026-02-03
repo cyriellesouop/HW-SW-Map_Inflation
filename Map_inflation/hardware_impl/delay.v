@@ -15,7 +15,7 @@ generate
         // No delay
         assign dataOut = dataIn;
 
-    end else begin : gen_pipeline
+    end else begin 
         reg [WIDTH-1:0] pipe [0:LATENCY-1];
         reg [LATENCY : 0 ] i;
 

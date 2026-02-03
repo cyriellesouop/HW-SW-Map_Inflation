@@ -1,0 +1,94 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Feb  2 22:21:07 2026
+# Process ID         : 209527
+# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_weight_loader/xsim_script.tcl}
+# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
+# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3683.993 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 12667 MB
+#-----------------------------------------------------------
+source xsim.dir/work.tb_weight_loader/xsim_script.tcl
+# xsim {work.tb_weight_loader} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Testing KERNEL_SIZE = 2
+PASS | K=2 | iter=0
+Expected = 12153524000000000000000000000000
+Got      = 12153524000000000000000000000000
+PASS | K=2 | iter=1
+Expected = c0895e81000000000000000000000000
+Got      = c0895e81000000000000000000000000
+PASS | K=2 | iter=2
+Expected = 8484d609000000000000000000000000
+Got      = 8484d609000000000000000000000000
+PASS | K=2 | iter=3
+Expected = b1f05663000000000000000000000000
+Got      = b1f05663000000000000000000000000
+PASS | K=2 | iter=4
+Expected = 06b97b0d000000000000000000000000
+Got      = 06b97b0d000000000000000000000000
+Testing KERNEL_SIZE = 3
+PASS | K=3 | iter=0
+Expected = 46df998db2c284658937521200000000
+Got      = 46df998db2c284658937521200000000
+PASS | K=3 | iter=1
+Expected = 00f3e30106d7cd0d3b23f17600000000
+Got      = 00f3e30106d7cd0d3b23f17600000000
+PASS | K=3 | iter=2
+Expected = 1e8dcd3d76d457ed462df78c00000000
+Got      = 1e8dcd3d76d457ed462df78c00000000
+PASS | K=3 | iter=3
+Expected = 7cfde9f9e33724c6e2f784c500000000
+Got      = 7cfde9f9e33724c6e2f784c500000000
+PASS | K=3 | iter=4
+Expected = d513d2aa72aff7e5bbd2727700000000
+Got      = d513d2aa72aff7e5bbd2727700000000
+Testing KERNEL_SIZE = 4
+PASS | K=4 | iter=0
+Expected = 8932d61247ecdb8f793069f2e77696ce
+Got      = 8932d61247ecdb8f793069f2e77696ce
+PASS | K=4 | iter=1
+Expected = f4007ae8e2ca4ec52e58495cde8e28bd
+Got      = f4007ae8e2ca4ec52e58495cde8e28bd
+PASS | K=4 | iter=2
+Expected = 96ab582db2a72665b1ef62630573870a
+Got      = 96ab582db2a72665b1ef62630573870a
+PASS | K=4 | iter=3
+Expected = c03b228010642120557845aacecccc9d
+Got      = c03b228010642120557845aacecccc9d
+PASS | K=4 | iter=4
+Expected = cb203e968983b81386bc380da9a7d653
+Got      = cb203e968983b81386bc380da9a7d653
+Testing KERNEL_SIZE = 5
+PASS | K=5 | iter=0
+Expected = 359fdd6beaa62ad581174a02d7563eae
+Got      = 359fdd6beaa62ad581174a02d7563eae
+PASS | K=5 | iter=1
+Expected = 0effe91de7c572cf118449230509650a
+Got      = 0effe91de7c572cf118449230509650a
+PASS | K=5 | iter=2
+Expected = e5730aca9e314c3c7968bdf2452e618a
+Got      = e5730aca9e314c3c7968bdf2452e618a
+PASS | K=5 | iter=3
+Expected = 20c4b341ec4b34d83c20f378c48a1289
+Got      = 20c4b341ec4b34d83c20f378c48a1289
+PASS | K=5 | iter=4
+Expected = 75c50deb5b0265b6634bf9c6571513ae
+Got      = 75c50deb5b0265b6634bf9c6571513ae
+$finish called at time : 1478 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_weight_loader.v" Line 138
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Feb  2 22:21:10 2026...

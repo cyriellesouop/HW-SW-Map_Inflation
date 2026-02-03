@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
 // Date        : Sat Jan 10 00:10:30 2026
 // Host        : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_clk_wiz_0_1 -prefix
+//               design_1_clk_wiz_0_1_ design_1_clk_wiz_0_1_sim_netlist.v
 // Design      : design_1_clk_wiz_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,14 +29,14 @@ module design_1_clk_wiz_0_1
   wire locked;
   wire reset;
 
-  design_1_clk_wiz_0_1_clk_wiz inst
+  design_1_clk_wiz_0_1_design_1_clk_wiz_0_1_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
         .locked(locked),
         .reset(reset));
 endmodule
 
-module design_1_clk_wiz_0_1_clk_wiz
+module design_1_clk_wiz_0_1_design_1_clk_wiz_0_1_clk_wiz
    (clk_out1,
     reset,
     locked,

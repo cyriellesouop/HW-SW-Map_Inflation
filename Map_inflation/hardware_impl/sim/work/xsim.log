@@ -3,28 +3,37 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sat Jan 24 21:43:52 2026
-# Process ID         : 248023
+# Start of session at: Mon Feb  2 22:21:32 2026
+# Process ID         : 209820
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
-# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_pe_wrapper/xsim_script.tcl}
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
 # Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.jou
 # Running On         : audrey-Precision-5520
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3579.011 MHz
+# CPU Frequency      : 3644.566 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 6064 MB
+# Available Virtual  : 12598 MB
 #-----------------------------------------------------------
-source xsim.dir/work.tb_pe_wrapper/xsim_script.tcl
-# xsim {work.tb_pe_wrapper} -autoloadwcfg -tclbatch {./../../sim.tcl}
+source xsim.dir/work.tb_top2/xsim_script.tcl
+# xsim {work.tb_top2} -autoloadwcfg -runall
 Time resolution is 1 ps
-source ./../../sim.tcl
-## open_saif myTop.saif
-## log_saif /tb_pe_wrapper/DUT/*
-ERROR: [Simtcl 6-54] No matching object to log found
+run -all
+30000 first weights value is 1020304
+38000 second weights value is 5060708
+46000 second weights value is 9000000
+66000 first data value is a0d1000
+74000 first data value is b0e1100
+82000 first data value is c0f1200
+94000 | VALID OUTPUT:                  x
+102000 | VALID OUTPUT:                  X
+110000 | VALID OUTPUT:                  X
+$finish called at time : 786 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 147
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Feb  2 22:21:36 2026...

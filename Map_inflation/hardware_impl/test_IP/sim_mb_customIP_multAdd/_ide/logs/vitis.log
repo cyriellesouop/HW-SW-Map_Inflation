@@ -5,3 +5,15 @@
 23:13:40 INFO  : Embedded Template List generated successfully
 23:14:19 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
 23:14:19 INFO  : created .gitignore file for the project /home/audrey/Documents/Verilog_course/sim_mb_customIP/vitis_ws
+02:53:34 INFO  : updated workspace path: 
+02:53:34 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+02:53:36 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey13840652981302056475
+02:53:36 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey9397651856403596643 -r /tmp/rigel_lopper_audrey13840652981302056475/.repo.yaml && deactivate
+02:53:36 INFO  : Embedded Template List generated successfully
+20:31:34 INFO  : updated workspace path: 
+20:31:34 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+20:31:43 INFO  : Successfully created repository data at /tmp/rigel_lopper_audrey8713353541365009675
+20:31:43 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_audrey2589473073966453824 -r /tmp/rigel_lopper_audrey8713353541365009675/.repo.yaml && deactivate
+20:31:43 INFO  : Embedded Template List generated successfully
+20:36:01 INFO  : bash, -c, source /home/audrey/Xilinx/Vitis/2024.2/tps/lnx64/lopper-1.1.0/env/bin/activate && python /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/scripts/pyesw//repo.py -st  /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw && deactivate
+20:36:01 INFO  : created .gitignore file for the project /home/audrey/Documents/convolution/Map_inflation/hardware_impl/test_IP/sim_mb_customIP_multAdd/vitis_ws_testIP

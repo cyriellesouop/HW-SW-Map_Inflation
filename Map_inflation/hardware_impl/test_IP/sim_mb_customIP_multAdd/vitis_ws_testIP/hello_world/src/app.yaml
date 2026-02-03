@@ -1,0 +1,4 @@
+domain_path: /home/audrey/Documents/convolution/Map_inflation/hardware_impl/test_IP/sim_mb_customIP_multAdd/vitis_ws_testIP/platform/export/platform/sw/standalone_microblaze_0
+app_src_dir: /home/audrey/Xilinx/Vitis/2024.2/data/embeddedsw/lib/sw_apps/hello_world
+template: hello_world
+lang: c

@@ -5,6 +5,7 @@ module axis_unpack_data #(
     parameter DATA_WIDTH   = 8,         // Width of each slice
     parameter DEPTH       = 4,        // Depth of each FIFO
     parameter PTR_WIDTH   = 2          // Log2 of DEPTH
+    
 )(
     input clk,
     input rstn,
@@ -51,7 +52,7 @@ module axis_unpack_data #(
                 // Master interface (Exposed to the next module)
                 .m_tready(m_axis_tready[i]),
                 .m_tdata (m_axis_tdata[i*DATA_WIDTH +: DATA_WIDTH]),
-                .m_tvalid(m_axis_tvalid[i])
+                .m_tvalid(m_axis_tvalid[i] )
             );
         end
     endgenerate

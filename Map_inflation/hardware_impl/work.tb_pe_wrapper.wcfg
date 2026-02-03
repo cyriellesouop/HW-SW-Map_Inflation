@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_pe_wrapper.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_pe_wrapper" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="59,723 ps"></ZoomStartTime>
+      <ZoomEndTime time="67,149 ps"></ZoomEndTime>
+      <Cursor1Time time="61,998 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="230"></NameColumnWidth>
+      <ValueColumnWidth column_width="131"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="27" />
+   <wvobject type="group" fp_name="group182">
+      <obj_property name="label">TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="divider181" type="divider">
+         <obj_property name="label">TB</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/en">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/dataIn">
+         <obj_property name="ElementShortName">dataIn[23:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/weightsIn">
+         <obj_property name="ElementShortName">weightsIn[71:0]</obj_property>
+         <obj_property name="ObjectShortName">weightsIn[71:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/dataOut">
+         <obj_property name="ElementShortName">dataOut[56:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[56:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/dataOut_done">
+         <obj_property name="ElementShortName">dataOut_done</obj_property>
+         <obj_property name="ObjectShortName">dataOut_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/ready">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/weights_mem">
+         <obj_property name="ElementShortName">weights_mem[0:8][7:0]</obj_property>
+         <obj_property name="ObjectShortName">weights_mem[0:8][7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/results_captured">
+         <obj_property name="ElementShortName">results_captured[0:8][56:0]</obj_property>
+         <obj_property name="ObjectShortName">results_captured[0:8][56:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/cap_ptr">
+         <obj_property name="ElementShortName">cap_ptr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cap_ptr[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/errors">
+         <obj_property name="ElementShortName">errors[31:0]</obj_property>
+         <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/i">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/r">
+         <obj_property name="ElementShortName">r[31:0]</obj_property>
+         <obj_property name="ObjectShortName">r[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/c">
+         <obj_property name="ElementShortName">c[31:0]</obj_property>
+         <obj_property name="ObjectShortName">c[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/dataOut_done_prev">
+         <obj_property name="ElementShortName">dataOut_done_prev</obj_property>
+         <obj_property name="ObjectShortName">dataOut_done_prev</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider204" type="divider">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group195">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/dut/en">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/dut/dataIn">
+         <obj_property name="ElementShortName">dataIn[23:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/dut/weightsIn">
+         <obj_property name="ElementShortName">weightsIn[71:0]</obj_property>
+         <obj_property name="ObjectShortName">weightsIn[71:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_pe_wrapper/dut/dataOut">
+         <obj_property name="ElementShortName">dataOut[56:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[56:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/dut/dataOut_done">
+         <obj_property name="ElementShortName">dataOut_done</obj_property>
+         <obj_property name="ObjectShortName">dataOut_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_pe_wrapper/dut/ready">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider37" type="divider">
+      <obj_property name="label">PE(0,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group25">
+      <obj_property name="label">PE(0,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider37" type="divider">
+      <obj_property name="label">PE(0,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group42">
+      <obj_property name="label">PE(0,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider37" type="divider">
+      <obj_property name="label">PE(0,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group43">
+      <obj_property name="label">PE(0,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider145" type="divider">
+      <obj_property name="label">SUM_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#E0FFFF</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group146">
+      <obj_property name="label">SUM_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider37" type="divider">
+      <obj_property name="label">PE(1,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FAAFBE</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group80">
+      <obj_property name="label">PE(1,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider79" type="divider">
+      <obj_property name="label">PE(1,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FAAFBE</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group92">
+      <obj_property name="label">PE(1,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider79" type="divider">
+      <obj_property name="label">PE(1,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FAAFBE</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group183">
+      <obj_property name="label">PE(1,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider168" type="divider">
+      <obj_property name="label">SUM_1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#E0FFFF</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group157">
+      <obj_property name="label">SUM_1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider118" type="divider">
+      <obj_property name="label">PE(2,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#A52A2A</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group106">
+      <obj_property name="label">PE(2,0)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider131" type="divider">
+      <obj_property name="label">PE(2,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#A52A2A</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group119">
+      <obj_property name="label">PE(2,1)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider144" type="divider">
+      <obj_property name="label">PE(2,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#A52A2A</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group132">
+      <obj_property name="label">PE(2,2)</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider180" type="divider">
+      <obj_property name="label">SUM_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#E0FFFF</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group169">
+      <obj_property name="label">SUM_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+</wave_config>

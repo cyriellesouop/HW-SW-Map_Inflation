@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
 -- Date        : Sun Jan 18 22:21:53 2026
 -- Host        : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/audrey/Documents/Verilog_course/sim_mb_customIP_multAdd/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_axi_gpio_0_0 -prefix
+--               design_1_axi_gpio_0_0_ design_1_axi_gpio_0_0_stub.vhdl
 -- Design      : design_1_axi_gpio_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1

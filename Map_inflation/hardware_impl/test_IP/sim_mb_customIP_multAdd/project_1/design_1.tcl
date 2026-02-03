@@ -136,12 +136,12 @@ xilinx.com:ip:util_vector_logic:2.0\
 xilinx.com:ip:axi_uartlite:2.0\
 xilinx.com:ip:smartconnect:1.0\
 xilinx.com:ip:axi_gpio:2.0\
-user.org:user:simpleCpu:1.0\
 xilinx.com:ip:axi_timer:2.0\
 xilinx.com:ip:axi_intc:4.1\
-user.org:user:MyCpuMult:1.0\
 xilinx.com:ip:clk_wiz:6.0\
 xilinx.com:ip:ila:6.2\
+user.org:user:myRegister:1.0\
+xilinx.com:ip:axis_broadcaster:1.1\
 xilinx.com:ip:lmb_v10:3.0\
 xilinx.com:ip:lmb_bram_if_cntlr:4.0\
 xilinx.com:ip:blk_mem_gen:8.4\
@@ -362,9 +362,6 @@ proc create_root_design { parentCell } {
   ] $axi_gpio_0
 
 
-  # Create instance: simpleCpu_0, and set properties
-  set simpleCpu_0 [ create_bd_cell -type ip -vlnv user.org:user:simpleCpu:1.0 simpleCpu_0 ]
-
   # Create instance: axi_timer_0, and set properties
   set axi_timer_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_0 ]
   set_property CONFIG.mode_64bit {1} $axi_timer_0
@@ -372,9 +369,6 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_intc_0, and set properties
   set axi_intc_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 axi_intc_0 ]
-
-  # Create instance: MyCpuMult_0, and set properties
-  set MyCpuMult_0 [ create_bd_cell -type ip -vlnv user.org:user:MyCpuMult:1.0 MyCpuMult_0 ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -384,9 +378,25 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.ALL_PROBE_SAME_MU {true} \
     CONFIG.C_MONITOR_TYPE {AXI} \
-    CONFIG.C_NUM_OF_PROBES {19} \
-    CONFIG.C_SLOT_0_AXI_PROTOCOL {AXI4LITE} \
+    CONFIG.C_NUM_OF_PROBES {9} \
+    CONFIG.C_SLOT_0_AXIS_TDATA_WIDTH {32} \
+    CONFIG.C_SLOT_0_AXI_PROTOCOL {AXI4S} \
   ] $ila_0
+
+
+  # Create instance: myRegister_0, and set properties
+  set myRegister_0 [ create_bd_cell -type ip -vlnv user.org:user:myRegister:1.0 myRegister_0 ]
+
+  # Create instance: axis_broadcaster_0, and set properties
+  set axis_broadcaster_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_broadcaster:1.1 axis_broadcaster_0 ]
+  set_property -dict [list \
+    CONFIG.HAS_ACLKEN {0} \
+    CONFIG.HAS_TKEEP {0} \
+    CONFIG.HAS_TLAST {0} \
+    CONFIG.HAS_TSTRB {0} \
+    CONFIG.M_TDATA_NUM_BYTES {4} \
+    CONFIG.S_TDATA_NUM_BYTES {4} \
+  ] $axis_broadcaster_0
 
 
   # Create interface connections
@@ -394,16 +404,17 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_intc_0_interrupt [get_bd_intf_pins axi_intc_0/interrupt] [get_bd_intf_pins microblaze_0/INTERRUPT]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins axi_uartlite_0/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M01_AXI [get_bd_intf_pins axi_smc/M01_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_intf_pins axi_smc/M01_AXI] [get_bd_intf_pins ila_0/SLOT_0_AXI]
-  connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins simpleCpu_0/S00_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins myRegister_0/S00_AXI]
   connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins axi_smc/M03_AXI] [get_bd_intf_pins axi_timer_0/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M04_AXI [get_bd_intf_pins axi_smc/M04_AXI] [get_bd_intf_pins axi_intc_0/s_axi]
-  connect_bd_intf_net -intf_net axi_smc_M05_AXI [get_bd_intf_pins axi_smc/M05_AXI] [get_bd_intf_pins MyCpuMult_0/S00_AXI]
   connect_bd_intf_net -intf_net axi_uartlite_0_UART [get_bd_intf_ports uart] [get_bd_intf_pins axi_uartlite_0/UART]
+connect_bd_intf_net -intf_net axis_broadcaster_0_M00_AXIS [get_bd_intf_pins axis_broadcaster_0/M00_AXIS] [get_bd_intf_pins ila_0/SLOT_0_AXIS]
   connect_bd_intf_net -intf_net microblaze_0_M_AXI_DP [get_bd_intf_pins microblaze_0/M_AXI_DP] [get_bd_intf_pins axi_smc/S00_AXI]
   connect_bd_intf_net -intf_net microblaze_0_debug [get_bd_intf_pins mdm_1/MBDEBUG_0] [get_bd_intf_pins microblaze_0/DEBUG]
   connect_bd_intf_net -intf_net microblaze_0_dlmb_1 [get_bd_intf_pins microblaze_0/DLMB] [get_bd_intf_pins microblaze_0_local_memory/DLMB]
   connect_bd_intf_net -intf_net microblaze_0_ilmb_1 [get_bd_intf_pins microblaze_0/ILMB] [get_bd_intf_pins microblaze_0_local_memory/ILMB]
+  connect_bd_intf_net -intf_net myRegister_0_M00_AXIS [get_bd_intf_pins myRegister_0/M00_AXIS] [get_bd_intf_pins axis_broadcaster_0/S_AXIS]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets myRegister_0_M00_AXIS]
 
   # Create port connections
   connect_bd_net -net axi_timer_0_interrupt  [get_bd_pins axi_timer_0/interrupt] \
@@ -423,9 +434,10 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_intf_pi
   [get_bd_pins axi_gpio_0/s_axi_aclk] \
   [get_bd_pins axi_timer_0/s_axi_aclk] \
   [get_bd_pins axi_intc_0/s_axi_aclk] \
-  [get_bd_pins MyCpuMult_0/s00_axi_aclk] \
-  [get_bd_pins simpleCpu_0/s00_axi_aclk] \
-  [get_bd_pins ila_0/clk]
+  [get_bd_pins ila_0/clk] \
+  [get_bd_pins axis_broadcaster_0/aclk] \
+  [get_bd_pins myRegister_0/s00_axi_aclk] \
+  [get_bd_pins myRegister_0/m00_axis_aclk]
   connect_bd_net -net reset_rtl_0_1  [get_bd_ports rst] \
   [get_bd_pins util_vector_logic_0/Op1] \
   [get_bd_pins clk_wiz_0/reset]
@@ -439,19 +451,19 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_intf_pi
   [get_bd_pins axi_gpio_0/s_axi_aresetn] \
   [get_bd_pins axi_timer_0/s_axi_aresetn] \
   [get_bd_pins axi_intc_0/s_axi_aresetn] \
-  [get_bd_pins MyCpuMult_0/s00_axi_aresetn] \
-  [get_bd_pins simpleCpu_0/s00_axi_aresetn]
+  [get_bd_pins axis_broadcaster_0/aresetn] \
+  [get_bd_pins myRegister_0/s00_axi_aresetn] \
+  [get_bd_pins myRegister_0/m00_axis_aresetn]
   connect_bd_net -net util_vector_logic_0_Res  [get_bd_pins util_vector_logic_0/Res] \
   [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
 
   # Create address segments
-  assign_bd_address -offset 0x44A10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs MyCpuMult_0/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x40000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_intc_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x41C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x40600000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] -force
-  assign_bd_address -offset 0x44A00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs simpleCpu_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x44A00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs myRegister_0/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x00000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] -force
 
 

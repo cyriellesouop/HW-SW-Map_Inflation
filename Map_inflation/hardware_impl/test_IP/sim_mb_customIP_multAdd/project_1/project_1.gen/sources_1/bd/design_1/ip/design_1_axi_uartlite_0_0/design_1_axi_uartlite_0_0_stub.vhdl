@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
--- Date        : Sun Dec 21 22:56:49 2025
+-- Date        : Sun Dec 21 22:56:48 2025
 -- Host        : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_axi_uartlite_0_0 -prefix
+--               design_1_axi_uartlite_0_0_ design_1_axi_uartlite_0_0_stub.vhdl
 -- Design      : design_1_axi_uartlite_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1

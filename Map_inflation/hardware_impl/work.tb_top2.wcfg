@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_top2.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_top2" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="752.875 ns"></ZoomStartTime>
+      <ZoomEndTime time="797.426 ns"></ZoomEndTime>
+      <Cursor1Time time="790.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="214"></NameColumnWidth>
+      <ValueColumnWidth column_width="333"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject type="group" fp_name="group135">
+      <obj_property name="label">tb_top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/s_axis_tdata">
+         <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/s_axis_tvalid">
+         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/s_axis_tready">
+         <obj_property name="ElementShortName">s_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[56:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[56:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/weight">
+         <obj_property name="ElementShortName">weight[31:0]</obj_property>
+         <obj_property name="ObjectShortName">weight[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/data">
+         <obj_property name="ElementShortName">data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider194" type="divider">
+      <obj_property name="label">TOP</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group171">
+      <obj_property name="label">top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/tb_top2/dut/s_axis_tdata">
+         <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/s_axis_tvalid">
+         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/s_axis_tready">
+         <obj_property name="ElementShortName">s_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[56:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[56:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_ready">
+         <obj_property name="ElementShortName">weight_loader_ready</obj_property>
+         <obj_property name="ObjectShortName">weight_loader_ready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/is_loading_weights">
+         <obj_property name="ElementShortName">is_loading_weights</obj_property>
+         <obj_property name="ObjectShortName">is_loading_weights</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/flat_weights">
+         <obj_property name="ElementShortName">flat_weights[71:0]</obj_property>
+         <obj_property name="ObjectShortName">flat_weights[71:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_ready">
+         <obj_property name="ElementShortName">accumulator_ready</obj_property>
+         <obj_property name="ObjectShortName">accumulator_ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulated_row">
+         <obj_property name="ElementShortName">accumulated_row[23:0]</obj_property>
+         <obj_property name="ObjectShortName">accumulated_row[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulated_valid">
+         <obj_property name="ElementShortName">accumulated_valid</obj_property>
+         <obj_property name="ObjectShortName">accumulated_valid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker_ready">
+         <obj_property name="ElementShortName">unpacker_ready</obj_property>
+         <obj_property name="ObjectShortName">unpacker_ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/fifo_m_tdata">
+         <obj_property name="ElementShortName">fifo_m_tdata[23:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_m_tdata[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/fifo_m_tvalid">
+         <obj_property name="ElementShortName">fifo_m_tvalid[2:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_m_tvalid[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/fifo_m_tready">
+         <obj_property name="ElementShortName">fifo_m_tready[2:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_m_tready[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/ready_pe_wrapper">
+         <obj_property name="ElementShortName">ready_pe_wrapper</obj_property>
+         <obj_property name="ObjectShortName">ready_pe_wrapper</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/pe_done">
+         <obj_property name="ElementShortName">pe_done</obj_property>
+         <obj_property name="ObjectShortName">pe_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/pe_dataout">
+         <obj_property name="ElementShortName">pe_dataout[56:0]</obj_property>
+         <obj_property name="ObjectShortName">pe_dataout[56:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/output_fifo_ready">
+         <obj_property name="ElementShortName">output_fifo_ready</obj_property>
+         <obj_property name="ObjectShortName">output_fifo_ready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/pe_en">
+         <obj_property name="ElementShortName">pe_en</obj_property>
+         <obj_property name="ObjectShortName">pe_en</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider81" type="divider">
+      <obj_property name="label">ACCUMULATOR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group82">
+      <obj_property name="label">accumulator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulator_inst/s_axis_tdata">
+         <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_inst/s_axis_tvalid">
+         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_inst/s_axis_tready">
+         <obj_property name="ElementShortName">s_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_inst/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulator_inst/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[23:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_inst/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulator_inst/row_buffer">
+         <obj_property name="ElementShortName">row_buffer[31:0]</obj_property>
+         <obj_property name="ObjectShortName">row_buffer[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulator_inst/transfer_count">
+         <obj_property name="ElementShortName">transfer_count[0:0]</obj_property>
+         <obj_property name="ObjectShortName">transfer_count[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/accumulator_inst/row_valid">
+         <obj_property name="ElementShortName">row_valid</obj_property>
+         <obj_property name="ObjectShortName">row_valid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/accumulator_inst/state">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider99" type="divider">
+      <obj_property name="label">UNPACKER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group98">
+      <obj_property name="label">unpacker</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/s_axis_tdata">
+         <obj_property name="ElementShortName">s_axis_tdata[23:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tdata[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/s_axis_tvalid">
+         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/s_axis_tready">
+         <obj_property name="ElementShortName">s_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[3:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[23:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/fifo_s_tready">
+         <obj_property name="ElementShortName">fifo_s_tready[2:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_s_tready[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider131" type="divider">
+      <obj_property name="label">FIFO1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group109">
+      <obj_property name="label">FIFO1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /s_tvalid">
+         <obj_property name="ElementShortName">s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /s_tdata">
+         <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /s_tready">
+         <obj_property name="ElementShortName">s_tready</obj_property>
+         <obj_property name="ObjectShortName">s_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /m_tready">
+         <obj_property name="ElementShortName">m_tready</obj_property>
+         <obj_property name="ObjectShortName">m_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /m_tdata">
+         <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /m_tvalid">
+         <obj_property name="ElementShortName">m_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[0].fifo_inst /fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider132" type="divider">
+      <obj_property name="label">FIFO2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group116">
+      <obj_property name="label">FIFO2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /s_tvalid">
+         <obj_property name="ElementShortName">s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /s_tdata">
+         <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /s_tready">
+         <obj_property name="ElementShortName">s_tready</obj_property>
+         <obj_property name="ObjectShortName">s_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /m_tready">
+         <obj_property name="ElementShortName">m_tready</obj_property>
+         <obj_property name="ObjectShortName">m_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /m_tdata">
+         <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /m_tvalid">
+         <obj_property name="ElementShortName">m_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[1].fifo_inst /fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider134" type="divider">
+      <obj_property name="label">FIFO3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group123">
+      <obj_property name="label">FIFO3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /s_tvalid">
+         <obj_property name="ElementShortName">s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /s_tdata">
+         <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /s_tready">
+         <obj_property name="ElementShortName">s_tready</obj_property>
+         <obj_property name="ObjectShortName">s_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /m_tready">
+         <obj_property name="ElementShortName">m_tready</obj_property>
+         <obj_property name="ObjectShortName">m_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /m_tdata">
+         <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /m_tvalid">
+         <obj_property name="ElementShortName">m_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/unpacker/\genblk1[2].fifo_inst /fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[3:0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider86" type="divider">
+      <obj_property name="label">WEIGHT LOADER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group87">
+      <obj_property name="label">weight_loader</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_inst/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_inst/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/weight_loader_inst/s_axis_tdata">
+         <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_inst/s_axis_tvalid">
+         <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_inst/s_axis_tready">
+         <obj_property name="ElementShortName">s_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/weight_loader_inst/weights_out">
+         <obj_property name="ElementShortName">weights_out[71:0]</obj_property>
+         <obj_property name="ObjectShortName">weights_out[71:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/weight_loader_inst/loading">
+         <obj_property name="ElementShortName">loading</obj_property>
+         <obj_property name="ObjectShortName">loading</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/weight_loader_inst/weight_storage">
+         <obj_property name="ElementShortName">weight_storage[95:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_storage[95:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/weight_loader_inst/transfer_counter">
+         <obj_property name="ElementShortName">transfer_counter[2:0]</obj_property>
+         <obj_property name="ObjectShortName">transfer_counter[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/weight_loader_inst/state">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider269" type="divider">
+      <obj_property name="label">PE_ENGINE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group248">
+      <obj_property name="label">pe_engine</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/en">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/dataIn">
+         <obj_property name="ElementShortName">dataIn[23:0]</obj_property>
+         <obj_property name="ObjectShortName">dataIn[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/weightsIn">
+         <obj_property name="ElementShortName">weightsIn[71:0]</obj_property>
+         <obj_property name="ObjectShortName">weightsIn[71:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/dataOut">
+         <obj_property name="ElementShortName">dataOut[56:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[56:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/dataOut_done">
+         <obj_property name="ElementShortName">dataOut_done</obj_property>
+         <obj_property name="ObjectShortName">dataOut_done</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/ready">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/vertical_pixel_bus">
+         <obj_property name="ElementShortName">vertical_pixel_bus[95:0]</obj_property>
+         <obj_property name="ObjectShortName">vertical_pixel_bus[95:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider125" type="divider">
+         <obj_property name="label">PE(0,0)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#A52A2A</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group131">
+         <obj_property name="label">PE(0,0)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_input">
+            <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_weight">
+            <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_en">
+            <obj_property name="ElementShortName">pe_en</obj_property>
+            <obj_property name="ObjectShortName">pe_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_pixel_out">
+            <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_output">
+            <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_done">
+            <obj_property name="ElementShortName">pe_done</obj_property>
+            <obj_property name="ObjectShortName">pe_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_input_reg">
+            <obj_property name="ElementShortName">pe_input_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_weight_reg">
+            <obj_property name="ElementShortName">pe_weight_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_en_reg">
+            <obj_property name="ElementShortName">pe_en_reg</obj_property>
+            <obj_property name="ObjectShortName">pe_en_reg</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="divider125" type="divider">
+         <obj_property name="label">PE(0,1)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#A52A2A</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group126">
+         <obj_property name="label">PE(0,1)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_input">
+            <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_weight">
+            <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_en">
+            <obj_property name="ElementShortName">pe_en</obj_property>
+            <obj_property name="ObjectShortName">pe_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_pixel_out">
+            <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_output">
+            <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_done">
+            <obj_property name="ElementShortName">pe_done</obj_property>
+            <obj_property name="ObjectShortName">pe_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_input_reg">
+            <obj_property name="ElementShortName">pe_input_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_weight_reg">
+            <obj_property name="ElementShortName">pe_weight_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_en_reg">
+            <obj_property name="ElementShortName">pe_en_reg</obj_property>
+            <obj_property name="ObjectShortName">pe_en_reg</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="divider125" type="divider">
+         <obj_property name="label">PE(0,2)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#A52A2A</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group140">
+         <obj_property name="label">PE(0,2</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_input">
+            <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_weight">
+            <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_en">
+            <obj_property name="ElementShortName">pe_en</obj_property>
+            <obj_property name="ObjectShortName">pe_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_pixel_out">
+            <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_output">
+            <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_done">
+            <obj_property name="ElementShortName">pe_done</obj_property>
+            <obj_property name="ObjectShortName">pe_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_input_reg">
+            <obj_property name="ElementShortName">pe_input_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_input_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_weight_reg">
+            <obj_property name="ElementShortName">pe_weight_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">pe_weight_reg[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_en_reg">
+            <obj_property name="ElementShortName">pe_en_reg</obj_property>
+            <obj_property name="ObjectShortName">pe_en_reg</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="divider159" type="divider">
+         <obj_property name="label">sum0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group150">
+         <obj_property name="label">sum0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /adder_en">
+            <obj_property name="ElementShortName">adder_en</obj_property>
+            <obj_property name="ObjectShortName">adder_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /adder_dataIn">
+            <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
+            <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /adder_dataOut">
+            <obj_property name="ElementShortName">adder_dataOut[18:0]</obj_property>
+            <obj_property name="ObjectShortName">adder_dataOut[18:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /unpacked_products">
+            <obj_property name="ElementShortName">unpacked_products[0:2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">unpacked_products[0:2][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /full_sum">
+            <obj_property name="ElementShortName">full_sum[17:0]</obj_property>
+            <obj_property name="ObjectShortName">full_sum[17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /i">
+            <obj_property name="ElementShortName">i[3:0]</obj_property>
+            <obj_property name="ObjectShortName">i[3:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /j">
+            <obj_property name="ElementShortName">j[3:0]</obj_property>
+            <obj_property name="ObjectShortName">j[3:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/dut/pe_engine/\genblk1[0].row_sum_adder /output_en">
+            <obj_property name="ElementShortName">output_en</obj_property>
+            <obj_property name="ObjectShortName">output_en</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group93">
+      <obj_property name="label">FIFO_OUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/dut/output_fifo/s_tvalid">
+         <obj_property name="ElementShortName">s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/output_fifo/s_tdata">
+         <obj_property name="ElementShortName">s_tdata[56:0]</obj_property>
+         <obj_property name="ObjectShortName">s_tdata[56:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/output_fifo/s_tready">
+         <obj_property name="ElementShortName">s_tready</obj_property>
+         <obj_property name="ObjectShortName">s_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/output_fifo/m_tready">
+         <obj_property name="ElementShortName">m_tready</obj_property>
+         <obj_property name="ObjectShortName">m_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/output_fifo/m_tdata">
+         <obj_property name="ElementShortName">m_tdata[56:0]</obj_property>
+         <obj_property name="ObjectShortName">m_tdata[56:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/dut/output_fifo/m_tvalid">
+         <obj_property name="ElementShortName">m_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top2/dut/output_fifo/fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[3:0][56:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[3:0][56:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

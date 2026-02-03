@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-//Date        : Fri Jan 23 23:48:30 2026
+//Date        : Tue Jan 27 20:21:45 2026
 //Host        : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=18,numNonXlnxBlks=2,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=5,da_mb_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=18,numNonXlnxBlks=1,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=5,da_clkrst_cnt=1,da_mb_cnt=2,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (clk_100MHz,
     gpio_tri_o,
@@ -42,11 +42,9 @@ module design_1
   wire [3:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
   wire [8:0]axi_smc_M01_AXI_ARADDR;
-  wire [2:0]axi_smc_M01_AXI_ARPROT;
   wire axi_smc_M01_AXI_ARREADY;
   wire axi_smc_M01_AXI_ARVALID;
   wire [8:0]axi_smc_M01_AXI_AWADDR;
-  wire [2:0]axi_smc_M01_AXI_AWPROT;
   wire axi_smc_M01_AXI_AWREADY;
   wire axi_smc_M01_AXI_AWVALID;
   wire axi_smc_M01_AXI_BREADY;
@@ -113,26 +111,9 @@ module design_1
   wire axi_smc_M04_AXI_WREADY;
   wire [3:0]axi_smc_M04_AXI_WSTRB;
   wire axi_smc_M04_AXI_WVALID;
-  wire [3:0]axi_smc_M05_AXI_ARADDR;
-  wire [2:0]axi_smc_M05_AXI_ARPROT;
-  wire axi_smc_M05_AXI_ARREADY;
-  wire axi_smc_M05_AXI_ARVALID;
-  wire [3:0]axi_smc_M05_AXI_AWADDR;
-  wire [2:0]axi_smc_M05_AXI_AWPROT;
-  wire axi_smc_M05_AXI_AWREADY;
-  wire axi_smc_M05_AXI_AWVALID;
-  wire axi_smc_M05_AXI_BREADY;
-  wire [1:0]axi_smc_M05_AXI_BRESP;
-  wire axi_smc_M05_AXI_BVALID;
-  wire [31:0]axi_smc_M05_AXI_RDATA;
-  wire axi_smc_M05_AXI_RREADY;
-  wire [1:0]axi_smc_M05_AXI_RRESP;
-  wire axi_smc_M05_AXI_RVALID;
-  wire [31:0]axi_smc_M05_AXI_WDATA;
-  wire axi_smc_M05_AXI_WREADY;
-  wire [3:0]axi_smc_M05_AXI_WSTRB;
-  wire axi_smc_M05_AXI_WVALID;
   wire axi_timer_0_interrupt;
+  wire [31:0]axis_broadcaster_0_M00_AXIS_TDATA;
+  wire [0:0]axis_broadcaster_0_M00_AXIS_TVALID;
   wire clk_100MHz;
   wire clk_wiz_0_locked;
   wire [15:0]gpio_tri_o;
@@ -185,6 +166,9 @@ module design_1
   wire microblaze_0_ilmb_1_READY;
   wire microblaze_0_ilmb_1_UE;
   wire microblaze_0_ilmb_1_WAIT;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]myRegister_0_M00_AXIS_TDATA;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire myRegister_0_M00_AXIS_TREADY;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire myRegister_0_M00_AXIS_TVALID;
   wire rst;
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
@@ -193,28 +177,6 @@ module design_1
   wire uart_txd;
   wire [0:0]util_vector_logic_0_Res;
 
-  design_1_MyCpuMult_0_0 MyCpuMult_0
-       (.s00_axi_aclk(microblaze_0_Clk),
-        .s00_axi_araddr(axi_smc_M05_AXI_ARADDR),
-        .s00_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
-        .s00_axi_arprot(axi_smc_M05_AXI_ARPROT),
-        .s00_axi_arready(axi_smc_M05_AXI_ARREADY),
-        .s00_axi_arvalid(axi_smc_M05_AXI_ARVALID),
-        .s00_axi_awaddr(axi_smc_M05_AXI_AWADDR),
-        .s00_axi_awprot(axi_smc_M05_AXI_AWPROT),
-        .s00_axi_awready(axi_smc_M05_AXI_AWREADY),
-        .s00_axi_awvalid(axi_smc_M05_AXI_AWVALID),
-        .s00_axi_bready(axi_smc_M05_AXI_BREADY),
-        .s00_axi_bresp(axi_smc_M05_AXI_BRESP),
-        .s00_axi_bvalid(axi_smc_M05_AXI_BVALID),
-        .s00_axi_rdata(axi_smc_M05_AXI_RDATA),
-        .s00_axi_rready(axi_smc_M05_AXI_RREADY),
-        .s00_axi_rresp(axi_smc_M05_AXI_RRESP),
-        .s00_axi_rvalid(axi_smc_M05_AXI_RVALID),
-        .s00_axi_wdata(axi_smc_M05_AXI_WDATA),
-        .s00_axi_wready(axi_smc_M05_AXI_WREADY),
-        .s00_axi_wstrb(axi_smc_M05_AXI_WSTRB),
-        .s00_axi_wvalid(axi_smc_M05_AXI_WVALID));
   design_1_axi_gpio_0_0 axi_gpio_0
        (.gpio_io_o(gpio_tri_o),
         .s_axi_aclk(microblaze_0_Clk),
@@ -277,11 +239,9 @@ module design_1
         .M00_AXI_wstrb(axi_smc_M00_AXI_WSTRB),
         .M00_AXI_wvalid(axi_smc_M00_AXI_WVALID),
         .M01_AXI_araddr(axi_smc_M01_AXI_ARADDR),
-        .M01_AXI_arprot(axi_smc_M01_AXI_ARPROT),
         .M01_AXI_arready(axi_smc_M01_AXI_ARREADY),
         .M01_AXI_arvalid(axi_smc_M01_AXI_ARVALID),
         .M01_AXI_awaddr(axi_smc_M01_AXI_AWADDR),
-        .M01_AXI_awprot(axi_smc_M01_AXI_AWPROT),
         .M01_AXI_awready(axi_smc_M01_AXI_AWREADY),
         .M01_AXI_awvalid(axi_smc_M01_AXI_AWVALID),
         .M01_AXI_bready(axi_smc_M01_AXI_BREADY),
@@ -348,25 +308,14 @@ module design_1
         .M04_AXI_wready(axi_smc_M04_AXI_WREADY),
         .M04_AXI_wstrb(axi_smc_M04_AXI_WSTRB),
         .M04_AXI_wvalid(axi_smc_M04_AXI_WVALID),
-        .M05_AXI_araddr(axi_smc_M05_AXI_ARADDR),
-        .M05_AXI_arprot(axi_smc_M05_AXI_ARPROT),
-        .M05_AXI_arready(axi_smc_M05_AXI_ARREADY),
-        .M05_AXI_arvalid(axi_smc_M05_AXI_ARVALID),
-        .M05_AXI_awaddr(axi_smc_M05_AXI_AWADDR),
-        .M05_AXI_awprot(axi_smc_M05_AXI_AWPROT),
-        .M05_AXI_awready(axi_smc_M05_AXI_AWREADY),
-        .M05_AXI_awvalid(axi_smc_M05_AXI_AWVALID),
-        .M05_AXI_bready(axi_smc_M05_AXI_BREADY),
-        .M05_AXI_bresp(axi_smc_M05_AXI_BRESP),
-        .M05_AXI_bvalid(axi_smc_M05_AXI_BVALID),
-        .M05_AXI_rdata(axi_smc_M05_AXI_RDATA),
-        .M05_AXI_rready(axi_smc_M05_AXI_RREADY),
-        .M05_AXI_rresp(axi_smc_M05_AXI_RRESP),
-        .M05_AXI_rvalid(axi_smc_M05_AXI_RVALID),
-        .M05_AXI_wdata(axi_smc_M05_AXI_WDATA),
-        .M05_AXI_wready(axi_smc_M05_AXI_WREADY),
-        .M05_AXI_wstrb(axi_smc_M05_AXI_WSTRB),
-        .M05_AXI_wvalid(axi_smc_M05_AXI_WVALID),
+        .M05_AXI_arready(1'b0),
+        .M05_AXI_awready(1'b0),
+        .M05_AXI_bresp({1'b0,1'b0}),
+        .M05_AXI_bvalid(1'b0),
+        .M05_AXI_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M05_AXI_rresp({1'b0,1'b0}),
+        .M05_AXI_rvalid(1'b0),
+        .M05_AXI_wready(1'b0),
         .S00_AXI_araddr(microblaze_0_M_AXI_DP_ARADDR),
         .S00_AXI_arprot(microblaze_0_M_AXI_DP_ARPROT),
         .S00_AXI_arready(microblaze_0_M_AXI_DP_ARREADY),
@@ -434,6 +383,15 @@ module design_1
         .s_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID),
         .tx(uart_txd));
+  design_1_axis_broadcaster_0_0 axis_broadcaster_0
+       (.aclk(microblaze_0_Clk),
+        .aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
+        .m_axis_tdata(axis_broadcaster_0_M00_AXIS_TDATA),
+        .m_axis_tready({1'b0,1'b1}),
+        .m_axis_tvalid(axis_broadcaster_0_M00_AXIS_TVALID),
+        .s_axis_tdata(myRegister_0_M00_AXIS_TDATA),
+        .s_axis_tready(myRegister_0_M00_AXIS_TREADY),
+        .s_axis_tvalid(myRegister_0_M00_AXIS_TVALID));
   design_1_clk_wiz_0_1 clk_wiz_0
        (.clk_in1(clk_100MHz),
         .clk_out1(microblaze_0_Clk),
@@ -441,25 +399,15 @@ module design_1
         .reset(rst));
   design_1_ila_0_0 ila_0
        (.clk(microblaze_0_Clk),
-        .probe0(axi_smc_M01_AXI_WREADY),
-        .probe1(axi_smc_M01_AXI_AWADDR),
-        .probe10(axi_smc_M01_AXI_RDATA),
-        .probe11(axi_smc_M01_AXI_AWVALID),
-        .probe12(axi_smc_M01_AXI_AWREADY),
-        .probe13(axi_smc_M01_AXI_RRESP),
-        .probe14(axi_smc_M01_AXI_WDATA),
-        .probe15(axi_smc_M01_AXI_WSTRB),
-        .probe16(axi_smc_M01_AXI_RVALID),
-        .probe17(axi_smc_M01_AXI_ARPROT),
-        .probe18(axi_smc_M01_AXI_AWPROT),
-        .probe2(axi_smc_M01_AXI_BRESP),
-        .probe3(axi_smc_M01_AXI_BVALID),
-        .probe4(axi_smc_M01_AXI_BREADY),
-        .probe5(axi_smc_M01_AXI_ARADDR),
-        .probe6(axi_smc_M01_AXI_RREADY),
-        .probe7(axi_smc_M01_AXI_WVALID),
-        .probe8(axi_smc_M01_AXI_ARVALID),
-        .probe9(axi_smc_M01_AXI_ARREADY));
+        .probe0(1'b1),
+        .probe1(axis_broadcaster_0_M00_AXIS_TDATA),
+        .probe2({1'b1,1'b1,1'b1,1'b1}),
+        .probe3(axis_broadcaster_0_M00_AXIS_TVALID),
+        .probe4(1'b0),
+        .probe5(1'b0),
+        .probe6({1'b1,1'b1,1'b1,1'b1}),
+        .probe7(1'b0),
+        .probe8(1'b0));
   design_1_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
         .Dbg_Clk_0(microblaze_0_debug_CLK),
@@ -547,17 +495,13 @@ module design_1
         .ILMB_wait(microblaze_0_ilmb_1_WAIT),
         .LMB_Clk(microblaze_0_Clk),
         .SYS_Rst(rst_clk_wiz_1_100M_bus_struct_reset));
-  design_1_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
-       (.aux_reset_in(1'b1),
-        .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),
-        .dcm_locked(clk_wiz_0_locked),
-        .ext_reset_in(util_vector_logic_0_Res),
-        .mb_debug_sys_rst(mdm_1_debug_sys_rst),
-        .mb_reset(rst_clk_wiz_1_100M_mb_reset),
-        .peripheral_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
-        .slowest_sync_clk(microblaze_0_Clk));
-  design_1_simpleCpu_0_0 simpleCpu_0
-       (.s00_axi_aclk(microblaze_0_Clk),
+  design_1_myRegister_0_0 myRegister_0
+       (.m00_axis_aclk(microblaze_0_Clk),
+        .m00_axis_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
+        .m00_axis_tdata(myRegister_0_M00_AXIS_TDATA),
+        .m00_axis_tready(myRegister_0_M00_AXIS_TREADY),
+        .m00_axis_tvalid(myRegister_0_M00_AXIS_TVALID),
+        .s00_axi_aclk(microblaze_0_Clk),
         .s00_axi_araddr(axi_smc_M02_AXI_ARADDR),
         .s00_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
         .s00_axi_arprot(axi_smc_M02_AXI_ARPROT),
@@ -578,6 +522,15 @@ module design_1
         .s00_axi_wready(axi_smc_M02_AXI_WREADY),
         .s00_axi_wstrb(axi_smc_M02_AXI_WSTRB),
         .s00_axi_wvalid(axi_smc_M02_AXI_WVALID));
+  design_1_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
+       (.aux_reset_in(1'b1),
+        .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),
+        .dcm_locked(clk_wiz_0_locked),
+        .ext_reset_in(util_vector_logic_0_Res),
+        .mb_debug_sys_rst(mdm_1_debug_sys_rst),
+        .mb_reset(rst_clk_wiz_1_100M_mb_reset),
+        .peripheral_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
+        .slowest_sync_clk(microblaze_0_Clk));
   design_1_util_vector_logic_0_0 util_vector_logic_0
        (.Op1(rst),
         .Res(util_vector_logic_0_Res));

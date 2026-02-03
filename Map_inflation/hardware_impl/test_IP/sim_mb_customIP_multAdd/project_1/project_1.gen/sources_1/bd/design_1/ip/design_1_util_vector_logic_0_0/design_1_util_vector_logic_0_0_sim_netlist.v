@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
 // Date        : Sun Dec 21 23:05:52 2025
 // Host        : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/audrey/Documents/Verilog_course/sim_mb_customIP/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_util_vector_logic_0_0 -prefix
+//               design_1_util_vector_logic_0_0_ design_1_util_vector_logic_0_0_sim_netlist.v
 // Design      : design_1_util_vector_logic_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

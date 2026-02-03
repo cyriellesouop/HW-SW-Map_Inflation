@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "bd_afc3,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_afc3,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=85,numReposBlks=68,numNonXlnxBlks=0,numHierBlks=17,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=None}" *) (* HW_HANDOFF = "design_1_axi_smc_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "bd_afc3,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_afc3,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=76,numReposBlks=61,numNonXlnxBlks=0,numHierBlks=15,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=None}" *) (* HW_HANDOFF = "design_1_axi_smc_0.hwdef" *) 
 module bd_afc3
    (M00_AXI_araddr,
     M00_AXI_arprot,
@@ -375,25 +375,6 @@ module bd_afc3
   wire M04_AXI_wready;
   wire [3:0]M04_AXI_wstrb;
   wire M04_AXI_wvalid;
-  wire [3:0]M05_AXI_araddr;
-  wire [2:0]M05_AXI_arprot;
-  wire M05_AXI_arready;
-  wire M05_AXI_arvalid;
-  wire [3:0]M05_AXI_awaddr;
-  wire [2:0]M05_AXI_awprot;
-  wire M05_AXI_awready;
-  wire M05_AXI_awvalid;
-  wire M05_AXI_bready;
-  wire [1:0]M05_AXI_bresp;
-  wire M05_AXI_bvalid;
-  wire [31:0]M05_AXI_rdata;
-  wire M05_AXI_rready;
-  wire [1:0]M05_AXI_rresp;
-  wire M05_AXI_rvalid;
-  wire [31:0]M05_AXI_wdata;
-  wire M05_AXI_wready;
-  wire [3:0]M05_AXI_wstrb;
-  wire M05_AXI_wvalid;
   wire [31:0]S00_AXI_araddr;
   wire [2:0]S00_AXI_arprot;
   wire S00_AXI_arready;
@@ -443,11 +424,6 @@ module bd_afc3
   wire [0:0]S_SC_AR_6_RECV;
   wire [0:0]S_SC_AR_6_REQ;
   wire [0:0]S_SC_AR_6_SEND;
-  wire [0:0]S_SC_AR_7_INFO;
-  wire [144:0]S_SC_AR_7_PAYLD;
-  wire [0:0]S_SC_AR_7_RECV;
-  wire [0:0]S_SC_AR_7_REQ;
-  wire [0:0]S_SC_AR_7_SEND;
   wire [0:0]S_SC_AW_1_INFO;
   wire [144:0]S_SC_AW_1_PAYLD;
   wire [0:0]S_SC_AW_1_RECV;
@@ -478,11 +454,6 @@ module bd_afc3
   wire [0:0]S_SC_AW_6_RECV;
   wire [0:0]S_SC_AW_6_REQ;
   wire [0:0]S_SC_AW_6_SEND;
-  wire [0:0]S_SC_AW_7_INFO;
-  wire [144:0]S_SC_AW_7_PAYLD;
-  wire [0:0]S_SC_AW_7_RECV;
-  wire [0:0]S_SC_AW_7_REQ;
-  wire [0:0]S_SC_AW_7_SEND;
   wire [0:0]S_SC_B_1_INFO;
   wire [6:0]S_SC_B_1_PAYLD;
   wire [0:0]S_SC_B_1_RECV;
@@ -513,11 +484,6 @@ module bd_afc3
   wire [0:0]S_SC_B_6_RECV;
   wire S_SC_B_6_REQ;
   wire S_SC_B_6_SEND;
-  wire [0:0]S_SC_B_7_INFO;
-  wire [6:0]S_SC_B_7_PAYLD;
-  wire [0:0]S_SC_B_7_RECV;
-  wire S_SC_B_7_REQ;
-  wire S_SC_B_7_SEND;
   wire [0:0]S_SC_R_1_INFO;
   wire [52:0]S_SC_R_1_PAYLD;
   wire [0:0]S_SC_R_1_RECV;
@@ -548,11 +514,6 @@ module bd_afc3
   wire [0:0]S_SC_R_6_RECV;
   wire S_SC_R_6_REQ;
   wire S_SC_R_6_SEND;
-  wire [0:0]S_SC_R_7_INFO;
-  wire [52:0]S_SC_R_7_PAYLD;
-  wire [0:0]S_SC_R_7_RECV;
-  wire S_SC_R_7_REQ;
-  wire S_SC_R_7_SEND;
   wire [0:0]S_SC_W_1_INFO;
   wire [58:0]S_SC_W_1_PAYLD;
   wire [0:0]S_SC_W_1_RECV;
@@ -583,11 +544,6 @@ module bd_afc3
   wire [0:0]S_SC_W_6_RECV;
   wire [0:0]S_SC_W_6_REQ;
   wire [0:0]S_SC_W_6_SEND;
-  wire [0:0]S_SC_W_7_INFO;
-  wire [58:0]S_SC_W_7_PAYLD;
-  wire [0:0]S_SC_W_7_RECV;
-  wire [0:0]S_SC_W_7_REQ;
-  wire [0:0]S_SC_W_7_SEND;
   wire aclk;
   wire aresetn;
   wire aresetn_net;
@@ -597,7 +553,6 @@ module bd_afc3
   wire clk_map_M02_ACLK;
   wire clk_map_M03_ACLK;
   wire clk_map_M04_ACLK;
-  wire clk_map_M05_ACLK;
   wire clk_map_S00_ACLK;
   wire [0:0]clk_map_S00_ARESETN;
   wire [0:0]m00_nodes_M_SC_AR_INFO;
@@ -915,74 +870,10 @@ module bd_afc3
   wire [3:0]m04_sc2axi_M_AXI_WSTRB;
   wire [1023:0]m04_sc2axi_M_AXI_WUSER;
   wire m04_sc2axi_M_AXI_WVALID;
-  wire [0:0]m05_nodes_M_SC_AR_INFO;
-  wire [144:0]m05_nodes_M_SC_AR_PAYLD;
-  wire m05_nodes_M_SC_AR_RECV;
-  wire [0:0]m05_nodes_M_SC_AR_REQ;
-  wire [0:0]m05_nodes_M_SC_AR_SEND;
-  wire [0:0]m05_nodes_M_SC_AW_INFO;
-  wire [144:0]m05_nodes_M_SC_AW_PAYLD;
-  wire m05_nodes_M_SC_AW_RECV;
-  wire [0:0]m05_nodes_M_SC_AW_REQ;
-  wire [0:0]m05_nodes_M_SC_AW_SEND;
-  wire [0:0]m05_nodes_M_SC_B_INFO;
-  wire [6:0]m05_nodes_M_SC_B_PAYLD;
-  wire [0:0]m05_nodes_M_SC_B_RECV;
-  wire [0:0]m05_nodes_M_SC_B_REQ;
-  wire [0:0]m05_nodes_M_SC_B_SEND;
-  wire [0:0]m05_nodes_M_SC_R_INFO;
-  wire [52:0]m05_nodes_M_SC_R_PAYLD;
-  wire [0:0]m05_nodes_M_SC_R_RECV;
-  wire [0:0]m05_nodes_M_SC_R_REQ;
-  wire [0:0]m05_nodes_M_SC_R_SEND;
-  wire [0:0]m05_nodes_M_SC_W_INFO;
-  wire [58:0]m05_nodes_M_SC_W_PAYLD;
-  wire m05_nodes_M_SC_W_RECV;
-  wire [0:0]m05_nodes_M_SC_W_REQ;
-  wire [0:0]m05_nodes_M_SC_W_SEND;
-  wire [3:0]m05_sc2axi_M_AXI_ARADDR;
-  wire [3:0]m05_sc2axi_M_AXI_ARCACHE;
-  wire [0:0]m05_sc2axi_M_AXI_ARID;
-  wire [7:0]m05_sc2axi_M_AXI_ARLEN;
-  wire [0:0]m05_sc2axi_M_AXI_ARLOCK;
-  wire [2:0]m05_sc2axi_M_AXI_ARPROT;
-  wire [3:0]m05_sc2axi_M_AXI_ARQOS;
-  wire m05_sc2axi_M_AXI_ARREADY;
-  wire [1023:0]m05_sc2axi_M_AXI_ARUSER;
-  wire m05_sc2axi_M_AXI_ARVALID;
-  wire [3:0]m05_sc2axi_M_AXI_AWADDR;
-  wire [3:0]m05_sc2axi_M_AXI_AWCACHE;
-  wire [0:0]m05_sc2axi_M_AXI_AWID;
-  wire [7:0]m05_sc2axi_M_AXI_AWLEN;
-  wire [0:0]m05_sc2axi_M_AXI_AWLOCK;
-  wire [2:0]m05_sc2axi_M_AXI_AWPROT;
-  wire [3:0]m05_sc2axi_M_AXI_AWQOS;
-  wire m05_sc2axi_M_AXI_AWREADY;
-  wire [1023:0]m05_sc2axi_M_AXI_AWUSER;
-  wire m05_sc2axi_M_AXI_AWVALID;
-  wire [0:0]m05_sc2axi_M_AXI_BID;
-  wire m05_sc2axi_M_AXI_BREADY;
-  wire [1:0]m05_sc2axi_M_AXI_BRESP;
-  wire [1023:0]m05_sc2axi_M_AXI_BUSER;
-  wire m05_sc2axi_M_AXI_BVALID;
-  wire [31:0]m05_sc2axi_M_AXI_RDATA;
-  wire [0:0]m05_sc2axi_M_AXI_RID;
-  wire m05_sc2axi_M_AXI_RLAST;
-  wire m05_sc2axi_M_AXI_RREADY;
-  wire [1:0]m05_sc2axi_M_AXI_RRESP;
-  wire [1023:0]m05_sc2axi_M_AXI_RUSER;
-  wire m05_sc2axi_M_AXI_RVALID;
-  wire [31:0]m05_sc2axi_M_AXI_WDATA;
-  wire m05_sc2axi_M_AXI_WLAST;
-  wire m05_sc2axi_M_AXI_WREADY;
-  wire [3:0]m05_sc2axi_M_AXI_WSTRB;
-  wire [1023:0]m05_sc2axi_M_AXI_WUSER;
-  wire m05_sc2axi_M_AXI_WVALID;
   wire [0:0]m_axi_aresetn_1;
   wire [0:0]m_axi_aresetn_2;
   wire [0:0]m_axi_aresetn_3;
   wire [0:0]m_axi_aresetn_4;
-  wire [0:0]m_axi_aresetn_5;
   wire [31:0]s00_entry_pipeline_m_axi_ARADDR;
   wire [3:0]s00_entry_pipeline_m_axi_ARCACHE;
   wire [0:0]s00_entry_pipeline_m_axi_ARID;
@@ -1060,8 +951,6 @@ module bd_afc3
         .M03_ARESETN(m_axi_aresetn_3),
         .M04_ACLK(clk_map_M04_ACLK),
         .M04_ARESETN(m_axi_aresetn_4),
-        .M05_ACLK(clk_map_M05_ACLK),
-        .M05_ARESETN(m_axi_aresetn_5),
         .S00_ACLK(clk_map_S00_ACLK),
         .S00_ARESETN(clk_map_S00_ARESETN),
         .aclk(aclk),
@@ -1969,186 +1858,6 @@ module bd_afc3
         .s_sc_w_recv(m04_nodes_M_SC_W_RECV),
         .s_sc_w_req(m04_nodes_M_SC_W_REQ),
         .s_sc_w_send(m04_nodes_M_SC_W_SEND));
-  m05_exit_pipeline_imp_1A5H04N m05_exit_pipeline
-       (.aclk(clk_map_M05_ACLK),
-        .aresetn(m_axi_aresetn_5),
-        .m_axi_araddr(M05_AXI_araddr),
-        .m_axi_arprot(M05_AXI_arprot),
-        .m_axi_arready(M05_AXI_arready),
-        .m_axi_arvalid(M05_AXI_arvalid),
-        .m_axi_awaddr(M05_AXI_awaddr),
-        .m_axi_awprot(M05_AXI_awprot),
-        .m_axi_awready(M05_AXI_awready),
-        .m_axi_awvalid(M05_AXI_awvalid),
-        .m_axi_bready(M05_AXI_bready),
-        .m_axi_bresp(M05_AXI_bresp),
-        .m_axi_bvalid(M05_AXI_bvalid),
-        .m_axi_rdata(M05_AXI_rdata),
-        .m_axi_rready(M05_AXI_rready),
-        .m_axi_rresp(M05_AXI_rresp),
-        .m_axi_rvalid(M05_AXI_rvalid),
-        .m_axi_wdata(M05_AXI_wdata),
-        .m_axi_wready(M05_AXI_wready),
-        .m_axi_wstrb(M05_AXI_wstrb),
-        .m_axi_wvalid(M05_AXI_wvalid),
-        .s_axi_araddr(m05_sc2axi_M_AXI_ARADDR),
-        .s_axi_arcache(m05_sc2axi_M_AXI_ARCACHE),
-        .s_axi_arid(m05_sc2axi_M_AXI_ARID),
-        .s_axi_arlen(m05_sc2axi_M_AXI_ARLEN),
-        .s_axi_arlock(m05_sc2axi_M_AXI_ARLOCK),
-        .s_axi_arprot(m05_sc2axi_M_AXI_ARPROT),
-        .s_axi_arqos(m05_sc2axi_M_AXI_ARQOS),
-        .s_axi_arready(m05_sc2axi_M_AXI_ARREADY),
-        .s_axi_aruser(m05_sc2axi_M_AXI_ARUSER),
-        .s_axi_arvalid(m05_sc2axi_M_AXI_ARVALID),
-        .s_axi_awaddr(m05_sc2axi_M_AXI_AWADDR),
-        .s_axi_awcache(m05_sc2axi_M_AXI_AWCACHE),
-        .s_axi_awid(m05_sc2axi_M_AXI_AWID),
-        .s_axi_awlen(m05_sc2axi_M_AXI_AWLEN),
-        .s_axi_awlock(m05_sc2axi_M_AXI_AWLOCK),
-        .s_axi_awprot(m05_sc2axi_M_AXI_AWPROT),
-        .s_axi_awqos(m05_sc2axi_M_AXI_AWQOS),
-        .s_axi_awready(m05_sc2axi_M_AXI_AWREADY),
-        .s_axi_awuser(m05_sc2axi_M_AXI_AWUSER),
-        .s_axi_awvalid(m05_sc2axi_M_AXI_AWVALID),
-        .s_axi_bid(m05_sc2axi_M_AXI_BID),
-        .s_axi_bready(m05_sc2axi_M_AXI_BREADY),
-        .s_axi_bresp(m05_sc2axi_M_AXI_BRESP),
-        .s_axi_buser(m05_sc2axi_M_AXI_BUSER),
-        .s_axi_bvalid(m05_sc2axi_M_AXI_BVALID),
-        .s_axi_rdata(m05_sc2axi_M_AXI_RDATA),
-        .s_axi_rid(m05_sc2axi_M_AXI_RID),
-        .s_axi_rlast(m05_sc2axi_M_AXI_RLAST),
-        .s_axi_rready(m05_sc2axi_M_AXI_RREADY),
-        .s_axi_rresp(m05_sc2axi_M_AXI_RRESP),
-        .s_axi_ruser(m05_sc2axi_M_AXI_RUSER),
-        .s_axi_rvalid(m05_sc2axi_M_AXI_RVALID),
-        .s_axi_wdata(m05_sc2axi_M_AXI_WDATA),
-        .s_axi_wlast(m05_sc2axi_M_AXI_WLAST),
-        .s_axi_wready(m05_sc2axi_M_AXI_WREADY),
-        .s_axi_wstrb(m05_sc2axi_M_AXI_WSTRB),
-        .s_axi_wuser(m05_sc2axi_M_AXI_WUSER),
-        .s_axi_wvalid(m05_sc2axi_M_AXI_WVALID));
-  m05_nodes_imp_FW97QE m05_nodes
-       (.M_SC_AR_info(m05_nodes_M_SC_AR_INFO),
-        .M_SC_AR_payld(m05_nodes_M_SC_AR_PAYLD),
-        .M_SC_AR_recv(m05_nodes_M_SC_AR_RECV),
-        .M_SC_AR_req(m05_nodes_M_SC_AR_REQ),
-        .M_SC_AR_send(m05_nodes_M_SC_AR_SEND),
-        .M_SC_AW_info(m05_nodes_M_SC_AW_INFO),
-        .M_SC_AW_payld(m05_nodes_M_SC_AW_PAYLD),
-        .M_SC_AW_recv(m05_nodes_M_SC_AW_RECV),
-        .M_SC_AW_req(m05_nodes_M_SC_AW_REQ),
-        .M_SC_AW_send(m05_nodes_M_SC_AW_SEND),
-        .M_SC_B_info(m05_nodes_M_SC_B_INFO),
-        .M_SC_B_payld(m05_nodes_M_SC_B_PAYLD),
-        .M_SC_B_recv(m05_nodes_M_SC_B_RECV),
-        .M_SC_B_req(m05_nodes_M_SC_B_REQ),
-        .M_SC_B_send(m05_nodes_M_SC_B_SEND),
-        .M_SC_R_info(m05_nodes_M_SC_R_INFO),
-        .M_SC_R_payld(m05_nodes_M_SC_R_PAYLD),
-        .M_SC_R_recv(m05_nodes_M_SC_R_RECV),
-        .M_SC_R_req(m05_nodes_M_SC_R_REQ),
-        .M_SC_R_send(m05_nodes_M_SC_R_SEND),
-        .M_SC_W_info(m05_nodes_M_SC_W_INFO),
-        .M_SC_W_payld(m05_nodes_M_SC_W_PAYLD),
-        .M_SC_W_recv(m05_nodes_M_SC_W_RECV),
-        .M_SC_W_req(m05_nodes_M_SC_W_REQ),
-        .M_SC_W_send(m05_nodes_M_SC_W_SEND),
-        .S_SC_AR_info(S_SC_AR_7_INFO),
-        .S_SC_AR_payld(S_SC_AR_7_PAYLD),
-        .S_SC_AR_recv(S_SC_AR_7_RECV),
-        .S_SC_AR_req(S_SC_AR_7_REQ),
-        .S_SC_AR_send(S_SC_AR_7_SEND),
-        .S_SC_AW_info(S_SC_AW_7_INFO),
-        .S_SC_AW_payld(S_SC_AW_7_PAYLD),
-        .S_SC_AW_recv(S_SC_AW_7_RECV),
-        .S_SC_AW_req(S_SC_AW_7_REQ),
-        .S_SC_AW_send(S_SC_AW_7_SEND),
-        .S_SC_B_info(S_SC_B_7_INFO),
-        .S_SC_B_payld(S_SC_B_7_PAYLD),
-        .S_SC_B_recv(S_SC_B_7_RECV),
-        .S_SC_B_req(S_SC_B_7_REQ),
-        .S_SC_B_send(S_SC_B_7_SEND),
-        .S_SC_R_info(S_SC_R_7_INFO),
-        .S_SC_R_payld(S_SC_R_7_PAYLD),
-        .S_SC_R_recv(S_SC_R_7_RECV),
-        .S_SC_R_req(S_SC_R_7_REQ),
-        .S_SC_R_send(S_SC_R_7_SEND),
-        .S_SC_W_info(S_SC_W_7_INFO),
-        .S_SC_W_payld(S_SC_W_7_PAYLD),
-        .S_SC_W_recv(S_SC_W_7_RECV),
-        .S_SC_W_req(S_SC_W_7_REQ),
-        .S_SC_W_send(S_SC_W_7_SEND),
-        .m_axi_aclk(clk_map_M05_ACLK),
-        .m_axi_aresetn(m_axi_aresetn_5),
-        .s_axi_aclk(clk_map_M00_ACLK),
-        .s_axi_aresetn(clk_map_M00_ARESETN));
-  bd_afc3_m05s2a_0 m05_sc2axi
-       (.aclk(clk_map_M05_ACLK),
-        .m_axi_araddr(m05_sc2axi_M_AXI_ARADDR),
-        .m_axi_arcache(m05_sc2axi_M_AXI_ARCACHE),
-        .m_axi_arid(m05_sc2axi_M_AXI_ARID),
-        .m_axi_arlen(m05_sc2axi_M_AXI_ARLEN),
-        .m_axi_arlock(m05_sc2axi_M_AXI_ARLOCK),
-        .m_axi_arprot(m05_sc2axi_M_AXI_ARPROT),
-        .m_axi_arqos(m05_sc2axi_M_AXI_ARQOS),
-        .m_axi_arready(m05_sc2axi_M_AXI_ARREADY),
-        .m_axi_aruser(m05_sc2axi_M_AXI_ARUSER),
-        .m_axi_arvalid(m05_sc2axi_M_AXI_ARVALID),
-        .m_axi_awaddr(m05_sc2axi_M_AXI_AWADDR),
-        .m_axi_awcache(m05_sc2axi_M_AXI_AWCACHE),
-        .m_axi_awid(m05_sc2axi_M_AXI_AWID),
-        .m_axi_awlen(m05_sc2axi_M_AXI_AWLEN),
-        .m_axi_awlock(m05_sc2axi_M_AXI_AWLOCK),
-        .m_axi_awprot(m05_sc2axi_M_AXI_AWPROT),
-        .m_axi_awqos(m05_sc2axi_M_AXI_AWQOS),
-        .m_axi_awready(m05_sc2axi_M_AXI_AWREADY),
-        .m_axi_awuser(m05_sc2axi_M_AXI_AWUSER),
-        .m_axi_awvalid(m05_sc2axi_M_AXI_AWVALID),
-        .m_axi_bid(m05_sc2axi_M_AXI_BID),
-        .m_axi_bready(m05_sc2axi_M_AXI_BREADY),
-        .m_axi_bresp(m05_sc2axi_M_AXI_BRESP),
-        .m_axi_buser(m05_sc2axi_M_AXI_BUSER),
-        .m_axi_bvalid(m05_sc2axi_M_AXI_BVALID),
-        .m_axi_rdata(m05_sc2axi_M_AXI_RDATA),
-        .m_axi_rid(m05_sc2axi_M_AXI_RID),
-        .m_axi_rlast(m05_sc2axi_M_AXI_RLAST),
-        .m_axi_rready(m05_sc2axi_M_AXI_RREADY),
-        .m_axi_rresp(m05_sc2axi_M_AXI_RRESP),
-        .m_axi_ruser(m05_sc2axi_M_AXI_RUSER),
-        .m_axi_rvalid(m05_sc2axi_M_AXI_RVALID),
-        .m_axi_wdata(m05_sc2axi_M_AXI_WDATA),
-        .m_axi_wlast(m05_sc2axi_M_AXI_WLAST),
-        .m_axi_wready(m05_sc2axi_M_AXI_WREADY),
-        .m_axi_wstrb(m05_sc2axi_M_AXI_WSTRB),
-        .m_axi_wuser(m05_sc2axi_M_AXI_WUSER),
-        .m_axi_wvalid(m05_sc2axi_M_AXI_WVALID),
-        .m_sc_b_info(S_SC_B_7_INFO),
-        .m_sc_b_payld(S_SC_B_7_PAYLD),
-        .m_sc_b_recv(S_SC_B_7_RECV),
-        .m_sc_b_req(S_SC_B_7_REQ),
-        .m_sc_b_send(S_SC_B_7_SEND),
-        .m_sc_r_info(S_SC_R_7_INFO),
-        .m_sc_r_payld(S_SC_R_7_PAYLD),
-        .m_sc_r_recv(S_SC_R_7_RECV),
-        .m_sc_r_req(S_SC_R_7_REQ),
-        .m_sc_r_send(S_SC_R_7_SEND),
-        .s_sc_ar_info(m05_nodes_M_SC_AR_INFO),
-        .s_sc_ar_payld(m05_nodes_M_SC_AR_PAYLD),
-        .s_sc_ar_recv(m05_nodes_M_SC_AR_RECV),
-        .s_sc_ar_req(m05_nodes_M_SC_AR_REQ),
-        .s_sc_ar_send(m05_nodes_M_SC_AR_SEND),
-        .s_sc_aw_info(m05_nodes_M_SC_AW_INFO),
-        .s_sc_aw_payld(m05_nodes_M_SC_AW_PAYLD),
-        .s_sc_aw_recv(m05_nodes_M_SC_AW_RECV),
-        .s_sc_aw_req(m05_nodes_M_SC_AW_REQ),
-        .s_sc_aw_send(m05_nodes_M_SC_AW_SEND),
-        .s_sc_w_info(m05_nodes_M_SC_W_INFO),
-        .s_sc_w_payld(m05_nodes_M_SC_W_PAYLD),
-        .s_sc_w_recv(m05_nodes_M_SC_W_RECV),
-        .s_sc_w_req(m05_nodes_M_SC_W_REQ),
-        .s_sc_w_send(m05_nodes_M_SC_W_SEND));
   bd_afc3_s00a2s_0 s00_axi2sc
        (.aclk(clk_map_S00_ACLK),
         .m_sc_ar_info(S_SC_AR_1_INFO),
@@ -2415,21 +2124,9 @@ module bd_afc3
         .M04_SC_W_recv(S_SC_W_6_RECV),
         .M04_SC_W_req(S_SC_W_6_REQ),
         .M04_SC_W_send(S_SC_W_6_SEND),
-        .M05_SC_AR_info(S_SC_AR_7_INFO),
-        .M05_SC_AR_payld(S_SC_AR_7_PAYLD),
-        .M05_SC_AR_recv(S_SC_AR_7_RECV),
-        .M05_SC_AR_req(S_SC_AR_7_REQ),
-        .M05_SC_AR_send(S_SC_AR_7_SEND),
-        .M05_SC_AW_info(S_SC_AW_7_INFO),
-        .M05_SC_AW_payld(S_SC_AW_7_PAYLD),
-        .M05_SC_AW_recv(S_SC_AW_7_RECV),
-        .M05_SC_AW_req(S_SC_AW_7_REQ),
-        .M05_SC_AW_send(S_SC_AW_7_SEND),
-        .M05_SC_W_info(S_SC_W_7_INFO),
-        .M05_SC_W_payld(S_SC_W_7_PAYLD),
-        .M05_SC_W_recv(S_SC_W_7_RECV),
-        .M05_SC_W_req(S_SC_W_7_REQ),
-        .M05_SC_W_send(S_SC_W_7_SEND),
+        .M05_SC_AR_recv(1'b0),
+        .M05_SC_AW_recv(1'b0),
+        .M05_SC_W_recv(1'b0),
         .S00_SC_AR_info(s00_nodes_M_SC_AR_INFO),
         .S00_SC_AR_payld(s00_nodes_M_SC_AR_PAYLD),
         .S00_SC_AR_recv(s00_nodes_M_SC_AR_RECV),
@@ -2495,16 +2192,14 @@ module bd_afc3
         .S04_SC_R_recv(m04_nodes_M_SC_R_RECV),
         .S04_SC_R_req(m04_nodes_M_SC_R_REQ),
         .S04_SC_R_send(m04_nodes_M_SC_R_SEND),
-        .S05_SC_B_info(m05_nodes_M_SC_B_INFO),
-        .S05_SC_B_payld(m05_nodes_M_SC_B_PAYLD),
-        .S05_SC_B_recv(m05_nodes_M_SC_B_RECV),
-        .S05_SC_B_req(m05_nodes_M_SC_B_REQ),
-        .S05_SC_B_send(m05_nodes_M_SC_B_SEND),
-        .S05_SC_R_info(m05_nodes_M_SC_R_INFO),
-        .S05_SC_R_payld(m05_nodes_M_SC_R_PAYLD),
-        .S05_SC_R_recv(m05_nodes_M_SC_R_RECV),
-        .S05_SC_R_req(m05_nodes_M_SC_R_REQ),
-        .S05_SC_R_send(m05_nodes_M_SC_R_SEND),
+        .S05_SC_B_info(1'b0),
+        .S05_SC_B_payld(1'b0),
+        .S05_SC_B_req(1'b0),
+        .S05_SC_B_send(1'b0),
+        .S05_SC_R_info(1'b0),
+        .S05_SC_R_payld(1'b0),
+        .S05_SC_R_req(1'b0),
+        .S05_SC_R_send(1'b0),
         .m_sc_aclk(clk_map_M00_ACLK),
         .m_sc_aresetn(clk_map_M00_ARESETN),
         .s_sc_aclk(clk_map_S00_ACLK),
@@ -5244,490 +4939,6 @@ module m04_nodes_imp_19KV9JK
         .s_sc_send(S_SC_W_send));
 endmodule
 
-module m05_exit_pipeline_imp_1A5H04N
-   (aclk,
-    aresetn,
-    m_axi_araddr,
-    m_axi_arprot,
-    m_axi_arready,
-    m_axi_arvalid,
-    m_axi_awaddr,
-    m_axi_awprot,
-    m_axi_awready,
-    m_axi_awvalid,
-    m_axi_bready,
-    m_axi_bresp,
-    m_axi_bvalid,
-    m_axi_rdata,
-    m_axi_rready,
-    m_axi_rresp,
-    m_axi_rvalid,
-    m_axi_wdata,
-    m_axi_wready,
-    m_axi_wstrb,
-    m_axi_wvalid,
-    s_axi_araddr,
-    s_axi_arcache,
-    s_axi_arid,
-    s_axi_arlen,
-    s_axi_arlock,
-    s_axi_arprot,
-    s_axi_arqos,
-    s_axi_arready,
-    s_axi_aruser,
-    s_axi_arvalid,
-    s_axi_awaddr,
-    s_axi_awcache,
-    s_axi_awid,
-    s_axi_awlen,
-    s_axi_awlock,
-    s_axi_awprot,
-    s_axi_awqos,
-    s_axi_awready,
-    s_axi_awuser,
-    s_axi_awvalid,
-    s_axi_bid,
-    s_axi_bready,
-    s_axi_bresp,
-    s_axi_buser,
-    s_axi_bvalid,
-    s_axi_rdata,
-    s_axi_rid,
-    s_axi_rlast,
-    s_axi_rready,
-    s_axi_rresp,
-    s_axi_ruser,
-    s_axi_rvalid,
-    s_axi_wdata,
-    s_axi_wlast,
-    s_axi_wready,
-    s_axi_wstrb,
-    s_axi_wuser,
-    s_axi_wvalid);
-  input aclk;
-  input aresetn;
-  output [3:0]m_axi_araddr;
-  output [2:0]m_axi_arprot;
-  input m_axi_arready;
-  output m_axi_arvalid;
-  output [3:0]m_axi_awaddr;
-  output [2:0]m_axi_awprot;
-  input m_axi_awready;
-  output m_axi_awvalid;
-  output m_axi_bready;
-  input [1:0]m_axi_bresp;
-  input m_axi_bvalid;
-  input [31:0]m_axi_rdata;
-  output m_axi_rready;
-  input [1:0]m_axi_rresp;
-  input m_axi_rvalid;
-  output [31:0]m_axi_wdata;
-  input m_axi_wready;
-  output [3:0]m_axi_wstrb;
-  output m_axi_wvalid;
-  input [3:0]s_axi_araddr;
-  input [3:0]s_axi_arcache;
-  input [0:0]s_axi_arid;
-  input [7:0]s_axi_arlen;
-  input [0:0]s_axi_arlock;
-  input [2:0]s_axi_arprot;
-  input [3:0]s_axi_arqos;
-  output s_axi_arready;
-  input [1023:0]s_axi_aruser;
-  input s_axi_arvalid;
-  input [3:0]s_axi_awaddr;
-  input [3:0]s_axi_awcache;
-  input [0:0]s_axi_awid;
-  input [7:0]s_axi_awlen;
-  input [0:0]s_axi_awlock;
-  input [2:0]s_axi_awprot;
-  input [3:0]s_axi_awqos;
-  output s_axi_awready;
-  input [1023:0]s_axi_awuser;
-  input s_axi_awvalid;
-  output [0:0]s_axi_bid;
-  input s_axi_bready;
-  output [1:0]s_axi_bresp;
-  output [1023:0]s_axi_buser;
-  output s_axi_bvalid;
-  output [31:0]s_axi_rdata;
-  output [0:0]s_axi_rid;
-  output s_axi_rlast;
-  input s_axi_rready;
-  output [1:0]s_axi_rresp;
-  output [1023:0]s_axi_ruser;
-  output s_axi_rvalid;
-  input [31:0]s_axi_wdata;
-  input s_axi_wlast;
-  output s_axi_wready;
-  input [3:0]s_axi_wstrb;
-  input [1023:0]s_axi_wuser;
-  input s_axi_wvalid;
-
-  wire aclk;
-  wire aresetn;
-  wire [3:0]m_axi_araddr;
-  wire [2:0]m_axi_arprot;
-  wire m_axi_arready;
-  wire m_axi_arvalid;
-  wire [3:0]m_axi_awaddr;
-  wire [2:0]m_axi_awprot;
-  wire m_axi_awready;
-  wire m_axi_awvalid;
-  wire m_axi_bready;
-  wire [1:0]m_axi_bresp;
-  wire m_axi_bvalid;
-  wire [31:0]m_axi_rdata;
-  wire m_axi_rready;
-  wire [1:0]m_axi_rresp;
-  wire m_axi_rvalid;
-  wire [31:0]m_axi_wdata;
-  wire m_axi_wready;
-  wire [3:0]m_axi_wstrb;
-  wire m_axi_wvalid;
-  wire [3:0]s_axi_araddr;
-  wire [3:0]s_axi_arcache;
-  wire [0:0]s_axi_arid;
-  wire [7:0]s_axi_arlen;
-  wire [0:0]s_axi_arlock;
-  wire [2:0]s_axi_arprot;
-  wire [3:0]s_axi_arqos;
-  wire s_axi_arready;
-  wire [1023:0]s_axi_aruser;
-  wire s_axi_arvalid;
-  wire [3:0]s_axi_awaddr;
-  wire [3:0]s_axi_awcache;
-  wire [0:0]s_axi_awid;
-  wire [7:0]s_axi_awlen;
-  wire [0:0]s_axi_awlock;
-  wire [2:0]s_axi_awprot;
-  wire [3:0]s_axi_awqos;
-  wire s_axi_awready;
-  wire [1023:0]s_axi_awuser;
-  wire s_axi_awvalid;
-  wire [0:0]s_axi_bid;
-  wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
-  wire [1023:0]s_axi_buser;
-  wire s_axi_bvalid;
-  wire [31:0]s_axi_rdata;
-  wire [0:0]s_axi_rid;
-  wire s_axi_rlast;
-  wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
-  wire [1023:0]s_axi_ruser;
-  wire s_axi_rvalid;
-  wire [31:0]s_axi_wdata;
-  wire s_axi_wlast;
-  wire s_axi_wready;
-  wire [3:0]s_axi_wstrb;
-  wire [1023:0]s_axi_wuser;
-  wire s_axi_wvalid;
-
-  bd_afc3_m05e_0 m05_exit
-       (.aclk(aclk),
-        .aresetn(aresetn),
-        .m_axi_araddr(m_axi_araddr),
-        .m_axi_arprot(m_axi_arprot),
-        .m_axi_arready(m_axi_arready),
-        .m_axi_arvalid(m_axi_arvalid),
-        .m_axi_awaddr(m_axi_awaddr),
-        .m_axi_awprot(m_axi_awprot),
-        .m_axi_awready(m_axi_awready),
-        .m_axi_awvalid(m_axi_awvalid),
-        .m_axi_bready(m_axi_bready),
-        .m_axi_bresp(m_axi_bresp),
-        .m_axi_bvalid(m_axi_bvalid),
-        .m_axi_rdata(m_axi_rdata),
-        .m_axi_rready(m_axi_rready),
-        .m_axi_rresp(m_axi_rresp),
-        .m_axi_rvalid(m_axi_rvalid),
-        .m_axi_wdata(m_axi_wdata),
-        .m_axi_wready(m_axi_wready),
-        .m_axi_wstrb(m_axi_wstrb),
-        .m_axi_wvalid(m_axi_wvalid),
-        .s_axi_araddr(s_axi_araddr),
-        .s_axi_arcache(s_axi_arcache),
-        .s_axi_arid(s_axi_arid),
-        .s_axi_arlen(s_axi_arlen),
-        .s_axi_arlock(s_axi_arlock),
-        .s_axi_arprot(s_axi_arprot),
-        .s_axi_arqos(s_axi_arqos),
-        .s_axi_arready(s_axi_arready),
-        .s_axi_aruser(s_axi_aruser),
-        .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
-        .s_axi_awcache(s_axi_awcache),
-        .s_axi_awid(s_axi_awid),
-        .s_axi_awlen(s_axi_awlen),
-        .s_axi_awlock(s_axi_awlock),
-        .s_axi_awprot(s_axi_awprot),
-        .s_axi_awqos(s_axi_awqos),
-        .s_axi_awready(s_axi_awready),
-        .s_axi_awuser(s_axi_awuser),
-        .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bid(s_axi_bid),
-        .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
-        .s_axi_buser(s_axi_buser),
-        .s_axi_bvalid(s_axi_bvalid),
-        .s_axi_rdata(s_axi_rdata),
-        .s_axi_rid(s_axi_rid),
-        .s_axi_rlast(s_axi_rlast),
-        .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
-        .s_axi_ruser(s_axi_ruser),
-        .s_axi_rvalid(s_axi_rvalid),
-        .s_axi_wdata(s_axi_wdata),
-        .s_axi_wlast(s_axi_wlast),
-        .s_axi_wready(s_axi_wready),
-        .s_axi_wstrb(s_axi_wstrb),
-        .s_axi_wuser(s_axi_wuser),
-        .s_axi_wvalid(s_axi_wvalid));
-endmodule
-
-module m05_nodes_imp_FW97QE
-   (M_SC_AR_info,
-    M_SC_AR_payld,
-    M_SC_AR_recv,
-    M_SC_AR_req,
-    M_SC_AR_send,
-    M_SC_AW_info,
-    M_SC_AW_payld,
-    M_SC_AW_recv,
-    M_SC_AW_req,
-    M_SC_AW_send,
-    M_SC_B_info,
-    M_SC_B_payld,
-    M_SC_B_recv,
-    M_SC_B_req,
-    M_SC_B_send,
-    M_SC_R_info,
-    M_SC_R_payld,
-    M_SC_R_recv,
-    M_SC_R_req,
-    M_SC_R_send,
-    M_SC_W_info,
-    M_SC_W_payld,
-    M_SC_W_recv,
-    M_SC_W_req,
-    M_SC_W_send,
-    S_SC_AR_info,
-    S_SC_AR_payld,
-    S_SC_AR_recv,
-    S_SC_AR_req,
-    S_SC_AR_send,
-    S_SC_AW_info,
-    S_SC_AW_payld,
-    S_SC_AW_recv,
-    S_SC_AW_req,
-    S_SC_AW_send,
-    S_SC_B_info,
-    S_SC_B_payld,
-    S_SC_B_recv,
-    S_SC_B_req,
-    S_SC_B_send,
-    S_SC_R_info,
-    S_SC_R_payld,
-    S_SC_R_recv,
-    S_SC_R_req,
-    S_SC_R_send,
-    S_SC_W_info,
-    S_SC_W_payld,
-    S_SC_W_recv,
-    S_SC_W_req,
-    S_SC_W_send,
-    m_axi_aclk,
-    m_axi_aresetn,
-    s_axi_aclk,
-    s_axi_aresetn);
-  output [0:0]M_SC_AR_info;
-  output [144:0]M_SC_AR_payld;
-  input [0:0]M_SC_AR_recv;
-  output [0:0]M_SC_AR_req;
-  output [0:0]M_SC_AR_send;
-  output [0:0]M_SC_AW_info;
-  output [144:0]M_SC_AW_payld;
-  input [0:0]M_SC_AW_recv;
-  output [0:0]M_SC_AW_req;
-  output [0:0]M_SC_AW_send;
-  output [0:0]M_SC_B_info;
-  output [6:0]M_SC_B_payld;
-  input [0:0]M_SC_B_recv;
-  output [0:0]M_SC_B_req;
-  output [0:0]M_SC_B_send;
-  output [0:0]M_SC_R_info;
-  output [52:0]M_SC_R_payld;
-  input [0:0]M_SC_R_recv;
-  output [0:0]M_SC_R_req;
-  output [0:0]M_SC_R_send;
-  output [0:0]M_SC_W_info;
-  output [58:0]M_SC_W_payld;
-  input [0:0]M_SC_W_recv;
-  output [0:0]M_SC_W_req;
-  output [0:0]M_SC_W_send;
-  input [0:0]S_SC_AR_info;
-  input [144:0]S_SC_AR_payld;
-  output [0:0]S_SC_AR_recv;
-  input [0:0]S_SC_AR_req;
-  input [0:0]S_SC_AR_send;
-  input [0:0]S_SC_AW_info;
-  input [144:0]S_SC_AW_payld;
-  output [0:0]S_SC_AW_recv;
-  input [0:0]S_SC_AW_req;
-  input [0:0]S_SC_AW_send;
-  input [0:0]S_SC_B_info;
-  input [6:0]S_SC_B_payld;
-  output [0:0]S_SC_B_recv;
-  input [0:0]S_SC_B_req;
-  input [0:0]S_SC_B_send;
-  input [0:0]S_SC_R_info;
-  input [52:0]S_SC_R_payld;
-  output [0:0]S_SC_R_recv;
-  input [0:0]S_SC_R_req;
-  input [0:0]S_SC_R_send;
-  input [0:0]S_SC_W_info;
-  input [58:0]S_SC_W_payld;
-  output [0:0]S_SC_W_recv;
-  input [0:0]S_SC_W_req;
-  input [0:0]S_SC_W_send;
-  input m_axi_aclk;
-  input m_axi_aresetn;
-  input s_axi_aclk;
-  input s_axi_aresetn;
-
-  wire [0:0]M_SC_AR_info;
-  wire [144:0]M_SC_AR_payld;
-  wire [0:0]M_SC_AR_recv;
-  wire [0:0]M_SC_AR_req;
-  wire [0:0]M_SC_AR_send;
-  wire [0:0]M_SC_AW_info;
-  wire [144:0]M_SC_AW_payld;
-  wire [0:0]M_SC_AW_recv;
-  wire [0:0]M_SC_AW_req;
-  wire [0:0]M_SC_AW_send;
-  wire [0:0]M_SC_B_info;
-  wire [6:0]M_SC_B_payld;
-  wire [0:0]M_SC_B_recv;
-  wire [0:0]M_SC_B_req;
-  wire [0:0]M_SC_B_send;
-  wire [0:0]M_SC_R_info;
-  wire [52:0]M_SC_R_payld;
-  wire [0:0]M_SC_R_recv;
-  wire [0:0]M_SC_R_req;
-  wire [0:0]M_SC_R_send;
-  wire [0:0]M_SC_W_info;
-  wire [58:0]M_SC_W_payld;
-  wire [0:0]M_SC_W_recv;
-  wire [0:0]M_SC_W_req;
-  wire [0:0]M_SC_W_send;
-  wire [0:0]S_SC_AR_info;
-  wire [144:0]S_SC_AR_payld;
-  wire [0:0]S_SC_AR_recv;
-  wire [0:0]S_SC_AR_req;
-  wire [0:0]S_SC_AR_send;
-  wire [0:0]S_SC_AW_info;
-  wire [144:0]S_SC_AW_payld;
-  wire [0:0]S_SC_AW_recv;
-  wire [0:0]S_SC_AW_req;
-  wire [0:0]S_SC_AW_send;
-  wire [0:0]S_SC_B_info;
-  wire [6:0]S_SC_B_payld;
-  wire [0:0]S_SC_B_recv;
-  wire [0:0]S_SC_B_req;
-  wire [0:0]S_SC_B_send;
-  wire [0:0]S_SC_R_info;
-  wire [52:0]S_SC_R_payld;
-  wire [0:0]S_SC_R_recv;
-  wire [0:0]S_SC_R_req;
-  wire [0:0]S_SC_R_send;
-  wire [0:0]S_SC_W_info;
-  wire [58:0]S_SC_W_payld;
-  wire [0:0]S_SC_W_recv;
-  wire [0:0]S_SC_W_req;
-  wire [0:0]S_SC_W_send;
-  wire m_axi_aclk;
-  wire m_axi_aresetn;
-  wire s_axi_aclk;
-  wire s_axi_aresetn;
-
-  bd_afc3_m05arn_0 m05_ar_node
-       (.m_sc_aclk(m_axi_aclk),
-        .m_sc_aresetn(m_axi_aresetn),
-        .m_sc_info(M_SC_AR_info),
-        .m_sc_payld(M_SC_AR_payld),
-        .m_sc_recv(M_SC_AR_recv),
-        .m_sc_req(M_SC_AR_req),
-        .m_sc_send(M_SC_AR_send),
-        .s_sc_aclk(s_axi_aclk),
-        .s_sc_aresetn(s_axi_aresetn),
-        .s_sc_info(S_SC_AR_info),
-        .s_sc_payld(S_SC_AR_payld),
-        .s_sc_recv(S_SC_AR_recv),
-        .s_sc_req(S_SC_AR_req),
-        .s_sc_send(S_SC_AR_send));
-  bd_afc3_m05awn_0 m05_aw_node
-       (.m_sc_aclk(m_axi_aclk),
-        .m_sc_aresetn(m_axi_aresetn),
-        .m_sc_info(M_SC_AW_info),
-        .m_sc_payld(M_SC_AW_payld),
-        .m_sc_recv(M_SC_AW_recv),
-        .m_sc_req(M_SC_AW_req),
-        .m_sc_send(M_SC_AW_send),
-        .s_sc_aclk(s_axi_aclk),
-        .s_sc_aresetn(s_axi_aresetn),
-        .s_sc_info(S_SC_AW_info),
-        .s_sc_payld(S_SC_AW_payld),
-        .s_sc_recv(S_SC_AW_recv),
-        .s_sc_req(S_SC_AW_req),
-        .s_sc_send(S_SC_AW_send));
-  bd_afc3_m05bn_0 m05_b_node
-       (.m_sc_aclk(s_axi_aclk),
-        .m_sc_aresetn(s_axi_aresetn),
-        .m_sc_info(M_SC_B_info),
-        .m_sc_payld(M_SC_B_payld),
-        .m_sc_recv(M_SC_B_recv),
-        .m_sc_req(M_SC_B_req),
-        .m_sc_send(M_SC_B_send),
-        .s_sc_aclk(m_axi_aclk),
-        .s_sc_aresetn(m_axi_aresetn),
-        .s_sc_info(S_SC_B_info),
-        .s_sc_payld(S_SC_B_payld),
-        .s_sc_recv(S_SC_B_recv),
-        .s_sc_req(S_SC_B_req),
-        .s_sc_send(S_SC_B_send));
-  bd_afc3_m05rn_0 m05_r_node
-       (.m_sc_aclk(s_axi_aclk),
-        .m_sc_aresetn(s_axi_aresetn),
-        .m_sc_info(M_SC_R_info),
-        .m_sc_payld(M_SC_R_payld),
-        .m_sc_recv(M_SC_R_recv),
-        .m_sc_req(M_SC_R_req),
-        .m_sc_send(M_SC_R_send),
-        .s_sc_aclk(m_axi_aclk),
-        .s_sc_aresetn(m_axi_aresetn),
-        .s_sc_info(S_SC_R_info),
-        .s_sc_payld(S_SC_R_payld),
-        .s_sc_recv(S_SC_R_recv),
-        .s_sc_req(S_SC_R_req),
-        .s_sc_send(S_SC_R_send));
-  bd_afc3_m05wn_0 m05_w_node
-       (.m_sc_aclk(m_axi_aclk),
-        .m_sc_aresetn(m_axi_aresetn),
-        .m_sc_info(M_SC_W_info),
-        .m_sc_payld(M_SC_W_payld),
-        .m_sc_recv(M_SC_W_recv),
-        .m_sc_req(M_SC_W_req),
-        .m_sc_send(M_SC_W_send),
-        .s_sc_aclk(s_axi_aclk),
-        .s_sc_aresetn(s_axi_aresetn),
-        .s_sc_info(S_SC_W_info),
-        .s_sc_payld(S_SC_W_payld),
-        .s_sc_recv(S_SC_W_recv),
-        .s_sc_req(S_SC_W_req),
-        .s_sc_send(S_SC_W_send));
-endmodule
-
 module s00_entry_pipeline_imp_USCCV8
    (aclk,
     aresetn,
@@ -6717,21 +5928,21 @@ module switchboards_imp_4N4PBE
   input [0:0]M04_SC_W_recv;
   output [0:0]M04_SC_W_req;
   output [0:0]M04_SC_W_send;
-  output [0:0]M05_SC_AR_info;
-  output [144:0]M05_SC_AR_payld;
-  input [0:0]M05_SC_AR_recv;
-  output [0:0]M05_SC_AR_req;
-  output [0:0]M05_SC_AR_send;
-  output [0:0]M05_SC_AW_info;
-  output [144:0]M05_SC_AW_payld;
-  input [0:0]M05_SC_AW_recv;
-  output [0:0]M05_SC_AW_req;
-  output [0:0]M05_SC_AW_send;
-  output [0:0]M05_SC_W_info;
-  output [58:0]M05_SC_W_payld;
-  input [0:0]M05_SC_W_recv;
-  output [0:0]M05_SC_W_req;
-  output [0:0]M05_SC_W_send;
+  output M05_SC_AR_info;
+  output M05_SC_AR_payld;
+  input M05_SC_AR_recv;
+  output M05_SC_AR_req;
+  output M05_SC_AR_send;
+  output M05_SC_AW_info;
+  output M05_SC_AW_payld;
+  input M05_SC_AW_recv;
+  output M05_SC_AW_req;
+  output M05_SC_AW_send;
+  output M05_SC_W_info;
+  output M05_SC_W_payld;
+  input M05_SC_W_recv;
+  output M05_SC_W_req;
+  output M05_SC_W_send;
   input [0:0]S00_SC_AR_info;
   input [144:0]S00_SC_AR_payld;
   output [0:0]S00_SC_AR_recv;
@@ -6797,16 +6008,16 @@ module switchboards_imp_4N4PBE
   output [0:0]S04_SC_R_recv;
   input [0:0]S04_SC_R_req;
   input [0:0]S04_SC_R_send;
-  input [0:0]S05_SC_B_info;
-  input [6:0]S05_SC_B_payld;
-  output [0:0]S05_SC_B_recv;
-  input [0:0]S05_SC_B_req;
-  input [0:0]S05_SC_B_send;
-  input [0:0]S05_SC_R_info;
-  input [52:0]S05_SC_R_payld;
-  output [0:0]S05_SC_R_recv;
-  input [0:0]S05_SC_R_req;
-  input [0:0]S05_SC_R_send;
+  input S05_SC_B_info;
+  input S05_SC_B_payld;
+  output S05_SC_B_recv;
+  input S05_SC_B_req;
+  input S05_SC_B_send;
+  input S05_SC_R_info;
+  input S05_SC_R_payld;
+  output S05_SC_R_recv;
+  input S05_SC_R_req;
+  input S05_SC_R_send;
   input m_sc_aclk;
   input m_sc_aresetn;
   input s_sc_aclk;
@@ -6899,17 +6110,17 @@ module switchboards_imp_4N4PBE
   wire [4:4]\^M04_SC_W_send ;
   wire [5:5]\^M05_SC_AR_info ;
   wire [869:725]\^M05_SC_AR_payld ;
-  wire [0:0]M05_SC_AR_recv;
+  wire M05_SC_AR_recv;
   wire [5:5]\^M05_SC_AR_req ;
   wire [5:5]\^M05_SC_AR_send ;
   wire [5:5]\^M05_SC_AW_info ;
   wire [869:725]\^M05_SC_AW_payld ;
-  wire [0:0]M05_SC_AW_recv;
+  wire M05_SC_AW_recv;
   wire [5:5]\^M05_SC_AW_req ;
   wire [5:5]\^M05_SC_AW_send ;
   wire [5:5]\^M05_SC_W_info ;
   wire [353:295]\^M05_SC_W_payld ;
-  wire [0:0]M05_SC_W_recv;
+  wire M05_SC_W_recv;
   wire [5:5]\^M05_SC_W_req ;
   wire [5:5]\^M05_SC_W_send ;
   wire [0:0]S00_SC_AR_info;
@@ -6977,16 +6188,16 @@ module switchboards_imp_4N4PBE
   wire [4:4]\^S04_SC_R_recv ;
   wire [0:0]S04_SC_R_req;
   wire [0:0]S04_SC_R_send;
-  wire [0:0]S05_SC_B_info;
-  wire [6:0]S05_SC_B_payld;
+  wire S05_SC_B_info;
+  wire S05_SC_B_payld;
   wire [5:5]\^S05_SC_B_recv ;
-  wire [0:0]S05_SC_B_req;
-  wire [0:0]S05_SC_B_send;
-  wire [0:0]S05_SC_R_info;
-  wire [52:0]S05_SC_R_payld;
+  wire S05_SC_B_req;
+  wire S05_SC_B_send;
+  wire S05_SC_R_info;
+  wire S05_SC_R_payld;
   wire [5:5]\^S05_SC_R_recv ;
-  wire [0:0]S05_SC_R_req;
-  wire [0:0]S05_SC_R_send;
+  wire S05_SC_R_req;
+  wire S05_SC_R_send;
   wire [0:0]ar_la_in_swbd_M00_SC_INFO;
   wire [144:0]ar_la_in_swbd_M00_SC_PAYLD;
   wire [0:0]ar_la_in_swbd_M00_SC_RECV;
@@ -7090,18 +6301,18 @@ module switchboards_imp_4N4PBE
   assign M04_SC_W_payld[58:0] = \^M04_SC_W_payld [294:236];
   assign M04_SC_W_req[0] = \^M04_SC_W_req [4];
   assign M04_SC_W_send[0] = \^M04_SC_W_send [4];
-  assign M05_SC_AR_info[0] = \^M05_SC_AR_info [5];
-  assign M05_SC_AR_payld[144:0] = \^M05_SC_AR_payld [869:725];
-  assign M05_SC_AR_req[0] = \^M05_SC_AR_req [5];
-  assign M05_SC_AR_send[0] = \^M05_SC_AR_send [5];
-  assign M05_SC_AW_info[0] = \^M05_SC_AW_info [5];
-  assign M05_SC_AW_payld[144:0] = \^M05_SC_AW_payld [869:725];
-  assign M05_SC_AW_req[0] = \^M05_SC_AW_req [5];
-  assign M05_SC_AW_send[0] = \^M05_SC_AW_send [5];
-  assign M05_SC_W_info[0] = \^M05_SC_W_info [5];
-  assign M05_SC_W_payld[58:0] = \^M05_SC_W_payld [353:295];
-  assign M05_SC_W_req[0] = \^M05_SC_W_req [5];
-  assign M05_SC_W_send[0] = \^M05_SC_W_send [5];
+  assign M05_SC_AR_info = \^M05_SC_AR_info [5];
+  assign M05_SC_AR_payld = \^M05_SC_AR_payld [725];
+  assign M05_SC_AR_req = \^M05_SC_AR_req [5];
+  assign M05_SC_AR_send = \^M05_SC_AR_send [5];
+  assign M05_SC_AW_info = \^M05_SC_AW_info [5];
+  assign M05_SC_AW_payld = \^M05_SC_AW_payld [725];
+  assign M05_SC_AW_req = \^M05_SC_AW_req [5];
+  assign M05_SC_AW_send = \^M05_SC_AW_send [5];
+  assign M05_SC_W_info = \^M05_SC_W_info [5];
+  assign M05_SC_W_payld = \^M05_SC_W_payld [295];
+  assign M05_SC_W_req = \^M05_SC_W_req [5];
+  assign M05_SC_W_send = \^M05_SC_W_send [5];
   assign S01_SC_B_recv[0] = \^S01_SC_B_recv [1];
   assign S01_SC_R_recv[0] = \^S01_SC_R_recv [1];
   assign S02_SC_B_recv[0] = \^S02_SC_B_recv [2];
@@ -7110,8 +6321,8 @@ module switchboards_imp_4N4PBE
   assign S03_SC_R_recv[0] = \^S03_SC_R_recv [3];
   assign S04_SC_B_recv[0] = \^S04_SC_B_recv [4];
   assign S04_SC_R_recv[0] = \^S04_SC_R_recv [4];
-  assign S05_SC_B_recv[0] = \^S05_SC_B_recv [5];
-  assign S05_SC_R_recv[0] = \^S05_SC_R_recv [5];
+  assign S05_SC_B_recv = \^S05_SC_B_recv [5];
+  assign S05_SC_R_recv = \^S05_SC_R_recv [5];
   bd_afc3_arinsw_0 ar_la_in_swbd
        (.aclk(s_sc_aclk),
         .aclken(1'b1),
@@ -7186,7 +6397,7 @@ module switchboards_imp_4N4PBE
         .m_sc_req(b_la_out_swbd_M00_SC_REQ),
         .m_sc_send(b_la_out_swbd_M00_SC_SEND),
         .s_sc_info({S05_SC_B_info,S04_SC_B_info,S03_SC_B_info,S02_SC_B_info,S01_SC_B_info,S00_SC_B_info}),
-        .s_sc_payld({S05_SC_B_payld,S04_SC_B_payld,S03_SC_B_payld,S02_SC_B_payld,S01_SC_B_payld,S00_SC_B_payld}),
+        .s_sc_payld({S05_SC_B_payld,S05_SC_B_payld,S05_SC_B_payld,S05_SC_B_payld,S05_SC_B_payld,S05_SC_B_payld,S05_SC_B_payld,S04_SC_B_payld,S03_SC_B_payld,S02_SC_B_payld,S01_SC_B_payld,S00_SC_B_payld}),
         .s_sc_recv({\^S05_SC_B_recv ,\^S04_SC_B_recv ,\^S03_SC_B_recv ,\^S02_SC_B_recv ,\^S01_SC_B_recv ,S00_SC_B_recv}),
         .s_sc_req({S05_SC_B_req,S04_SC_B_req,S03_SC_B_req,S02_SC_B_req,S01_SC_B_req,S00_SC_B_req}),
         .s_sc_send({S05_SC_B_send,S04_SC_B_send,S03_SC_B_send,S02_SC_B_send,S01_SC_B_send,S00_SC_B_send}));
@@ -7267,7 +6478,7 @@ module switchboards_imp_4N4PBE
         .m_sc_req(r_la_out_swbd_M00_SC_REQ),
         .m_sc_send(r_la_out_swbd_M00_SC_SEND),
         .s_sc_info({S05_SC_R_info,S04_SC_R_info,S03_SC_R_info,S02_SC_R_info,S01_SC_R_info,S00_SC_R_info}),
-        .s_sc_payld({S05_SC_R_payld,S04_SC_R_payld,S03_SC_R_payld,S02_SC_R_payld,S01_SC_R_payld,S00_SC_R_payld}),
+        .s_sc_payld({S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S05_SC_R_payld,S04_SC_R_payld,S03_SC_R_payld,S02_SC_R_payld,S01_SC_R_payld,S00_SC_R_payld}),
         .s_sc_recv({\^S05_SC_R_recv ,\^S04_SC_R_recv ,\^S03_SC_R_recv ,\^S02_SC_R_recv ,\^S01_SC_R_recv ,S00_SC_R_recv}),
         .s_sc_req({S05_SC_R_req,S04_SC_R_req,S03_SC_R_req,S02_SC_R_req,S01_SC_R_req,S00_SC_R_req}),
         .s_sc_send({S05_SC_R_send,S04_SC_R_send,S03_SC_R_send,S02_SC_R_send,S01_SC_R_send,S00_SC_R_send}));

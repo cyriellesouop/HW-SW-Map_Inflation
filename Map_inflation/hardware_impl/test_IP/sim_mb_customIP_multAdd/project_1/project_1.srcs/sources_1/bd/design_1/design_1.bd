@@ -7,7 +7,8 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.2"
+      "tool_version": "2024.2",
+      "validated": "true"
     },
     "design_tree": {
       "microblaze_0": "",
@@ -28,7 +29,8 @@
       "axi_intc_0": "",
       "clk_wiz_0": "",
       "ila_0": "",
-      "myRegister_0": ""
+      "myRegister_0": "",
+      "axis_broadcaster_0": ""
     },
     "interface_ports": {
       "uart": {
@@ -65,6 +67,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -74,8 +80,24 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_100MHz",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       }
@@ -611,19 +633,59 @@
             "value": "AXI"
           },
           "C_NUM_OF_PROBES": {
-            "value": "19"
+            "value": "9"
+          },
+          "C_SLOT_0_AXIS_TDATA_WIDTH": {
+            "value": "32"
           },
           "C_SLOT_0_AXI_PROTOCOL": {
-            "value": "AXI4LITE"
+            "value": "AXI4S"
           }
         }
       },
       "myRegister_0": {
         "vlnv": "user.org:user:myRegister:1.0",
-        "ip_revision": "1",
+        "ip_revision": "12",
         "xci_name": "design_1_myRegister_0_0",
         "xci_path": "ip/design_1_myRegister_0_0/design_1_myRegister_0_0.xci",
         "inst_hier_path": "myRegister_0"
+      },
+      "axis_broadcaster_0": {
+        "vlnv": "xilinx.com:ip:axis_broadcaster:1.1",
+        "ip_revision": "32",
+        "xci_name": "design_1_axis_broadcaster_0_0",
+        "xci_path": "ip/design_1_axis_broadcaster_0_0/design_1_axis_broadcaster_0_0.xci",
+        "inst_hier_path": "axis_broadcaster_0",
+        "parameters": {
+          "HAS_ACLKEN": {
+            "value": "0"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "M_TDATA_NUM_BYTES": {
+            "value": "4"
+          },
+          "S_TDATA_NUM_BYTES": {
+            "value": "4"
+          }
+        },
+        "interface_ports": {
+          "S_AXIS": {
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "mode": "Slave",
+            "bridges": [
+              "M00_AXIS",
+              "M01_AXIS"
+            ]
+          }
+        }
       }
     },
     "interface_nets": {
@@ -648,8 +710,7 @@
       "axi_smc_M01_AXI": {
         "interface_ports": [
           "axi_smc/M01_AXI",
-          "axi_gpio_0/S_AXI",
-          "ila_0/SLOT_0_AXI"
+          "axi_gpio_0/S_AXI"
         ]
       },
       "axi_smc_M02_AXI": {
@@ -676,6 +737,12 @@
           "axi_uartlite_0/UART"
         ]
       },
+      "axis_broadcaster_0_M00_AXIS": {
+        "interface_ports": [
+          "axis_broadcaster_0/M00_AXIS",
+          "ila_0/SLOT_0_AXIS"
+        ]
+      },
       "microblaze_0_M_AXI_DP": {
         "interface_ports": [
           "microblaze_0/M_AXI_DP",
@@ -699,6 +766,20 @@
           "microblaze_0/ILMB",
           "microblaze_0_local_memory/ILMB"
         ]
+      },
+      "myRegister_0_M00_AXIS": {
+        "interface_ports": [
+          "myRegister_0/M00_AXIS",
+          "axis_broadcaster_0/S_AXIS"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       }
     },
     "nets": {
@@ -738,7 +819,9 @@
           "axi_timer_0/s_axi_aclk",
           "axi_intc_0/s_axi_aclk",
           "ila_0/clk",
-          "myRegister_0/s00_axi_aclk"
+          "axis_broadcaster_0/aclk",
+          "myRegister_0/s00_axi_aclk",
+          "myRegister_0/m00_axis_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -768,7 +851,9 @@
           "axi_gpio_0/s_axi_aresetn",
           "axi_timer_0/s_axi_aresetn",
           "axi_intc_0/s_axi_aresetn",
-          "myRegister_0/s00_axi_aresetn"
+          "axis_broadcaster_0/aresetn",
+          "myRegister_0/s00_axi_aresetn",
+          "myRegister_0/m00_axis_aresetn"
         ]
       },
       "util_vector_logic_0_Res": {
@@ -833,9 +918,9 @@
     },
     "elf_association": {
       "file": {
-        "name": "../../../../../vitis_ws_new_mult/hello_world/build/hello_world.elf",
+        "name": "../../../../../vitis_ws_testIP/hello_world/build/hello_world.elf",
         "type": "ELF",
-        "checksum": "1323914760",
+        "checksum": "2840334833",
         "IsVisible": "1",
         "ScopedToRef": "design_1",
         "ScopedToCell": [

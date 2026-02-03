@@ -3,15 +3,16 @@
 set proj_name "project1"
 set proj_dir "./project1"
 set part_name "xc7s50csga324-2"
-set top_module "pe_wrapper"
+set top_module "top"
 
-set sim_top_module "tb_pe_wrapper"
+set sim_top_module "tb_top2"
 set sim_pe "tb_pe"
 set sim_adder "tb_adder"
 set sim_axim_reg "tb_axim_reg"
 set sim_top_fifo "tb_top_fifo"
 set sim_fifo "tb_fifo"
-#set sim_pe_wrapper "tb_pe_wrapper"
+set sim_weight_loader "tb_weight_loader"
+set sim_pe_wrapper "tb_pe_wrapper"
 
 
 set bitfile "mapinflation.bit"
@@ -29,6 +30,8 @@ cd work
 # compile design and testbench
 exec xvlog ./../../pe.v
 exec xvlog ./../../adder_tree.v
+exec xvlog -sv ./../../data_accumulator.sv
+exec xvlog -sv ./../../weight_loader.sv
 exec xvlog -sv ./../../axim_reg.sv
 exec xvlog ./../../fifo.v
 exec xvlog ./../../fifo_axis.v
@@ -36,36 +39,42 @@ exec xvlog ./../../top_fifo.v
 exec xvlog ./../../axis_unpack_data.v
 exec xvlog ./../../delay.v
 exec xvlog ./../../pe_wrapper.v
-#exec xvlog ./../../top.v
+exec xvlog ./../../top.v
 #exec xvlog ./../../fsm.v
 
 #testbenches
 #exec xvlog ./../../testbench.v
 exec xvlog ./../../tb_pe.v
 exec xvlog ./../../tb_adder.v
+exec xvlog ./../../tb_weight_loader.v
 exec xvlog ./../../tb_axim_reg.v
 exec xvlog ./../../tb_top_fifo.v
 exec xvlog ./../../tb_fifo.v
 exec xvlog ./../../tb_pe_wrapper.v
+exec xvlog ./../../tb_top2.v
  
 #elaborate
 #exec xelab $sim_top_module -debug all
 exec xelab $sim_pe -debug all
 exec xelab $sim_adder -debug all
+exec xelab  $sim_weight_loader -debug all
 exec xelab $sim_axim_reg -debug all
 exec xelab $sim_fifo -debug all
 exec xelab  $sim_top_fifo -debug all
+exec xelab  $sim_pe_wrapper -debug all
 exec xelab $sim_top_module -debug all
 
 #simulation
 
 exec xsim $sim_pe -R
 exec xsim $sim_adder -R
+exec xsim  $sim_weight_loader -R
 exec xsim $sim_axim_reg -R
 exec xsim $sim_fifo -R
 exec xsim $sim_top_fifo -R
-#exec  xsim $sim_top_module -R
-exec  xsim $sim_top_module --tclbatch ./../../sim.tcl
+exec xsim  $sim_pe_wrapper -R
+exec  xsim $sim_top_module -R
+#exec  xsim $sim_top_module --tclbatch ./../../sim.tcl
 cd ../..
 
 #////////////////////////
@@ -78,14 +87,17 @@ cd  synth_place_route
 
 #load design sources
 read_verilog ./../pe.v
-read_verilog ./../adder.v
-read_verilog ./../axim_reg.v
+read_verilog ./../adder_tree.v
+read_verilog ./../data_accumulator.sv
+read_verilog ./../weight_loader.sv
+read_verilog ./../axim_reg.sv
 read_verilog ./../fifo.v
 read_verilog ./../fifo_axis.v
 read_verilog ./../top_fifo.v
 read_verilog ./../axis_unpack_data.v
 read_verilog ./../delay.v
 read_verilog ./../pe_wrapper.v
+read_verilog ./../top.v
 
 
 #load constraints files

@@ -51,13 +51,6 @@ module adder_tree #(
                         adder_dataIn[(j+1)*PRODUCT_WIDTH-1 -: PRODUCT_WIDTH];
                 end
             end
-            else begin
-                // Clear registers when not enabled
-                // This prevents 'X' from propagating if the PE output is invalid
-                for (j = 0; j < KERNEL_SIZE; j = j + 1) begin
-                    unpacked_products[j] <= {PRODUCT_WIDTH{1'b0}};
-                end
-            end
         end
     end
 
@@ -83,9 +76,6 @@ module adder_tree #(
                 {(FINAL_OUT_WIDTH - PARTIAL_SUM_WIDTH){1'b0}},
                 full_sum
             };
-        end
-        else begin
-            adder_dataOut <= {FINAL_OUT_WIDTH{1'b0}}; // Keep output clean and avoid latches
         end
     end
 

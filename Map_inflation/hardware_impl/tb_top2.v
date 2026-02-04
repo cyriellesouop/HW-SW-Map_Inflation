@@ -6,8 +6,8 @@ module tb_top2;
     parameter KERNEL_SIZE  = 3;
     parameter DATA_WIDTH   = 8;
     parameter WEIGHT_WIDTH = 8;
-    parameter DEPTH        = 4;
-    parameter PTR_WIDTH    = 2;
+    parameter DEPTH        = 8;
+    parameter PTR_WIDTH    = 3;
     parameter BUS_WIDTH    = 32;
     
     localparam PERIOD = 4; //250 MHZ
@@ -137,10 +137,10 @@ module tb_top2;
        s_axis_tvalid = 1'b0;
        @(posedge clk);
        
-       repeat(150) begin
+       repeat(1000) begin
            @(posedge clk);
            if (m_axis_tvalid && m_axis_tready) begin
-               $display("%0t | VALID OUTPUT: %d", $time, m_axis_tdata);
+               $display("%0t | VALID OUTPUT: %b", $time, m_axis_tdata);
            end
        end
        

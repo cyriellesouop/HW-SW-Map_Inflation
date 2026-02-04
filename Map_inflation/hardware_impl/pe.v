@@ -41,16 +41,22 @@ module pe
             
             pe_en_reg <= pe_en;
             // forward pixel regardless
-            //pe_pixel_out <= pe_input_reg;
-            pe_pixel_out <= pe_input;
+           // pe_pixel_out <= pe_input_reg;
+           // pe_pixel_out <= pe_input;
             if (pe_en_reg) begin
+                pe_pixel_out <= pe_input_reg; // to allow differents row pe to get an input at the same clock cyle
                 
 		(* use_dsp = "yes" *) // to Map the multiplication below to a DSP block
                 pe_output <= pe_input_reg * pe_weight_reg;
                 pe_done    <= 1'b1;
             end
             else
-            	pe_done    <= 1'b0;
+                begin
+            	   pe_done    <= 1'b0;
+            	   pe_output <= 0;
+            	   pe_pixel_out <= 0;
+            	end
+            	
                
        end
    end

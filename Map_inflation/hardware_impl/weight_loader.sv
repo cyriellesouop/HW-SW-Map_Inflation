@@ -39,7 +39,8 @@ module weight_loader #(
     // FSM State Outputs
     assign loading = (state == LOAD_WEIGHTS); // the loading is high as far as we are in the LOAD WEIGHTs state, otherwise, it goes low.
     assign s_axis_tready = loading;  // Only accept data when loading
-    assign weights_out = weight_storage[REQUIRED_BITS - 1 : 0]; // Slice only the required bits for the output, ignoring the padding at the top
+    //assign weights_out = weight_storage[REQUIRED_BITS - 1 : 0]; // Slice only the required bits for the output, ignoring the padding at the top
+    assign weights_out = weight_storage[PADDED_SIZE - 1 : PADDED_SIZE - REQUIRED_BITS];
 
     // Weight Loading FSM
     always @(posedge clk) begin

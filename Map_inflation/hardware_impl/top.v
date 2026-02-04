@@ -21,11 +21,10 @@ module top #(
    // output  [BUS_WIDTH - 1 : 0]               m_axis_tdata,
     output                                    m_axis_tvalid
 );
-    //localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE;
     localparam DATAOUT_WIDTH = (DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE;  // size of the dataOut produces by the pe_wrapper.
     localparam DATAIN_WIDTH = DATA_WIDTH * KERNEL_SIZE ;  // size of the dataIn of the pe_wrapper
-    localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;   // size of the input weights
-    //localparam DATA_ROW_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;   // size of the input weights  
+    localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;   // size of the input weights 
+    localparam TOTAL_BYTES = KERNEL_SIZE * KERNEL_SIZE;  // each weight is on 8 bits(1byte). So the total byte of a weight bus is equal to the kernel  dimension : KERNEL_SIZE * KERNEL_SIZE
      
 
     // Weight loader signals
@@ -50,6 +49,7 @@ module top #(
 
     // output FIFO signals
     wire output_fifo_ready;
+    wire [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weight_for_pe;// Define the correctly ordered weight bus
 
     // During weight loading: route input to weight loader
     // During streaming: route input to data accumulator
@@ -57,20 +57,21 @@ module top #(
 
 
     // FULLY PIPELINED: PE processes whenever data is available
-    wire pe_en = (&fifo_m_tvalid) && ready_pe_wrapper && output_fifo_ready;
+    wire pe_en = (&fifo_m_tvalid || pe_done) && (ready_pe_wrapper && output_fifo_ready); //(&fifo_m_tvalid) && ready_pe_wrapper && output_fifo_ready;
     
-    reg pe_en_reg;
-always @(posedge clk) begin
-    if (!rstn) begin
-        pe_en_reg <= 1'b0;
-    end else begin
-        // Delay the enable by 1 cycle so it "arrives" with the data
-        pe_en_reg <=(&fifo_m_tvalid) && ready_pe_wrapper && output_fifo_ready;
-    end
-end
+       
+         //to put weights in the right order : Reverse the byte order 
+	genvar b;
+	generate
+	    for (b = 0; b < (KERNEL_SIZE * KERNEL_SIZE); b = b + 1) begin 
+		assign weight_for_pe[b*WEIGHT_WIDTH +: WEIGHT_WIDTH] = flat_weights[(TOTAL_BYTES - 1 - b)*WEIGHT_WIDTH +: WEIGHT_WIDTH]; //weigth to assign to pe
+	    end
+	endgenerate
     
     // Read from all FIFOs simultaneously when PE processes
     assign fifo_m_tready = {KERNEL_SIZE{pe_en}};
+    // Only pull from the FIFO if the PE is enabled AND the FIFO actually has data
+   //assign fifo_m_tready = {KERNEL_SIZE{pe_en && (&fifo_m_tvalid)}};
 
 
 
@@ -156,12 +157,12 @@ end
         .rstn(rstn),
 
 	// control
-        .en(pe_en_reg),
+        .en(pe_en),
         .ready(ready_pe_wrapper),
 
 	//Data inputs
         .dataIn(fifo_m_tdata),
-        .weightsIn(flat_weights),
+        .weightsIn(weight_for_pe),
 
 	// Data outputs
         .dataOut(pe_dataout),

@@ -16,7 +16,7 @@ module pe_wrapper #(
     localparam PRODUCT_WIDTH = DATA_WIDTH + WEIGHT_WIDTH;
     localparam SUM_WIDTH     = DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE;
     localparam ROW_STRIDE    = DATA_WIDTH * KERNEL_SIZE;
-    localparam TOTAL_DONE_DELAY = 3; // Adder + pe latency: 3 cycles
+    localparam TOTAL_DONE_DELAY = 3; // Adder latency: 3 cycles
     
     // Bus for vertical pixel propagation
     wire [ROW_STRIDE * (KERNEL_SIZE + 1) - 1 : 0] vertical_pixel_bus;
@@ -45,12 +45,15 @@ module pe_wrapper #(
                     .clk(clk),
                     .rstn(rstn),
                     .pe_en(en),
+                    .pe_input(vertical_pixel_bus[(r * ROW_STRIDE) + ((KERNEL_SIZE - 1 - c) * DATA_WIDTH) +: DATA_WIDTH]),
                     // Input comes from previous row's output bus
-                    .pe_input(vertical_pixel_bus[(r * ROW_STRIDE) + (c * DATA_WIDTH) +: DATA_WIDTH]),
+                   // .pe_input(vertical_pixel_bus[(r * ROW_STRIDE) + (c * DATA_WIDTH) +: DATA_WIDTH]),
                     .pe_weight(weightsIn[(r*KERNEL_SIZE + c)*WEIGHT_WIDTH +: WEIGHT_WIDTH]),
                     // Output goes to next row's input bus
-                    .pe_pixel_out(vertical_pixel_bus[((r+1) * ROW_STRIDE) + (c * DATA_WIDTH) +: DATA_WIDTH]),
+                    //.pe_pixel_out(vertical_pixel_bus[((r+1) * ROW_STRIDE) + (c * DATA_WIDTH) +: DATA_WIDTH]),
                     .pe_output(products[c*PRODUCT_WIDTH +: PRODUCT_WIDTH]),
+                    // Keep output consistent with the input flip
+                    .pe_pixel_out(vertical_pixel_bus[((r+1) * ROW_STRIDE) + ((KERNEL_SIZE - 1 - c) * DATA_WIDTH) +: DATA_WIDTH]),
                     .pe_done(row_pe_dones[c])
                 );
             end
@@ -65,17 +68,19 @@ module pe_wrapper #(
                 .rstn(rstn),
                 .adder_en(row_adder_en),
                 .adder_dataIn(products),
-                // Connect to intermediate wire, NOT final output
-                .adder_dataOut(dataOut[r*SUM_WIDTH +: SUM_WIDTH])
+                .adder_dataOut(dataOut[r*SUM_WIDTH +: SUM_WIDTH]) // Connect to intermediate wire, NOT final output
             );
         end
     endgenerate
     
     // 3. Streaming Done Signal
-    delay #(.LATENCY(TOTAL_DONE_DELAY), .WIDTH(1)) delay_inst (
+    delay #(
+        .LATENCY(TOTAL_DONE_DELAY), 
+        .WIDTH(1)
+      ) delay_inst (
         .clk(clk),
         .rstn(rstn),
-        .dataIn(row_ready_signals[0]), // Now we simply look at the enable signal of the first adder row. 
+        .dataIn(en), // this asserts one thepe_wrapper is enable                    // (|row_ready_signals : This asserts if adder of Row 0 OR Row 1 OR Row 2 ... is enable)
         .dataOut(dataOut_done)
     );
     

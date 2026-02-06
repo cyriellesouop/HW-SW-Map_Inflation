@@ -1,5 +1,5 @@
 open_saif myTop.saif
-log_saif /tp_top2/DUT/*
+log_saif /tb_top2/DUT/*
 run -all
 quit
 close_saif

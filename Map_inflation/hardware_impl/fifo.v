@@ -41,23 +41,20 @@ module fifo
            wr_cnt <= 0;
            wr_addr <= 0;
          end
-	else if(rstn) begin
+	else begin
 	    
-	    if(WR) begin
-		  if(~full ) begin
+	    if(WR && ~full) begin
+		  //if(~full ) begin
 		     MEM[wr_addr] <= dataIn;
 		   //  wr_addr <= wr_addr + 1 ;
 		     if(wr_addr == DEPTH-1 )  begin
 			wr_addr <= 0 ;
-			if(wr_cnt==0)
-			   wr_cnt <= 1;
-		        else 
-			   wr_cnt <= 0;
+			wr_cnt  <= ~wr_cnt;
 		     end
 	             else
 			  wr_addr <= wr_addr + 1 ;
 
-                  end	    
+                 // end	    
             end
       end
  end
@@ -70,23 +67,20 @@ module fifo
            rd_addr <= 0;
          end
 
-       else if(rstn) begin
+       else begin
 
-		if(RD) begin
-		   if(~empty) begin
+		if(RD && ~empty) begin
+		   //if(~empty) begin
                       dataOut <=  MEM[rd_addr];
                       
 		      if (rd_addr == DEPTH-1) begin
 			      rd_addr <=0;
-			      if(rd_cnt==0)
-			          rd_cnt <= 1;
-		              else
-			          rd_cnt <=0;
+			      rd_cnt  <= ~rd_cnt;
 		      end
 		      else 
 			    rd_addr <= rd_addr +1;
-                  end
-            end
+                  //end
+                end
         end
    end
    
@@ -103,7 +97,7 @@ module fifo
 
    //full and empty signal
 
-          assign  empty =(wr_addr == rd_addr) && (wr_cnt == rd_cnt) ;
+          assign empty =(wr_addr == rd_addr) && (wr_cnt == rd_cnt) ;
 	  assign full = (wr_addr == rd_addr) &&  (wr_cnt != rd_cnt );
                   
    endmodule

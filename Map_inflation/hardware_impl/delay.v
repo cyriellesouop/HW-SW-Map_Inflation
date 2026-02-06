@@ -17,7 +17,7 @@ generate
 
     end else begin 
         reg [WIDTH-1:0] pipe [0:LATENCY-1];
-        reg [LATENCY : 0 ] i;
+        integer i;
 
         always @(posedge clk) begin
             if (!rstn) begin

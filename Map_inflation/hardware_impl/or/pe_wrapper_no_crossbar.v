@@ -9,29 +9,18 @@ module pe_wrapper #(
     input  en,
     input  [DATA_WIDTH * KERNEL_SIZE - 1 : 0] dataIn,
     input  [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weightsIn,
-
-    input m_axis_tready,
-    output [(DATA_WIDTH + WEIGHT_WIDTH +  $clog2(KERNEL_SIZE)) - 1 : 0] m_axis_tdata,
-    output m_axis_tvalid,
-   // output [(DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE) * KERNEL_SIZE - 1 : 0] dataOut,
+    output [(DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE) * KERNEL_SIZE - 1 : 0] dataOut,
+    output dataOut_done,
     output ready
 );
     localparam PRODUCT_WIDTH = DATA_WIDTH + WEIGHT_WIDTH;
-    localparam SUM_WIDTH     = DATA_WIDTH + WEIGHT_WIDTH + $clog2(KERNEL_SIZE);
-    localparam PARTIAL_SUM_WIDTH = PRODUCT_WIDTH + $clog2(KERNEL_SIZE);
+    localparam SUM_WIDTH     = DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE;
     localparam ROW_STRIDE    = DATA_WIDTH * KERNEL_SIZE;
     localparam TOTAL_DONE_DELAY = 3; // Adder latency: 3 cycles
-    
-    //reg start_counter;
     
     // Bus for vertical pixel propagation
     wire [ROW_STRIDE * (KERNEL_SIZE + 1) - 1 : 0] vertical_pixel_bus;
     wire [KERNEL_SIZE - 1 : 0] row_ready_signals;
-    
-    // --- Intermediate AXI-Stream signals to collect results from all rows ---
-    wire [KERNEL_SIZE-1:0] row_tvalid;
-    wire [KERNEL_SIZE-1:0] row_tready;
-    wire [PARTIAL_SUM_WIDTH * KERNEL_SIZE - 1 : 0] row_tdata;
     
     assign ready = rstn;
     
@@ -77,53 +66,15 @@ module pe_wrapper #(
             ) row_sum_adder (
                 .clk(clk),
                 .rstn(rstn),
-                // write interface
                 .adder_en(row_adder_en),
                 .adder_dataIn(products),
-                // read interface
-		.m_axis_tready(row_tready[r]),
-		.m_axis_tvalid(row_tvalid[r]),
-		.m_axis_tdata(row_tdata[r * PARTIAL_SUM_WIDTH +: PARTIAL_SUM_WIDTH])
-               // .adder_dataOut(dataOut[r*SUM_WIDTH +: SUM_WIDTH]) // Connect to intermediate wire, NOT final output
+                .adder_dataOut(dataOut[r*SUM_WIDTH +: SUM_WIDTH]) // Connect to intermediate wire, NOT final output
             );
         end
     endgenerate
     
-    //logic to start our cross bar module:
-    /*always @(posedge clk) begin
-        if (!rstn) begin
-            start_counter <= 1'b0;
-        end 
-        else begin
-            if (|row_tvalid) begin
-                start_counter <= 1'b1;
-            end
-        end
-    end*/
-    
-    // 3. The Crossbar - Multiplexes kernel size rows into 1 final output
-    crossbar#(
-        .KERNEL_SIZE(KERNEL_SIZE),
-        .DATA_WIDTH(PARTIAL_SUM_WIDTH)
-    ) crossbar_inst (
-        .clk(clk),
-        .rstn(rstn),
-
-        // Slave side: connected to all the row adders
-        .s_axis_tvalid(row_tvalid),
-        .s_axis_tdata (row_tdata),
-        .s_axis_tready(row_tready),
-
-        // Master side: final output of the pe_wrapper
-        .m_axis_tvalid(m_axis_tvalid),
-        .m_axis_tdata (m_axis_tdata),
-        .m_axis_tready(m_axis_tready)
-    );
-    
-
-    
     // 3. Streaming Done Signal
-   /* delay #(
+    delay #(
         .LATENCY(TOTAL_DONE_DELAY), 
         .WIDTH(1)
       ) delay_inst (
@@ -132,6 +83,6 @@ module pe_wrapper #(
         .dataIn(en), // this asserts one thepe_wrapper is enable                    // (|row_ready_signals : This asserts if adder of Row 0 OR Row 1 OR Row 2 ... is enable)
         .dataOut(dataOut_done)
     );
-    */
+    
     
 endmodule

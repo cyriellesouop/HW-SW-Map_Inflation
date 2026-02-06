@@ -17,15 +17,18 @@ module top #(
     output                                    s_axis_tready,
     // AXI Stream Master Interface
     input                                     m_axis_tready,
-    output [(DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE-1 :0]  m_axis_tdata,
+    output [(DATA_WIDTH+WEIGHT_WIDTH+ $clog2(KERNEL_SIZE)) -1 :0]  m_axis_tdata,
    // output  [BUS_WIDTH - 1 : 0]               m_axis_tdata,
     output                                    m_axis_tvalid
 );
-    localparam DATAOUT_WIDTH = (DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE;  // size of the dataOut produces by the pe_wrapper.
+    //localparam DATAOUT_WIDTH = (DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE;  // size of the dataOut produces by the pe_wrapper.
     localparam DATAIN_WIDTH = DATA_WIDTH * KERNEL_SIZE ;  // size of the dataIn of the pe_wrapper
     localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;   // size of the input weights 
     localparam TOTAL_BYTES = KERNEL_SIZE * KERNEL_SIZE;  // each weight is on 8 bits(1byte). So the total byte of a weight bus is equal to the kernel  dimension : KERNEL_SIZE * KERNEL_SIZE
-     
+    localparam ADDER_LATENCY    = 3; // Adder latency: 3 cycles
+    localparam CROSSBAR_LATENCY = 2; // crossbar latency Input reg + Output reg
+    localparam TOTAL_DONE_DELAY = (2 * KERNEL_SIZE) + ADDER_LATENCY + CROSSBAR_LATENCY; // KERNEL_SIZE : latency of The last pixel needs to reach the very last PE
+                                                                                       // KERNEL_SIZE : the last row might have to wait for the other rows to be "read" before its final pixel can exit
 
     // Weight loader signals
     wire weight_loader_ready;
@@ -44,11 +47,11 @@ module top #(
     wire [KERNEL_SIZE - 1 : 0] fifo_m_tvalid;
     wire [KERNEL_SIZE - 1 : 0] fifo_m_tready;
     wire ready_pe_wrapper;
-    wire pe_done;
-    wire [DATAOUT_WIDTH - 1 : 0] pe_dataout;
+   // wire pe_done;
+   // wire [DATAOUT_WIDTH - 1 : 0] pe_dataout;
 
     // output FIFO signals
-    wire output_fifo_ready;
+    //wire output_fifo_ready;
     wire [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weight_for_pe;// Define the correctly ordered weight bus
 
     // During weight loading: route input to weight loader
@@ -57,7 +60,7 @@ module top #(
 
 
     // FULLY PIPELINED: PE processes whenever data is available
-    wire pe_en = (&fifo_m_tvalid || pe_done) && (ready_pe_wrapper && output_fifo_ready); //(&fifo_m_tvalid) && ready_pe_wrapper && output_fifo_ready;
+    wire pe_en = (&fifo_m_tvalid || pipe_flushing ) && ready_pe_wrapper && m_axis_tready; 
     
        
          //to put weights in the right order : Reverse the byte order 
@@ -70,9 +73,6 @@ module top #(
     
     // Read from all FIFOs simultaneously when PE processes
     assign fifo_m_tready = {KERNEL_SIZE{pe_en}};
-    // Only pull from the FIFO if the PE is enabled AND the FIFO actually has data
-   //assign fifo_m_tready = {KERNEL_SIZE{pe_en && (&fifo_m_tvalid)}};
-
 
 
     // 1. FSM fpr  Weight Loader
@@ -164,12 +164,26 @@ module top #(
         .dataIn(fifo_m_tdata),
         .weightsIn(weight_for_pe),
 
-	// Data outputs
-        .dataOut(pe_dataout),
-        .dataOut_done(pe_done)
+	// Data outputs inerface
+        .m_axis_tready(m_axis_tready),
+        .m_axis_tdata(m_axis_tdata),
+        .m_axis_tvalid(m_axis_tvalid)
     );
-
     
+        // This module "holds" the high signal for TOTAL_DONE_DELAY cycles
+    // after the FIFO goes empty.
+    delay #(
+        .LATENCY(TOTAL_DONE_DELAY), 
+        .WIDTH(1)
+    ) flush_delay_inst (
+        .clk(clk),
+        .rstn(rstn),
+        .dataIn(&fifo_m_tvalid), 
+        .dataOut(pipe_flushing)
+    );
+    
+   
+   /* 
     // 5.output FIFO
     fifo_axis #(
         .DATAWIDTH(DATAOUT_WIDTH),
@@ -190,5 +204,5 @@ module top #(
         .m_tvalid(m_axis_tvalid)
     );
 
-     
+     */
 endmodule

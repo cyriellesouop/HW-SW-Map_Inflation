@@ -29,7 +29,7 @@ module weight_loader #(
 
     // Internal Signals
     reg [PADDED_SIZE - 1 : 0] weight_storage;
-    reg [$clog2(NUM_TRANSFERS) : 0] transfer_counter; //to count the number of transfer done
+    integer transfer_counter; //to count the number of transfer done
     //reg state;
 
     // State definition

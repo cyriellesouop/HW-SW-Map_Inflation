@@ -46,21 +46,13 @@ xvlog pe_wrapper.v
 
 #xsim tb_pe_wrapper -R
 
-xvlog crossbar.v
+#xvlog adder_tree.v
 
-xvlog adder_tree.v
+#xvlog tb_adder.v
 
-#xvlog tb_crossbar.v
+#xelab tb_adder -debug all
 
-#xelab tb_crossbar -debug all
-
-#xsim  tb_crossbar -R
-
-#xvlog tb_adder_tree.v
-
-#xelab tb_adder_tree -debug all
-
-#xsim tb_adder_tree -R
+#xsim tb_adder -R
 
 xvlog top.v
 

@@ -12,10 +12,10 @@ module tb_top2;
     
     localparam PERIOD = 4; //250 MHZ
     // Calculated parameters
-    localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE;
-    localparam DATAOUT_WIDTH  = SUM_WIDTH * KERNEL_SIZE;
+    localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + $clog2(KERNEL_SIZE);
+    localparam DATAOUT_WIDTH  = SUM_WIDTH ;
     localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;
-    localparam NUM_WEIGHT_TRANSFERS = (WEIGHTIN_WIDTH + BUS_WIDTH - 1) / BUS_WIDTH;
+   // localparam NUM_WEIGHT_TRANSFERS = (WEIGHTIN_WIDTH + BUS_WIDTH - 1) / BUS_WIDTH;
     
     
     reg clk=0;
@@ -39,7 +39,7 @@ module tb_top2;
         .DEPTH(DEPTH),
         .PTR_WIDTH(PTR_WIDTH),
         .BUS_WIDTH(BUS_WIDTH)
-    ) dut (
+    ) DUT (
         .clk(clk),
         .rstn(rstn),
         .s_axis_tdata(s_axis_tdata),
@@ -52,6 +52,7 @@ module tb_top2;
     
     reg[31:0] weight;
     reg[31:0] data;
+   
     // --------------Clock Generation --------------------------------
     always #(PERIOD/2) clk = ~clk;
     
@@ -137,18 +138,26 @@ module tb_top2;
        s_axis_tvalid = 1'b0;
        @(posedge clk);
        
-       repeat(1000) begin
+     /* repeat(1000) begin
            @(posedge clk);
            if (m_axis_tvalid && m_axis_tready) begin
-               $display("%0t | VALID OUTPUT: %b", $time, m_axis_tdata);
+               $display("%0t | VALID OUTPUT: %0d", $time, m_axis_tdata);
            end
-       end
-       
-       #100;
+       end 
+       */
+       #1000;
         
         $finish;
        
     end
+    
+   always @(posedge clk) begin
+        if (m_axis_tvalid && m_axis_tready) begin
+            $display("Time=%0t | Output Handshake! Result=%d (decimal:%0d)", $time, m_axis_tdata, m_axis_tdata);
+        end
+    end 
+    
+    
     
     endmodule
     

@@ -1,0 +1,25 @@
++====================+===================+=============================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                         |
++====================+===================+=============================================================+
+| clk                | clk               | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[15]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[13]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[13]/D |
+| clk                | clk               | pe_engine/genblk1[2].genblk1[1].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[12]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[15]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[15]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[12]/D |
+| clk                | clk               | pe_engine/genblk1[2].genblk1[0].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[2].genblk1[1].pe_inst/pe_output_reg[13]/D |
+| clk                | clk               | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[15]/D |
+| clk                | clk               | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[2].genblk1[0].pe_inst/pe_output_reg[13]/D |
+| clk                | clk               | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[12]/D |
+| clk                | clk               | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[13]/D |
+| clk                | clk               | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[14]/D |
+| clk                | clk               | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[7]/D  |
+| clk                | clk               | pe_engine/genblk1[2].genblk1[0].pe_inst/pe_output_reg[7]/D  |
+| clk                | clk               | weight_loader_inst/FSM_sequential_state_reg/D               |
++--------------------+-------------------+-------------------------------------------------------------+

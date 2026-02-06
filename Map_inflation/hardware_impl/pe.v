@@ -53,8 +53,8 @@ module pe
             else
                 begin
             	   pe_done    <= 1'b0;
-            	   pe_output <= 0;
-            	   pe_pixel_out <= 0;
+            	 //  pe_output <= 0;
+            	 //  pe_pixel_out <= 0;
             	end
             	
                

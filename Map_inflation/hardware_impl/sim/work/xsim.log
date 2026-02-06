@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Feb  2 22:21:32 2026
-# Process ID         : 209820
+# Start of session at: Fri Feb  6 07:04:56 2026
+# Process ID         : 126285
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
 # Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
@@ -13,27 +13,47 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3644.566 MHz
+# CPU Frequency      : 3591.854 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 12598 MB
+# Available Virtual  : 11989 MB
 #-----------------------------------------------------------
 source xsim.dir/work.tb_top2/xsim_script.tcl
-# xsim {work.tb_top2} -autoloadwcfg -runall
+# xsim {work.tb_top2} -autoloadwcfg -tclbatch {./../../sim.tcl}
 Time resolution is 1 ps
-run -all
-30000 first weights value is 1020304
-38000 second weights value is 5060708
-46000 second weights value is 9000000
-66000 first data value is a0d1000
-74000 first data value is b0e1100
-82000 first data value is c0f1200
-94000 | VALID OUTPUT:                  x
-102000 | VALID OUTPUT:                  X
-110000 | VALID OUTPUT:                  X
-$finish called at time : 786 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 147
-exit
-INFO: [Common 17-206] Exiting xsim at Mon Feb  2 22:21:36 2026...
+source ./../../sim.tcl
+## open_saif myTop.saif
+## log_saif /tb_top2/DUT/*
+## run -all
+34000 first weights value is 1020304
+42000 second weights value is 5060708
+50000 second weights value is 9000000
+70000 first data value is a0d1000
+78000 first data value is b0e1100
+86000 first data value is c0f1200
+Time=102000 | Output Handshake! Result=     x (decimal:x)
+Time=106000 | Output Handshake! Result=     x (decimal:x)
+Time=110000 | Output Handshake! Result=     x (decimal:x)
+Time=114000 | Output Handshake! Result=     x (decimal:x)
+Time=118000 | Output Handshake! Result=     0 (decimal:0)
+Time=122000 | Output Handshake! Result=     0 (decimal:0)
+Time=126000 | Output Handshake! Result=     x (decimal:x)
+Time=130000 | Output Handshake! Result=     x (decimal:x)
+Time=134000 | Output Handshake! Result=     0 (decimal:0)
+Time=138000 | Output Handshake! Result=    84 (decimal:84)
+Time=146000 | Output Handshake! Result=   201 (decimal:201)
+Time=150000 | Output Handshake! Result=     x (decimal:x)
+Time=154000 | Output Handshake! Result=    90 (decimal:90)
+Time=158000 | Output Handshake! Result=   201 (decimal:201)
+Time=162000 | Output Handshake! Result=   318 (decimal:318)
+Time=166000 | Output Handshake! Result=    96 (decimal:96)
+Time=170000 | Output Handshake! Result=   216 (decimal:216)
+Time=174000 | Output Handshake! Result=   342 (decimal:342)
+Time=178000 | Output Handshake! Result=    96 (decimal:96)
+Time=182000 | Output Handshake! Result=   231 (decimal:231)
+$finish called at time : 1090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 150
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Feb  6 07:04:59 2026...

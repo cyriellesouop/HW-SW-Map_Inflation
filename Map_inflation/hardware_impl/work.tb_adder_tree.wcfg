@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.tb_adder_tree.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_adder_tree" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="133.994 ns"></ZoomEndTime>
+      <Cursor1Time time="86.037 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="242"></NameColumnWidth>
+      <ValueColumnWidth column_width="213"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wvobject type="group" fp_name="group42">
+      <obj_property name="label">TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_adder_tree/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/rstn">
+         <obj_property name="ElementShortName">rstn</obj_property>
+         <obj_property name="ObjectShortName">rstn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/adder_en">
+         <obj_property name="ElementShortName">adder_en</obj_property>
+         <obj_property name="ObjectShortName">adder_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/adder_dataIn">
+         <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[17:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/KERNEL_SIZE">
+         <obj_property name="ElementShortName">KERNEL_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">KERNEL_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/DATA_WIDTH">
+         <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/WEIGHT_WIDTH">
+         <obj_property name="ElementShortName">WEIGHT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WEIGHT_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/DEPTH">
+         <obj_property name="ElementShortName">DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DEPTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/PTR_WIDTH">
+         <obj_property name="ElementShortName">PTR_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PTR_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/PRODUCT_WIDTH">
+         <obj_property name="ElementShortName">PRODUCT_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PRODUCT_WIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider43" type="divider">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group18">
+      <obj_property name="label">dut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/adder_en">
+         <obj_property name="ElementShortName">adder_en</obj_property>
+         <obj_property name="ObjectShortName">adder_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/adder_dataIn">
+         <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
+         <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/m_axis_tdata">
+         <obj_property name="ElementShortName">m_axis_tdata[17:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tdata[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/m_axis_tvalid">
+         <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/unpacked_products">
+         <obj_property name="ElementShortName">unpacked_products[0:2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">unpacked_products[0:2][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/full_sum">
+         <obj_property name="ElementShortName">full_sum[17:0]</obj_property>
+         <obj_property name="ObjectShortName">full_sum[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/i">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/j">
+         <obj_property name="ElementShortName">j[31:0]</obj_property>
+         <obj_property name="ObjectShortName">j[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/output_en">
+         <obj_property name="ElementShortName">output_en</obj_property>
+         <obj_property name="ObjectShortName">output_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_tvalid">
+         <obj_property name="ElementShortName">fifo_axis_tvalid</obj_property>
+         <obj_property name="ObjectShortName">fifo_axis_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_tdata">
+         <obj_property name="ElementShortName">fifo_axis_tdata[17:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_axis_tdata[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_tready">
+         <obj_property name="ElementShortName">fifo_axis_tready</obj_property>
+         <obj_property name="ObjectShortName">fifo_axis_tready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider41" type="divider">
+      <obj_property name="label">FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group32">
+      <obj_property name="label">FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_adder_tree/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/s_tvalid">
+         <obj_property name="ElementShortName">s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/s_tdata">
+         <obj_property name="ElementShortName">s_tdata[17:0]</obj_property>
+         <obj_property name="ObjectShortName">s_tdata[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/s_tready">
+         <obj_property name="ElementShortName">s_tready</obj_property>
+         <obj_property name="ObjectShortName">s_tready</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/m_tready">
+         <obj_property name="ElementShortName">m_tready</obj_property>
+         <obj_property name="ObjectShortName">m_tready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/m_tdata">
+         <obj_property name="ElementShortName">m_tdata[17:0]</obj_property>
+         <obj_property name="ObjectShortName">m_tdata[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/m_tvalid">
+         <obj_property name="ElementShortName">m_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/full">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_adder_tree/dut/fifo_axis_inst/empty">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM">
+         <obj_property name="ElementShortName">MEM[7:0][17:0]</obj_property>
+         <obj_property name="ObjectShortName">MEM[7:0][17:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[7]">
+            <obj_property name="ElementShortName">[7][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[6]">
+            <obj_property name="ElementShortName">[6][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[5]">
+            <obj_property name="ElementShortName">[5][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[4]">
+            <obj_property name="ElementShortName">[4][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[3]">
+            <obj_property name="ElementShortName">[3][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[2]">
+            <obj_property name="ElementShortName">[2][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[1]">
+            <obj_property name="ElementShortName">[1][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[0]">
+            <obj_property name="ElementShortName">[0][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[7]">
+            <obj_property name="ElementShortName">[7][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[6]">
+            <obj_property name="ElementShortName">[6][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[5]">
+            <obj_property name="ElementShortName">[5][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[4]">
+            <obj_property name="ElementShortName">[4][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[3]">
+            <obj_property name="ElementShortName">[3][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[2]">
+            <obj_property name="ElementShortName">[2][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[1]">
+            <obj_property name="ElementShortName">[1][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_adder_tree/dut/fifo_axis_inst/fifo_inst/MEM[0]">
+            <obj_property name="ElementShortName">[0][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

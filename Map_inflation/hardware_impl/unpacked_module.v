@@ -37,7 +37,7 @@ module unpacker_module #(
     wire [DATA_WIDTH-1:0] fifo_m_tdata [0:KERNEL_SIZE-1];
     
     genvar i;
-    reg[KERNEL_SIZE:0] j;
+    integer j;
     
     // Unpack input data into individual elements
     generate

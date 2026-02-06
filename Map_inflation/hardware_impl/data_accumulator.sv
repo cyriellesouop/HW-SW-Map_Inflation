@@ -29,7 +29,8 @@ module data_accumulator #(
     
     // Internal signals
     reg [PADDED_SIZE - 1 : 0] row_buffer;
-    reg [$clog2(NUM_TRANSFERS) : 0] transfer_count;
+    integer transfer_count;
+    //reg [$clog2(NUM_TRANSFERS) : 0] transfer_count;
     reg row_valid;
     
     // State definition

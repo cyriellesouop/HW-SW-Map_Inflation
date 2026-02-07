@@ -4,8 +4,8 @@ Design Place Status
        # of unplaced cells....................... :           0 :
        # of placed cells......................... :        2244 :
        # of cells with fixed placement........... :           0 :
-   # of used sites............................... :         467 :
-       # of sites with route thrus............... :          84 :
+   # of used sites............................... :         486 :
+       # of sites with route thrus............... :          90 :
        # of sites with inverted inputs........... :           0 :
        # of sites with tie-off pins.............. :           0 :
        # of sites with errors.................... :           0 :

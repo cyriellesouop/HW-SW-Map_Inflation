@@ -1,0 +1,26 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/audrey/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab tb_top2 -debug all 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.weight_loader(KERNEL_SIZE=3)
+Compiling module work.data_accumulator_default
+Compiling module work.fifo(DEPTH=8,PTR_WIDTH=3)
+Compiling module work.fifo_axis(DEPTH=8,PTR_WIDTH=3)
+Compiling module work.axis_unpack_data(DEPTH=8,PTR_WID...
+Compiling module work.pe
+Compiling module work.fifo(DATAWIDTH=18,DEPTH=8,PTR_WI...
+Compiling module work.fifo_axis(DATAWIDTH=18,DEPTH=8,P...
+Compiling module work.adder_tree_default
+Compiling module work.crossbar_default
+Compiling module work.pe_wrapper_default
+Compiling module work.delay(LATENCY=11)
+Compiling module work.top(DEPTH=8,PTR_WIDTH=3)
+Compiling module work.tb_top2
+Built simulation snapshot work.tb_top2

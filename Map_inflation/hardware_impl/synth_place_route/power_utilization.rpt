@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Fri Feb  6 07:07:28 2026
+| Date             : Fri Feb  6 17:50:39 2026
 | Host             : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file power_utilization.rpt
 | Design           : top
@@ -54,12 +54,12 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.008 |        3 |       --- |             --- |
 | Slice Logic              |     0.001 |     2229 |       --- |             --- |
-|   LUT as Logic           |     0.001 |      890 |     32600 |            2.73 |
+|   LUT as Logic           |     0.001 |      897 |     32600 |            2.75 |
 |   LUT as Distributed RAM |    <0.001 |       54 |      9600 |            0.56 |
 |   Register               |    <0.001 |      907 |     65200 |            1.39 |
 |   CARRY4                 |    <0.001 |      113 |      8150 |            1.39 |
 |   Others                 |     0.000 |       42 |       --- |             --- |
-| Signals                  |     0.002 |     1791 |       --- |             --- |
+| Signals                  |     0.002 |     1790 |       --- |             --- |
 | I/O                      |     0.001 |       56 |       210 |           26.67 |
 | Static Power             |     0.070 |          |           |                 |
 | Total                    |     0.083 |          |           |                 |
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.021 |       0.012 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -141,7 +141,6 @@ Table of Contents
 +------------------------------+-----------+
 | top                          |     0.013 |
 |   pe_engine                  |     0.008 |
-|     crossbar_inst            |     0.001 |
 |     genblk1[0].row_sum_adder |     0.001 |
 |     genblk1[1].row_sum_adder |     0.001 |
 |     genblk1[2].row_sum_adder |     0.001 |

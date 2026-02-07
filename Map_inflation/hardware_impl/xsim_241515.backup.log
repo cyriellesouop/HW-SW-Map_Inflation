@@ -3,31 +3,29 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Feb  6 17:46:19 2026
-# Process ID         : 164892
-# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
+# Start of session at: Sat Feb  7 02:00:13 2026
+# Process ID         : 241515
+# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl
 # Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
-# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
-# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.jou
+# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.log
+# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.jou
 # Running On         : audrey-Precision-5520
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3551.557 MHz
+# CPU Frequency      : 3673.832 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 13029 MB
+# Available Virtual  : 10347 MB
 #-----------------------------------------------------------
 source xsim.dir/work.tb_top2/xsim_script.tcl
-# xsim {work.tb_top2} -autoloadwcfg -tclbatch {./../../sim.tcl}
+# xsim {work.tb_top2} -autoloadwcfg -runall
 Time resolution is 1 ps
-source ./../../sim.tcl
-## open_saif myTop.saif
-## log_saif /tb_top2/DUT/*
-## run -all
+open_wave_config /home/audrey/Documents/convolution/Map_inflation/hardware_impl/work.tb_top2.wcfg
+run -all
 34000 first weights value is 1020304
 42000 second weights value is 5060708
 50000 second weights value is 9000000
@@ -55,5 +53,5 @@ Time=174000 | Output Handshake! Result=   342 (decimal:342)
 Time=178000 | Output Handshake! Result=    96 (decimal:96)
 Time=182000 | Output Handshake! Result=   231 (decimal:231)
 $finish called at time : 1090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 150
-## quit
-INFO: [Common 17-206] Exiting xsim at Fri Feb  6 17:46:23 2026...
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Feb  7 02:00:17 2026...

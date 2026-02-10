@@ -84,7 +84,7 @@ module crossbar
                         count         <= 0; // Stay parked at Row 0
                     end
                 end 
-                else begin
+                else  begin
                     // Then, Cycle through rows in Round-Robin
                     if (reg_s_tvalid[count]) begin    // current slot has data
                         m_axis_tdata  <= reg_s_tdata[count];  // output data from current slot

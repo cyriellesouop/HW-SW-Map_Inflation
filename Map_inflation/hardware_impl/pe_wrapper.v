@@ -47,6 +47,7 @@ module pe_wrapper #(
             // This row's adder is active when its PEs are done
             wire row_adder_en = &row_pe_dones;
             assign row_ready_signals[r] = row_adder_en;
+            //always @(posedge clk) row_adder_en_delay <= row_adder_en;
             
             for (c = 0; c < KERNEL_SIZE; c = c + 1) begin 
                 pe #(
@@ -89,18 +90,6 @@ module pe_wrapper #(
         end
     endgenerate
     
-    //logic to start our cross bar module:
-    /*always @(posedge clk) begin
-        if (!rstn) begin
-            start_counter <= 1'b0;
-        end 
-        else begin
-            if (|row_tvalid) begin
-                start_counter <= 1'b1;
-            end
-        end
-    end*/
-    
     // 3. The Crossbar - Multiplexes kernel size rows into 1 final output
     crossbar#(
         .KERNEL_SIZE(KERNEL_SIZE),
@@ -120,18 +109,5 @@ module pe_wrapper #(
         .m_axis_tready(m_axis_tready)
     );
     
-
-    
-    // 3. Streaming Done Signal
-   /* delay #(
-        .LATENCY(TOTAL_DONE_DELAY), 
-        .WIDTH(1)
-      ) delay_inst (
-        .clk(clk),
-        .rstn(rstn),
-        .dataIn(en), // this asserts one thepe_wrapper is enable                    // (|row_ready_signals : This asserts if adder of Row 0 OR Row 1 OR Row 2 ... is enable)
-        .dataOut(dataOut_done)
-    );
-    */
     
 endmodule

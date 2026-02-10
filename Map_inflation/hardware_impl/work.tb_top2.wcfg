@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="676.001 ns"></ZoomEndTime>
-      <Cursor1Time time="170.000 ns"></Cursor1Time>
+      <ZoomStartTime time="55.006 ns"></ZoomStartTime>
+      <ZoomEndTime time="170.807 ns"></ZoomEndTime>
+      <Cursor1Time time="138.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="315"></NameColumnWidth>
-      <ValueColumnWidth column_width="179"></ValueColumnWidth>
+      <NameColumnWidth column_width="232"></NameColumnWidth>
+      <ValueColumnWidth column_width="145"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="20" />
    <wvobject type="group" fp_name="group135">
@@ -34,7 +34,7 @@
       <wvobject type="array" fp_name="/tb_top2/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/s_axis_tvalid">
          <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
@@ -73,7 +73,6 @@
    <wvobject type="group" fp_name="group171">
       <obj_property name="label">top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/tb_top2/DUT/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
@@ -340,6 +339,7 @@
    <wvobject type="group" fp_name="group313">
       <obj_property name="label">fifo1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /s_tvalid">
          <obj_property name="ElementShortName">s_tvalid</obj_property>
          <obj_property name="ObjectShortName">s_tvalid</obj_property>
@@ -385,6 +385,7 @@
    <wvobject type="group" fp_name="group314">
       <obj_property name="label">fifo2</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /s_tvalid">
          <obj_property name="ElementShortName">s_tvalid</obj_property>
          <obj_property name="ObjectShortName">s_tvalid</obj_property>
@@ -487,6 +488,7 @@
       <wvobject type="group" fp_name="group131">
          <obj_property name="label">PE(0,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -535,6 +537,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_weight">
             <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
@@ -547,10 +550,12 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_pixel_out">
             <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -559,6 +564,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_input_reg">
             <obj_property name="ElementShortName">pe_input_reg[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input_reg[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[1].pe_inst /pe_weight_reg">
             <obj_property name="ElementShortName">pe_weight_reg[7:0]</obj_property>
@@ -580,6 +586,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_weight">
             <obj_property name="ElementShortName">pe_weight[7:0]</obj_property>
@@ -592,10 +599,12 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_pixel_out">
             <obj_property name="ElementShortName">pe_pixel_out[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_pixel_out[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -604,6 +613,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_input_reg">
             <obj_property name="ElementShortName">pe_input_reg[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input_reg[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[2].pe_inst /pe_weight_reg">
             <obj_property name="ElementShortName">pe_weight_reg[7:0]</obj_property>
@@ -629,6 +639,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].row_sum_adder /adder_dataIn">
             <obj_property name="ElementShortName">adder_dataIn[47:0]</obj_property>
             <obj_property name="ObjectShortName">adder_dataIn[47:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].row_sum_adder /m_axis_tready">
             <obj_property name="ElementShortName">m_axis_tready</obj_property>
@@ -692,6 +703,11 @@
       <wvobject type="group" fp_name="group162">
          <obj_property name="label">pe(1,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_top2/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].genblk1[0].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -711,6 +727,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].genblk1[0].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].genblk1[0].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -737,6 +754,7 @@
       <wvobject type="group" fp_name="group180">
          <obj_property name="label">pe(1,1)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="logic" fp_name="/tb_top2/clk">
             <obj_property name="ElementShortName">clk</obj_property>
             <obj_property name="ObjectShortName">clk</obj_property>
@@ -760,6 +778,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].genblk1[1].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].genblk1[1].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -901,6 +920,7 @@
       <wvobject type="group" fp_name="group217">
          <obj_property name="label">pe(2,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[0].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -920,6 +940,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[0].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[0].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -946,6 +967,7 @@
       <wvobject type="group" fp_name="group231">
          <obj_property name="label">pe(2,1)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[1].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -965,6 +987,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[1].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[1].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -991,6 +1014,7 @@
       <wvobject type="group" fp_name="group245">
          <obj_property name="label">pe(2,2)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[2].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -1010,6 +1034,7 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[2].pe_inst /pe_output">
             <obj_property name="ElementShortName">pe_output[15:0]</obj_property>
             <obj_property name="ObjectShortName">pe_output[15:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[2].pe_inst /pe_done">
             <obj_property name="ElementShortName">pe_done</obj_property>
@@ -1146,31 +1171,6 @@
          <obj_property name="ObjectShortName">reg_s_tdata[0:2][17:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          <obj_property name="isExpanded"></obj_property>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[0]">
-            <obj_property name="ElementShortName">[0][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][17:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[1]">
-            <obj_property name="ElementShortName">[1][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][17:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[2]">
-            <obj_property name="ElementShortName">[2][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][17:0]</obj_property>
-            <obj_property name="Radix">BINARYRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[0]">
-            <obj_property name="ElementShortName">[0][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][17:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[1]">
-            <obj_property name="ElementShortName">[1][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][17:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[2]">
-            <obj_property name="ElementShortName">[2][17:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][17:0]</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tvalid">
          <obj_property name="ElementShortName">reg_s_tvalid[2:0]</obj_property>

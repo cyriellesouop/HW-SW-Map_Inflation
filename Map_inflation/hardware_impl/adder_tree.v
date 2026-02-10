@@ -53,19 +53,12 @@ module adder_tree #(
         end
         else if (fifo_axis_tready || !fifo_axis_tvalid) begin
             output_en <= adder_en;
-            //output_en <= adder_en && fifo_axis_tready ; // we enable output when adder is enable and fifo is not full
             if (adder_en) begin
                 for (j = 0; j < KERNEL_SIZE; j = j + 1) begin
                     unpacked_products[j] <= adder_dataIn[(j+1)*PRODUCT_WIDTH-1 -: PRODUCT_WIDTH];
                         
                 end
-            end
-          /*  else begin
-                // Clear internal regs when not enabled
-                for (j = 0; j < KERNEL_SIZE; j = j + 1) begin
-                    unpacked_products[j] <= {PRODUCT_WIDTH{1'b0}};
-                end
-            end  */          
+            end  
         end
     end
 
@@ -82,7 +75,7 @@ module adder_tree #(
     // ------------------------------------------------------------------
     // STAGE 3: Output register
     // ------------------------------------------------------------------
-    always @(posedge clk) begin
+   always @(posedge clk) begin
         if (!rstn) begin
             fifo_axis_tdata <= {FINAL_OUT_WIDTH{1'b0}};
 	    fifo_axis_tvalid <= 1'b0;
@@ -94,7 +87,7 @@ module adder_tree #(
                    fifo_axis_tdata <=  full_sum;
               end
         end
-    end
+    end 
 
        fifo_axis #(
         .DATAWIDTH (FINAL_OUT_WIDTH),

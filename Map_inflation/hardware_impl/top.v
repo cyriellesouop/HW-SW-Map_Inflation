@@ -63,8 +63,8 @@ module top #(
 
 
     // FULLY PIPELINED: PE processes whenever data is available
-    wire pe_en = pe_en_delayed && ready_pe_wrapper && m_axis_tready; 
-   // wire pe_en = (&fifo_m_tvalid || pipe_flushing ) && ready_pe_wrapper && m_axis_tready; 
+  wire pe_en = pe_en_delayed && ready_pe_wrapper && m_axis_tready; 
+ // wire pe_en = (&fifo_m_tvalid || pipe_flushing ) && ready_pe_wrapper && m_axis_tready; 
     
        
          //to put weights in the right order : Reverse the byte order 
@@ -186,27 +186,4 @@ module top #(
         .dataOut(pipe_flushing)
     );
     
-   
-   /* 
-    // 5.output FIFO
-    fifo_axis #(
-        .DATAWIDTH(DATAOUT_WIDTH),
-        .DEPTH(DEPTH),  // Match input FIFO depth
-        .PTR_WIDTH(PTR_WIDTH)
-    ) output_fifo (
-        .clk(clk),
-        .rstn(rstn),
-
-        // Input from PE_wrapper (producer)
-        .s_tvalid(pe_done),
-        .s_tdata(pe_dataout),
-        .s_tready(output_fifo_ready),
-
-        // Output to DMA (consumer)
-        .m_tready(m_axis_tready),
-        .m_tdata(m_axis_tdata),
-        .m_tvalid(m_axis_tvalid)
-    );
-
-     */
 endmodule

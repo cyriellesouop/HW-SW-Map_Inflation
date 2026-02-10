@@ -1,0 +1,4 @@
+images of different size  and double the size of standard images.
+How many window do we have in this standard kernel size?
+I know the time that my accelerator take to process one kernel. 
+How many  window k *  k , do we have in a matrice size of  N * N.

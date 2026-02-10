@@ -145,7 +145,7 @@ module tb_top2;
            end
        end 
        */
-       #1000;
+       #2000;
         
         $finish;
        

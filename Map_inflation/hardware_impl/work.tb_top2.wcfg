@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="103.718 ns"></ZoomStartTime>
-      <ZoomEndTime time="244.919 ns"></ZoomEndTime>
-      <Cursor1Time time="175.318 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="676.001 ns"></ZoomEndTime>
+      <Cursor1Time time="170.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="272"></NameColumnWidth>
-      <ValueColumnWidth column_width="162"></ValueColumnWidth>
+      <NameColumnWidth column_width="315"></NameColumnWidth>
+      <ValueColumnWidth column_width="179"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="20" />
    <wvobject type="group" fp_name="group135">
@@ -73,6 +73,7 @@
    <wvobject type="group" fp_name="group171">
       <obj_property name="label">top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/tb_top2/DUT/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
@@ -476,6 +477,7 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/row_tdata">
          <obj_property name="ElementShortName">row_tdata[53:0]</obj_property>
          <obj_property name="ObjectShortName">row_tdata[53:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="divider125" type="divider">
          <obj_property name="label">PE(0,0)</obj_property>
@@ -1113,6 +1115,8 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/s_axis_tvalid">
          <obj_property name="ElementShortName">s_axis_tvalid[2:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tvalid[2:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[53:0]</obj_property>
@@ -1145,17 +1149,27 @@
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[0]">
             <obj_property name="ElementShortName">[0][17:0]</obj_property>
             <obj_property name="ObjectShortName">[0][17:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[1]">
             <obj_property name="ElementShortName">[1][17:0]</obj_property>
             <obj_property name="ObjectShortName">[1][17:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[2]">
             <obj_property name="ElementShortName">[2][17:0]</obj_property>
             <obj_property name="ObjectShortName">[2][17:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">BINARYRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[0]">
+            <obj_property name="ElementShortName">[0][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[1]">
+            <obj_property name="ElementShortName">[1][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tdata[2]">
+            <obj_property name="ElementShortName">[2][17:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][17:0]</obj_property>
          </wvobject>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tvalid">
@@ -1166,6 +1180,7 @@
          <obj_property name="ElementShortName">count[1:0]</obj_property>
          <obj_property name="ObjectShortName">count[1:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/start_counter">
          <obj_property name="ElementShortName">start_counter</obj_property>
@@ -1225,8 +1240,8 @@
          <obj_property name="ObjectShortName">dataOut[0:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/flush_delay_inst/\genblk1.pipe ">
-         <obj_property name="ElementShortName">\genblk1.pipe [0:10][0:0]</obj_property>
-         <obj_property name="ObjectShortName">\genblk1.pipe [0:10][0:0]</obj_property>
+         <obj_property name="ElementShortName">\genblk1.pipe [0:19][0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.pipe [0:19][0:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/flush_delay_inst/\genblk1.i ">
          <obj_property name="ElementShortName">\genblk1.i [31:0]</obj_property>

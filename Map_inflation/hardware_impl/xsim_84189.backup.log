@@ -3,39 +3,29 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Feb  9 20:36:59 2026
-# Process ID         : 84594
+# Start of session at: Mon Feb  9 20:28:17 2026
+# Process ID         : 84189
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl
-# Command line       : xsim -source {xsim.dir/work.tb_top2/xsim_script.tcl}
+# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.log
 # Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/xsim.jou
 # Running On         : audrey-Precision-5520
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3701.548 MHz
+# CPU Frequency      : 3574.281 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 13768 MB
+# Available Virtual  : 13775 MB
 #-----------------------------------------------------------
-start_gui
 source xsim.dir/work.tb_top2/xsim_script.tcl
-# set_param project.enableReportConfiguration 0
-# load_feature core
-# current_fileset
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
-# xsim {work.tb_top2} -autoloadwcfg
+# xsim {work.tb_top2} -autoloadwcfg -runall
 Time resolution is 1 ps
 open_wave_config /home/audrey/Documents/convolution/Map_inflation/hardware_impl/work.tb_top2.wcfg
-run all
+run -all
 34000 first weights value is 1020304
 42000 second weights value is 5060708
 50000 second weights value is 9000000
@@ -74,3 +64,5 @@ Time=218000 | Output Handshake! Result=   231 (decimal:231)
 Time=222000 | Output Handshake! Result=   366 (decimal:366)
 Time=226000 | Output Handshake! Result=    96 (decimal:96)
 $finish called at time : 2090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 150
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Feb  9 20:28:21 2026...

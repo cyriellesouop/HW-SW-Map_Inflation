@@ -3,57 +3,37 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Feb  6 17:46:19 2026
-# Process ID         : 164892
+# Start of session at: Mon Feb  9 05:43:07 2026
+# Process ID         : 48665
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
-# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
+# Command line       : xsim -source {xsim.dir/work.tb_top2.wdb/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
 # Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.jou
 # Running On         : audrey-Precision-5520
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3551.557 MHz
+# CPU Frequency      : 3686.853 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 13029 MB
+# Available Virtual  : 13172 MB
 #-----------------------------------------------------------
-source xsim.dir/work.tb_top2/xsim_script.tcl
-# xsim {work.tb_top2} -autoloadwcfg -tclbatch {./../../sim.tcl}
-Time resolution is 1 ps
-source ./../../sim.tcl
-## open_saif myTop.saif
-## log_saif /tb_top2/DUT/*
-## run -all
-34000 first weights value is 1020304
-42000 second weights value is 5060708
-50000 second weights value is 9000000
-70000 first data value is a0d1000
-78000 first data value is b0e1100
-86000 first data value is c0f1200
-Time=102000 | Output Handshake! Result=     x (decimal:x)
-Time=106000 | Output Handshake! Result=     x (decimal:x)
-Time=110000 | Output Handshake! Result=     x (decimal:x)
-Time=114000 | Output Handshake! Result=     x (decimal:x)
-Time=118000 | Output Handshake! Result=     0 (decimal:0)
-Time=122000 | Output Handshake! Result=     0 (decimal:0)
-Time=126000 | Output Handshake! Result=     x (decimal:x)
-Time=130000 | Output Handshake! Result=     x (decimal:x)
-Time=134000 | Output Handshake! Result=     0 (decimal:0)
-Time=138000 | Output Handshake! Result=    84 (decimal:84)
-Time=146000 | Output Handshake! Result=   201 (decimal:201)
-Time=150000 | Output Handshake! Result=     x (decimal:x)
-Time=154000 | Output Handshake! Result=    90 (decimal:90)
-Time=158000 | Output Handshake! Result=   201 (decimal:201)
-Time=162000 | Output Handshake! Result=   318 (decimal:318)
-Time=166000 | Output Handshake! Result=    96 (decimal:96)
-Time=170000 | Output Handshake! Result=   216 (decimal:216)
-Time=174000 | Output Handshake! Result=   342 (decimal:342)
-Time=178000 | Output Handshake! Result=    96 (decimal:96)
-Time=182000 | Output Handshake! Result=   231 (decimal:231)
-$finish called at time : 1090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 150
-## quit
-INFO: [Common 17-206] Exiting xsim at Fri Feb  6 17:46:23 2026...
+start_gui
+source xsim.dir/work.tb_top2.wdb/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
+# xsim {work.tb_top2.wdb} -autoloadwcfg
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Feb  9 05:43:43 2026...

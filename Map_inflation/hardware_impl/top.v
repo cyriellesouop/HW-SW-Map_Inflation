@@ -27,7 +27,7 @@ module top #(
     localparam TOTAL_BYTES = KERNEL_SIZE * KERNEL_SIZE;  // each weight is on 8 bits(1byte). So the total byte of a weight bus is equal to the kernel  dimension : KERNEL_SIZE * KERNEL_SIZE
     localparam ADDER_LATENCY    = 3; // Adder latency: 3 cycles
     localparam CROSSBAR_LATENCY = 2; // crossbar latency Input reg + Output reg
-    localparam TOTAL_DONE_DELAY = (2 * KERNEL_SIZE) + ADDER_LATENCY + CROSSBAR_LATENCY; // KERNEL_SIZE : latency of The last pixel needs to reach the very last PE
+    localparam TOTAL_DONE_DELAY =(2 * KERNEL_SIZE) + ADDER_LATENCY + CROSSBAR_LATENCY; // KERNEL_SIZE : latency of The last pixel needs to reach the very last PE
                                                                                        // KERNEL_SIZE : the last row might have to wait for the other rows to be "read" before its final pixel can exit
 
     // Weight loader signals
@@ -53,6 +53,9 @@ module top #(
     // output FIFO signals
     //wire output_fifo_ready;
     wire [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weight_for_pe;// Define the correctly ordered weight bus
+    
+    reg pe_en_delayed;
+    always @(posedge clk) pe_en_delayed <= (&fifo_m_tvalid || pipe_flushing);
 
     // During weight loading: route input to weight loader
     // During streaming: route input to data accumulator
@@ -60,7 +63,8 @@ module top #(
 
 
     // FULLY PIPELINED: PE processes whenever data is available
-    wire pe_en = (&fifo_m_tvalid || pipe_flushing ) && ready_pe_wrapper && m_axis_tready; 
+    wire pe_en = pe_en_delayed && ready_pe_wrapper && m_axis_tready; 
+   // wire pe_en = (&fifo_m_tvalid || pipe_flushing ) && ready_pe_wrapper && m_axis_tready; 
     
        
          //to put weights in the right order : Reverse the byte order 

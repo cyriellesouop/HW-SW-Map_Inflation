@@ -66,6 +66,12 @@ xvlog top.v
 
 xvlog tb_top2.v
 
+#xvlog tb_data_accumulator.v
+
+#xelab tb_data_accumulator -debug all
+
+#xsim tb_data_accumulator -R
+
 xelab tb_top2 -debug all
 
 xsim tb_top2 -R

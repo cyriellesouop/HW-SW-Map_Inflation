@@ -115,6 +115,7 @@ module top #(
         
         // Enable only when NOT loading weights
         .enable(!is_loading_weights),
+        //.is_loading_weights(is_loading_weights), // pass the signal
         
         // Slave interface (only active when not loading weights)
         .s_axis_tdata(s_axis_tdata),
@@ -185,5 +186,6 @@ module top #(
         .dataIn(&fifo_m_tvalid), 
         .dataOut(pipe_flushing)
     );
+
     
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Mon Feb  9 05:39:28 2026
+| Date             : Tue Feb 10 05:20:41 2026
 | Host             : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power_opt -file power_opt.rpt
 | Design           : top
@@ -34,7 +34,7 @@ Table of Contents
 +---------------------------+-------+------------+------------+----------------+
 | Number of BRAMs           | 0     | 0          | 0          | 0.000          |
 | Number of SRLs            | 0     | 0          | 0          | 0.000          |
-| Number of Slice Registers | 907   | 707        | 0          | 77.949         |
+| Number of Slice Registers | 860   | 659        | 0          | 76.628         |
 | Number of XPM URAMs       | 0     | 0          | 0          | 0.000          |
 +---------------------------+-------+------------+------------+----------------+
 
@@ -178,14 +178,6 @@ None
 | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[0].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[0].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[0].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[0]                    | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[1]                    | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[2]                    | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
@@ -202,14 +194,6 @@ None
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[1].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[1].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[0].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[0]                    | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[1]                    | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[2]                    | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
@@ -226,14 +210,6 @@ None
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].genblk1[2].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[0].genblk1[2].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[0].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[0]  | CE      | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1_n_0    |
 | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[1]  | CE      | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1_n_0    |
 | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[2]  | CE      | pe_engine/genblk1[0].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1_n_0    |
@@ -339,14 +315,6 @@ None
 | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[0].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[0].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[1].genblk1[0].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[0]                    | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[1]                    | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[2]                    | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
@@ -363,14 +331,6 @@ None
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[1].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[1].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[1].genblk1[1].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[0]                    | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[1]                    | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[2]                    | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
@@ -387,14 +347,6 @@ None
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[13]                   | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[14]                   | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].genblk1[2].pe_inst/pe_output_reg[15]                   | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[0]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[1]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[2]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[3]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[4]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[5]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[6]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
-| pe_engine/genblk1[1].genblk1[2].pe_inst/pe_pixel_out_reg[7]                 | CE      | pe_engine/genblk1[1].genblk1[2].pe_inst/E[0]                                       |
 | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[0]  | CE      | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1__1_n_0 |
 | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[1]  | CE      | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1__1_n_0 |
 | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut_reg[2]  | CE      | pe_engine/genblk1[1].row_sum_adder/fifo_axis_inst/fifo_inst/dataOut[17]_i_1__1_n_0 |
@@ -621,30 +573,30 @@ None
 | pe_engine/genblk1[2].row_sum_adder/unpacked_products_reg[2][13]             | CE      | pe_engine/genblk1[2].row_sum_adder/unpacked_products                               |
 | pe_engine/genblk1[2].row_sum_adder/unpacked_products_reg[2][14]             | CE      | pe_engine/genblk1[2].row_sum_adder/unpacked_products                               |
 | pe_engine/genblk1[2].row_sum_adder/unpacked_products_reg[2][15]             | CE      | pe_engine/genblk1[2].row_sum_adder/unpacked_products                               |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]_0[0]                        |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
-| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/E[0]                                       |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[0].fifo_inst/fifo_inst/dataOut[7]_i_1_n_0                         |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[1].fifo_inst/fifo_inst/dataOut[7]_i_1__0_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[0]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[1]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[2]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[3]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[4]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[5]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[6]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
+| unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut_reg[7]                      | CE      | unpacker/genblk1[2].fifo_inst/fifo_inst/dataOut[7]_i_1__1_n_0                      |
 | weight_loader_inst/transfer_counter_reg[0]                                  | CE      | weight_loader_inst/transfer_counter[31]_i_2_n_0                                    |
 | weight_loader_inst/transfer_counter_reg[1]                                  | CE      | weight_loader_inst/transfer_counter[31]_i_2_n_0                                    |
 | weight_loader_inst/transfer_counter_reg[2]                                  | CE      | weight_loader_inst/transfer_counter[31]_i_2_n_0                                    |

@@ -3,7 +3,7 @@
 module tb_top2;
 
     // Parameters matching the top module
-    parameter KERNEL_SIZE  = 3;
+    parameter KERNEL_SIZE  = 5;
     parameter DATA_WIDTH   = 8;
     parameter WEIGHT_WIDTH = 8;
     parameter DEPTH        = 8;
@@ -58,10 +58,12 @@ module tb_top2;
     
     initial begin
        /*
-       1 2 3 10       10 11 12 20     (1*10 + 2*13 + 3*16 + 10*23) , (1*11 + 2*14 + 3*17 + 10*24) , (1*12+ 2*15 + 3*18 + 10*25) ,  (1*20+ 2*21 + 3*22 + 10*26)
-       4 5 6 11   *   13 14 15 21  =  (4*10 + 5*13 + 6*16 + 11*23) , (4*11 + 5*14 + 6*17 + 11*24) (4*12+ 5*15 + 6*18 + 11*25) (4*20+ 5*21 + 6*22 + 11*26)
-       7 8 9 12       16 17 18 22     (7*10 + 8*13 + 9*16 + 12*23) , (7*11 + 8*14 + 9*17 + 12*24 ) (7*12+ 8*15 + 9*18 + 12*25) ( 7*20+ 8*21 + 9*22 + 12*26 )
-       20 21 22 23    23 24 25 26      (20*10 + 21*13 + 22*16 + 23*23) , (20*11 + 21*14 + 22*17 + 23*24 ) (20*12+ 21*15 + 22*18 + 23*25) ( 20*20+ 21*21 + 22*22 + 23*26 )
+       01 02 03 04 05           26 27 28 29 30    0590 0605 0620 0635 0650
+       06 07 08 09 10      *    31 32 33 34 35 =  1490 1530 1570 1610 1650
+       11 12 13 14 15           36 37 38 39 40    2390 2455 2520 2585 2650 
+       16 17 18 19 20           41 42 43 44 45    3290 3380 3470 3560 3650
+       21 22 23 24 25           46 47 48 49 50    4190 4305 4420 4535 4650
+       
        
        1 2 3 10       10 11 12 20     314 , 330, 346   388   
        4 5 6 11   *   13 14 15 21   = 454 , 480, 506   603      
@@ -88,7 +90,8 @@ module tb_top2;
        
        //weigth load
       // s_axis_tdata = 32'b00000001_00000010_00000011_00000100;   // first transfer weights : 1,2,3,4 
-       s_axis_tdata  = 32'h01_02_03_04;
+      // s_axis_tdata  = 32'h01_02_03_04; 3*3
+       s_axis_tdata  = 32'h01_02_03_04; 
        s_axis_tvalid = 1'b1;  
        @(posedge clk);   
        wait(s_axis_tready);
@@ -98,6 +101,7 @@ module tb_top2;
        
        //weigth load;
       // s_axis_tdata = 32'b00000101_00000100_00000111_00001000;    // second transfer weights : 5,6,7,8 
+      // s_axis_tdata  = 32'h05_06_07_08; 3*3
        s_axis_tdata  = 32'h05_06_07_08;
        s_axis_tvalid = 1'b1;     
        @(posedge clk);
@@ -108,19 +112,69 @@ module tb_top2;
        
        //weigth = 32'h789;
        //s_axis_tdata = 32'b00000000_00000000_00000000_00001001;   // third transfer weights :  9
-       s_axis_tdata  = 32'h09_00_00_00;
+       //s_axis_tdata  = 32'h09_00_00_00;
+       s_axis_tdata  = 32'h09_0a_0b_0c;
        s_axis_tvalid = 1'b1;     
        @(posedge clk);
        wait(s_axis_tready);
        $display ("%0t second weights value is %0h", $time , s_axis_tdata);
        s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+       s_axis_tdata  = 32'h0d_0e_0f_10;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+       s_axis_tdata  = 32'h11_12_13_14;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+        s_axis_tdata  = 32'h15_16_17_18;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+       s_axis_tdata  = 32'h19_00_00_00;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+        /*s_axis_tdata  = 32'h19_00_00_00;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;*/
+      
+
        
        //repeat(2) @(posedge clk); // Gap between weights and data
-       repeat(4) @(posedge clk);
+      /* repeat(3) @(posedge clk);
+      s_axis_tdata  = 32'h00_00_00_00;
+       s_axis_tvalid = 1'b1;     
+       @(posedge clk);
+       wait(s_axis_tready);
+       $display ("%0t second weights value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk); */
        
        // send data   
-       //s_axis_tdata  = 32'h0a_0d_10_0b; // 10,13,16,11 first transfer data
-       s_axis_tdata  = 32'h0a_0d_10_0b;   // 10,13,16 first row data
+      
+       s_axis_tdata  = 32'h1A_1F_24_29;   //  first row data
        s_axis_tvalid = 1'b1;    
        @(posedge clk);   
        wait(s_axis_tready);
@@ -128,8 +182,16 @@ module tb_top2;
        s_axis_tvalid = 1'b0;
        @(posedge clk);
        
-       //s_axis_tdata  = 32'h0e_11_0c_0f; // 14,17,12,15 second transfer data
-       s_axis_tdata  = 32'h0e_11_0c_0f; // 11,14,17 second row data
+       s_axis_tdata  = 32'h2E_1B_20_25;   //  first row data
+       s_axis_tvalid = 1'b1;    
+       @(posedge clk);   
+       wait(s_axis_tready);
+       $display ("%0t first data value is %0h", $time , s_axis_tdata);  
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+     
+       s_axis_tdata  = 32'h2A_2F_1C_21; // 11,14,17 second row data
        s_axis_tvalid = 1'b1;    
        @(posedge clk);   
        wait(s_axis_tready);
@@ -138,7 +200,7 @@ module tb_top2;
        @(posedge clk);
        
        //s_axis_tdata = 32'b00000000_00000000_00000000_00010010;   // 18 third data transfer
-       s_axis_tdata  = 32'h12_00_00_00;
+       s_axis_tdata  = 32'h26_2B_30_1D;
        s_axis_tvalid = 1'b1;    
        @(posedge clk);   
        wait(s_axis_tready);
@@ -146,14 +208,32 @@ module tb_top2;
        s_axis_tvalid = 1'b0;
        @(posedge clk);
        
-     /* repeat(1000) begin
-           @(posedge clk);
-           if (m_axis_tvalid && m_axis_tready) begin
-               $display("%0t | VALID OUTPUT: %0d", $time, m_axis_tdata);
-           end
-       end 
-       */
-       #3000;
+       s_axis_tdata  = 32'h22_27_2C_31;
+       s_axis_tvalid = 1'b1;    
+       @(posedge clk);   
+       wait(s_axis_tready);
+       $display ("%0t first data value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+       s_axis_tdata  = 32'h1E_23_28_2D;
+       s_axis_tvalid = 1'b1;    
+       @(posedge clk);   
+       wait(s_axis_tready);
+       $display ("%0t first data value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+       s_axis_tdata  = 32'h32_00_00_00;
+       s_axis_tvalid = 1'b1;    
+       @(posedge clk);   
+       wait(s_axis_tready);
+       $display ("%0t first data value is %0h", $time , s_axis_tdata);
+       s_axis_tvalid = 1'b0;
+       @(posedge clk);
+       
+  
+       #10000;
         
         $finish;
        

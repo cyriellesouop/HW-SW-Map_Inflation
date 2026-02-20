@@ -331,7 +331,7 @@ module tb_top2;
        @(posedge clk);
        
 
-       #6000;
+       #8000;
         
         $finish;
        

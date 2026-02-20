@@ -1,21 +1,21 @@
 `timescale 1ns/1ps
 
-module tb_top;
+module tb_top2;
 
     // Parameters matching the top module
-    parameter KERNEL_SIZE  = 16;
+    parameter KERNEL_SIZE  = 3;
     parameter DATA_WIDTH   = 8;
     parameter WEIGHT_WIDTH = 8;
-    parameter DEPTH        = 4;
-    parameter PTR_WIDTH    = 2;
+    parameter DEPTH        = 8;
+    parameter PTR_WIDTH    = 3;
     parameter BUS_WIDTH    = 32;
     
     localparam PERIOD = 4; //250 MHZ
     // Calculated parameters
-    localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + KERNEL_SIZE;
-    localparam DATAOUT_WIDTH  = SUM_WIDTH * KERNEL_SIZE;
+    localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + $clog2(KERNEL_SIZE);
+    localparam DATAOUT_WIDTH  = SUM_WIDTH ;
     localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;
-    localparam NUM_WEIGHT_TRANSFERS = (WEIGHTIN_WIDTH + BUS_WIDTH - 1) / BUS_WIDTH;
+   // localparam NUM_WEIGHT_TRANSFERS = (WEIGHTIN_WIDTH + BUS_WIDTH - 1) / BUS_WIDTH;
     
     
     reg clk=0;
@@ -39,7 +39,7 @@ module tb_top;
         .DEPTH(DEPTH),
         .PTR_WIDTH(PTR_WIDTH),
         .BUS_WIDTH(BUS_WIDTH)
-    ) dut (
+    ) DUT (
         .clk(clk),
         .rstn(rstn),
         .s_axis_tdata(s_axis_tdata),
@@ -50,215 +50,95 @@ module tb_top;
         .m_axis_tvalid(m_axis_tvalid)
     );
     
+    reg[31:0] weight;
+    reg[31:0] data;
+   
     // --------------Clock Generation --------------------------------
     always #(PERIOD/2) clk = ~clk;
+    
+    
+       /*
+       1 2 3 10       10 11 12 20     (1*10 + 2*13 + 3*16 + 10*23) , (1*11 + 2*14 + 3*17 + 10*24) , (1*12+ 2*15 + 3*18 + 10*25) ,  (1*20+ 2*21 + 3*22 + 10*26)
+       4 5 6 11   *   13 14 15 21  =  (4*10 + 5*13 + 6*16 + 11*23) , (4*11 + 5*14 + 6*17 + 11*24) (4*12+ 5*15 + 6*18 + 11*25) (4*20+ 5*21 + 6*22 + 11*26)
+       7 8 9 12       16 17 18 22     (7*10 + 8*13 + 9*16 + 12*23) , (7*11 + 8*14 + 9*17 + 12*24 ) (7*12+ 8*15 + 9*18 + 12*25) ( 7*20+ 8*21 + 9*22 + 12*26 )
+       20 21 22 23    23 24 25 26      (20*10 + 21*13 + 22*16 + 23*23) , (20*11 + 21*14 + 22*17 + 23*24 ) (20*12+ 21*15 + 22*18 + 23*25) ( 20*20+ 21*21 + 22*22 + 23*26 )
+       
+       1 2 3 10       10 11 12 20     314 , 330, 346   388   
+       4 5 6 11   *   13 14 15 21   = 454 , 480, 506   603      
+       7 8 9 12       16 17 18 22     594 , 630, 666   818
+       20 21 22 23    23 24 25 26    1354  1440 1526  1923  
+       
+       
+       
+       1 2 3     10 11 12     84 , 90, 96        dataOut(0,0) = 84 , dataOut(0,1)(1,0) = 90__201  dataOut(0,2)(1,1)(2,0) = 96__216__318
+       4 5 6  *  13 14 15   = 201 , 216, 231      dataOut(.,.)(1,2)(2,1) = xx_  , dataOut(0,1)(1,0) =   dataOut(0,2)(1,1)(2,0) = 
+       7 8 9     16 17 18     318 , 342, 366
+       */
+    task automatic send_word(input [BUS_WIDTH-1:0] w);
+    begin
+        s_axis_tdata  <= w;
+        s_axis_tvalid <= 1'b1;
 
+        // wait until a real handshake can occur
+        while (!s_axis_tready)
+            @(posedge clk);
 
-    // Test variables
-    integer i, j, k;
-    reg [7:0] test_weights [0:KERNEL_SIZE*KERNEL_SIZE-1];
-    reg [7:0] test_data [0:KERNEL_SIZE-1];
-
-    // Verification variables
-    integer num_errors;
-    integer num_checks;
-    reg [SUM_WIDTH-1:0] expected_results [0:KERNEL_SIZE-1];
-    reg [SUM_WIDTH-1:0] actual_result;
-
-      //function to compute expected results
-       function   [SUM_WIDTH-1:0] calculate_expected_pe_output;
-        input integer pe_index;
-        input [7:0] data_row [0:KERNEL_SIZE-1];
-        input [7:0] weights [0:KERNEL_SIZE*KERNEL_SIZE-1];
-        
-        integer idx;
-        integer weight_base;
-        reg [31:0] accumulator;
-        
-        begin
-            accumulator = 0;
-            weight_base = pe_index * KERNEL_SIZE;
-            
-            for (idx = 0; idx < KERNEL_SIZE; idx = idx + 1) begin
-                accumulator = accumulator + (data_row[idx] * weights[weight_base + idx]);
-            end
-            
-            calculate_expected_pe_output = accumulator[SUM_WIDTH-1:0];
-        end
-    endfunction
-
-    // task to verify if the expected result match the DUT result
-    task verify_output;
-        input [DATAOUT_WIDTH-1:0] output_data;
-        input integer row_number;
-        reg [31:0] expected_sum;
-        reg [SUM_WIDTH-1:0] extracted_result;
-        integer pe_idx;
-        integer weight_idx;
-
-        begin
-            $display("\n--- Verifying Output for Row %0d ---", row_number);
-
-            // Check each PE output (KERNEL_SIZE results per row)
-            for (pe_idx = 0; pe_idx < KERNEL_SIZE; pe_idx = pe_idx + 1) begin
-                // Extract the result for this PE
-                extracted_result = output_data[pe_idx*SUM_WIDTH +: SUM_WIDTH];
-
-                // Calculate expected result: sum of (data[i] * weight[pe_idx][i])
-                expected_sum = 0;
-                for (k = 0; k < KERNEL_SIZE; k = k + 1) begin
-                    weight_idx = pe_idx * KERNEL_SIZE + k;
-                    expected_sum = expected_sum + (test_data[k] * test_weights[weight_idx]);
-                end
-
-                // Compare expected vs actual
-                num_checks = num_checks + 1;
-
-                if (extracted_result == expected_sum) begin
-                    $display("%0t  PE[%0d]: PASS - Expected: %0d, Got: %0d", $time, pe_idx, expected_sum, extracted_result);
-                end 
-		else begin
-                    $display("%0t  PE[%0d]: FAIL - Expected: %0d, Got: %0d", $time,pe_idx, expected_sum, extracted_result);
-                    
-		    num_errors = num_errors + 1;
-
-                    // Show detailed calculation for debugging
-                    $display(" %0t Debug: Data values used:", $time);
-                    for (k = 0; k < KERNEL_SIZE; k = k + 1) begin
-                        weight_idx = pe_idx * KERNEL_SIZE + k;
-                        $display(" %0t data[%0d]=%0d * weight[%0d,%0d]=%0d = %0d",$time, k, test_data[k], pe_idx, k, test_weights[weight_idx], test_data[k] * test_weights[weight_idx]);
-                    end
-                end
-            end
-        end
+        // handshake happens on this edge
+        @(posedge clk);
+    end
     endtask
 
-
-
-
-    
-    // Main test sequence
+    // ------------------------------------------------------------
+    // Stimulus
+    // ------------------------------------------------------------
     initial begin
-        // Initialize signals
-        rstn = 0;
-        s_axis_tdata = 0;
-        s_axis_tvalid = 0;
-        m_axis_tready = 1;
-        
-        // Wait for a few cycles
-        repeat(10) @(posedge clk);
-        rstn = 1;
-	repeat(3) @(posedge clk);
-        
-        
-        //Load Weights
-        
-        // Initialize test weights by incrementing 
-        for (i = 0; i < KERNEL_SIZE*KERNEL_SIZE; i = i + 1) begin
-	      test_weights[i] = i;
-           // test_weights[i] = i % 256;
-        end
-        
-        // Send weights via AXI Stream
-        for (i = 0; i < NUM_WEIGHT_TRANSFERS; i = i + 1) begin
-            @(posedge clk);
-            wait(s_axis_tready);
-            
-            s_axis_tvalid = 1;
-            // Pack 4 weights into 32-bit bus
-            s_axis_tdata = {test_weights[i*4+3], test_weights[i*4+2], test_weights[i*4+1], test_weights[i*4]};
-            
-            @(posedge clk);
-            $display(" %0t Sent weight transfer No %0d/ on %0d: 0x%h", $time, i+1, NUM_WEIGHT_TRANSFERS, s_axis_tdata);
-        end
-        
-        s_axis_tvalid = 0;
+
+        rstn           = 0;
+        s_axis_tdata   = 0;
+        s_axis_tvalid  = 0;
+        m_axis_tready  = 0;
+
         repeat(5) @(posedge clk);
-        
-       // $display(" %0t Weight loading complete", $time);
-        
-        // Stream Input Data
-        $display("\n %0t Streaming Input Data", $time);
-        
-        // Send multiple rows of data
-        for (j = 0; j < 10; j = j + 1) begin
-            // Prepare test data for this iteration
-            for (i = 0; i < KERNEL_SIZE; i = i + 1) begin
-                test_data[i] = (j + i) % 256; // this is to avoid overflow in case i+j is too big . input data should fit on 32bits. 
-            end
-            
-            // Send data (4 transfers for 16 bytes)
-            for (i = 0; i < KERNEL_SIZE/4; i = i + 1) begin
-                @(posedge clk);
-                wait(s_axis_tready);
-                
-                s_axis_tvalid = 1;
-                s_axis_tdata = {test_data[i*4+3], test_data[i*4+2], test_data[i*4+1], test_data[i*4]};
-                
-                @(posedge clk);
-            end
-            
-            s_axis_tvalid = 0;
-            $display(" %0t Sent data row %0d", $time, j);
-            
-            // Small delay between rows
-            repeat(3) @(posedge clk);
-        end
-        
-        $display("\n %0t  Collecting Results",$time);
-        
+        rstn = 1;
+
+        repeat(3) @(posedge clk);
         m_axis_tready = 1;
+        @(posedge clk);
 
-	// Wait for and verify outputs
-        for (j = 0; j < 10; j = j + 1) begin
-            // Wait for valid output
-            @(posedge clk);
-            while (!m_axis_tvalid) @(posedge clk);
+        // ----------------------------
+        // WEIGHTS (back-to-back)
+        // ----------------------------
+        send_word(32'h01_02_03_04);   // 1 2 3 4
+        send_word(32'h05_06_07_08);   // 5 6 7 8
+        send_word(32'h09_00_00_00);   // 9
 
-            // Reconstruct the test data used for this output
-            for (i = 0; i < KERNEL_SIZE; i = i + 1) begin
-                test_data[i] = (j  + i) % 256 ;
-            end
+        // stop driving for a moment (optional)
+        s_axis_tvalid <= 1'b0;
 
-            // Verify the output
-            verify_output(m_axis_tdata, j);
+        // small gap between weight phase and data phase
+        repeat(2) @(posedge clk);
 
-            @(posedge clk);
-        end
-        
-        // Wait for outputs
-       /* repeat(1000) @(posedge clk);
-            
-        for (i = 0; i < 10; i = i + 1) begin
-            @(posedge clk);
-            wait(m_axis_tvalid);
-                    
-            $display("%0t - Received output %0d: m_axis_tdata = %0d",  $time, i, m_axis_tdata[SUM_WIDTH-1:0]);
-                    
-            @(posedge clk);
-         end
-	 */
-        
-        repeat(20) @(posedge clk);
-	$display("Total Checks: %0d", num_checks);
-        $display("Total Errors: %0d", num_errors);
+        // ----------------------------
+        // DATA (back-to-back)
+        // ----------------------------
+        send_word(32'h0a_0d_10_0b);   // 10,13,16,11
+        send_word(32'h0e_11_0c_0f);   // 14,17,12,15
+        send_word(32'h12_00_00_00);   // 18
 
-        if (num_errors == 0) begin
-            $display("*** TEST PASSED - All outputs correct! ***");
-        end else begin
-            $display("*** TEST FAILED - %0d errors detected ***", num_errors);
-        end
+        s_axis_tvalid <= 1'b0;
 
-	#50;
-        
+        #6000;
         $finish;
     end
-    
-    /*
-    initial begin
-        $monitor("%0t | rstn=%b | s_valid=%b | s_ready=%b | m_valid=%b | m_ready=%b", $time, rstn, s_axis_tvalid, s_axis_tready, m_axis_tvalid, m_axis_tready);
+
+    // ------------------------------------------------------------
+    // Output monitor
+    // ------------------------------------------------------------
+    always @(posedge clk) begin
+        if (m_axis_tvalid && m_axis_tready) begin
+            $display("Time=%0t | Output handshake | Result=%0d",
+                      $time, m_axis_tdata);
+        end
     end
-    */
-    
 
 endmodule

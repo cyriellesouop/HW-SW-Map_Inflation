@@ -14,7 +14,7 @@ module pe
         input pe_en,                                         // when this is asserted,  the PE start
 	// outpute interface
 	output  [(DATA_WIDTH-1):0] pe_pixel_out,          // output pixel = input pixel transfered to the next PE
-	output reg [(DATA_WIDTH+WEIGHT_WIDTH)-1 :0] pe_output,  // this is the result currently computed
+	(* use_dsp = "yes" *)  output reg [(DATA_WIDTH+WEIGHT_WIDTH)-1 :0] pe_output,  // this is the result currently computed
 	output reg pe_done
      );
 
@@ -42,7 +42,7 @@ module pe
             if (pe_en_reg) begin
              //  pe_pixel_out <= pe_input; // to allow differents row pe to get an input at the same clock cyle
                 
-		(* use_dsp = "yes" *) // to Map the multiplication below to a DSP block
+		//(* use_dsp = "yes" *) // to Map the multiplication below to a DSP block
                 pe_output <= pe_input_reg * pe_weight_reg;
                pe_done    <= 1'b1;
             end

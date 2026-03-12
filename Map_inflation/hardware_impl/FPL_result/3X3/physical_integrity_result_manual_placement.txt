@@ -1,0 +1,14 @@
+Table 1: Physical Implementation Metrics
+-------------------------------|-----------------------
+Total Routing Antennas         | 54
+Total Routing Islands          | 0
+
+(Manually Placed Logic (Cells))
+
+Cells at SLICE_X34Y7 (Accum)   | 5
+Cells at SLICE_X34Y8 (Weight)  | 5
+Cells at SLICE_X30Y11 (Weight) | 6
+
+Managed AXI-Stream Pins        | 53
+
+Analysis: "To ensure deterministic timing closure at 290 MHz, a congestion-aware methodology was employed. By manually distributing 53 AXI-Stream partition pins across dedicated interconnect columns, we eliminated routing 'islands'—a common limitation in high-density FPGA implementations. Furthermore, inter-slice isolation was achieved by pinning 16 critical registers to specific physical sites (SLICE_X34Y7, X34Y8, and X30Y11), adding controlled wire delay to satisfy hold-time requirements while maintaining a minimal logic depth."

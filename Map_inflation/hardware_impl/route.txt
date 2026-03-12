@@ -1,0 +1,37 @@
+Design Route Status
+                                               :      # nets :
+   ------------------------------------------- : ----------- :
+   # of logical nets.......................... :        1453 :
+       # of nets not needing routing.......... :         425 :
+           # of internally routed nets........ :         359 :
+           # of nets with no loads............ :          30 :
+           # of implicitly routed ports....... :          36 :
+       # of routable nets..................... :        1028 :
+           # of fully routed nets............. :        1009 :
+       # of nets with routing errors.......... :          52 :
+           # of nets with antennas/islands.... :          52 :
+   ------------------------------------------- : ----------- :
+
+
+Nets with Routing Errors: (only the first 10 nets are listed)
+  pe_engine/crossbar_inst/m_axis_tdata[0]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[10]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[11]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[12]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[13]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[14]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[15]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[16]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[17]
+    Islands reason: This net has no logical loads but has route data.
+  pe_engine/crossbar_inst/m_axis_tdata[1]
+    Islands reason: This net has no logical loads but has route data.
+

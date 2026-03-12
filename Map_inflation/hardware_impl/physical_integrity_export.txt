@@ -1,0 +1,12 @@
+Table 1: Physical Implementation Metrics
+-------------------------------|-----------------------
+Total Routing Antennas         | 0
+Total Routing Islands          | 0
+
+(Manually Placed Logic (Cells))
+
+Cells at SLICE_X34Y7 (Accum)   | 5
+Cells at SLICE_X34Y8 (Weight)  | 5
+Cells at SLICE_X30Y11 (Weight) | 6
+
+Managed AXI-Stream Pins        | 53

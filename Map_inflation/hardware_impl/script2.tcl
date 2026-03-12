@@ -104,25 +104,23 @@ read_verilog ./../delay.v
 read_verilog ./../pe_wrapper.v
 read_verilog ./../crossbar.v
 read_verilog ./../top.v
+read_verilog ./../top_ooc_wrapper.v
 
 
 #load constraints files
-read_xdc ./../timingConstraint.xdc
+read_xdc -mode out_of_context  ./../timingConstraint.xdc
 #read_xdc ./../pins.xdc
-#Vivado% set_property CARRY_REMAP 1 [get_cells -hier -filter {ref_name == CARRY8}]
+#Vivado% set_property CARRY_REMAP 1 [get_cells -hier -filter {ref_name == CARRY8}
 
 synth_design -mode out_of_context -top $top_module -part $part_name -directive LogicCompaction 
 #-mode out_of_context -directive LogicCompaction 
 write_checkpoint -force  synth_checkpoint.dcp
 # optimization
+#opt_design 
 opt_design  -remap -resynth_remap 
 
 #placement
 place_design 
-
-#set_property IS_LOC_FIXED true [get_cells pe_engine/crossbar_inst/m_axis_tdata_reg\[*\]]
-#set_property IS_BEL_FIXED true [get_cells pe_engine/crossbar_inst/m_axis_tdata_reg\[*\]]
-
 
 # post-placement optimization
 phys_opt_design  -insert_negative_edge_ffs -placement_opt -dsp_register_opt -hold_fix
@@ -131,25 +129,15 @@ phys_opt_design  -insert_negative_edge_ffs -placement_opt -dsp_register_opt -hol
 route_design -tns_cleanup -directive AggressiveExplore 
 #AdvancedSkewModeling  #NoTimingRelaxation
 
-# We must unroute first so place_design can move Partition Pins if needed
-route_design -unroute
-
-#Run optimization after placement to improve critical path timing at the expense of additional placement and routing runtime.
-place_design  -post_place_opt
-
-# 3. Final Route (This will reconnect the Partition Pins to the new locations)
-route_design -directive AggressiveExplore
-
-
 #post routing optimization
-phys_opt_design -routing_opt -hold_fix
+#phys_opt_design -routing_opt -hold_fix
+phys_opt_design -hold_fix
+
 write_checkpoint -force final_checkpoint.dcp
 #reports
 report_utilization -file  utilization.rpt
 report_timing_summary -file timing_summary.rpt
 
-#Resets the attributes of the switching activity on all nets, ports, pins, and cells in the design
-#reset_switching_activity -all
 
 read_saif -strip_path tb_top2/DUT ./../sim/work/myTop.saif
 

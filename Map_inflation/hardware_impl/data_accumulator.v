@@ -28,8 +28,8 @@ module data_accumulator #(
 
     reg [SR_BITS-1:0] shift_reg;
     reg [CNT_W-1:0]   elem_count;
-    reg [BUS_WIDTH-1:0] in_buf_data;  // One-word input buffer
-    reg                 in_buf_valid;
+    (* DONT_TOUCH = "TRUE"*) reg [BUS_WIDTH-1:0] in_buf_data;  // One-word input buffer
+    (* DONT_TOUCH = "TRUE"*) reg                 in_buf_valid;
 
     assign s_axis_tready = enable && !in_buf_valid; //Accept new words only when enabled AND the input buffer is free.
 

@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module pe_wrapper #(
+ module pe_wrapper #(
     parameter KERNEL_SIZE  = 3,
     parameter DATA_WIDTH   = 8,
     parameter WEIGHT_WIDTH = 8

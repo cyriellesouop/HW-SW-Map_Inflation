@@ -14,8 +14,10 @@ module crossbar
     output [KERNEL_SIZE-1:0] s_axis_tready,
 
     // Master Interface to output the results  (* IOB = "TRUE" *) 
-   output reg m_axis_tvalid,
-  output reg [DATA_WIDTH-1:0] m_axis_tdata,
+   (* DONT_TOUCH = "TRUE" *) output reg m_axis_tvalid,
+   (* DONT_TOUCH = "TRUE"*) output reg [DATA_WIDTH-1:0] m_axis_tdata,
+   //output reg m_axis_tvalid,
+   // output reg [DATA_WIDTH-1:0] m_axis_tdata,
     input m_axis_tready
 );
 

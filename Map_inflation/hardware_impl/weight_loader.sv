@@ -28,7 +28,7 @@ module weight_loader #(
     localparam IDLE         = 1'b1;*/
 
     // Internal Signals
-    reg [PADDED_SIZE - 1 : 0] weight_storage;
+    (* DONT_TOUCH = "TRUE"*) reg [PADDED_SIZE - 1 : 0] weight_storage;
     integer transfer_counter; //to count the number of transfer done
     //reg state;
 

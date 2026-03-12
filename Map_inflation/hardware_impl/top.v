@@ -9,17 +9,17 @@ module top #(
     parameter BUS_WIDTH = 32  //the data bus width
 )(
     input  clk,
-    input  rstn,
+    (* clock_buffer_type = "none" *)input  rstn,
 
     // AXI Stream Slave Interface
-    input   [BUS_WIDTH - 1 : 0]               s_axis_tdata,
-    input                                     s_axis_tvalid,
-    output                                    s_axis_tready,
+   (* DONT_TOUCH = "TRUE"*) input   [BUS_WIDTH - 1 : 0]               s_axis_tdata,
+   (* DONT_TOUCH = "TRUE"*) input                                     s_axis_tvalid,
+   output                                    s_axis_tready,
     // AXI Stream Master Interface
-    input                                     m_axis_tready,
-    output [(DATA_WIDTH+WEIGHT_WIDTH+ $clog2(KERNEL_SIZE)) -1 :0]  m_axis_tdata,
+   input                                     m_axis_tready,
+   output [(DATA_WIDTH+WEIGHT_WIDTH+ $clog2(KERNEL_SIZE)) -1 :0]  m_axis_tdata,
    // output  [BUS_WIDTH - 1 : 0]               m_axis_tdata,
-    output                                    m_axis_tvalid
+ output                                    m_axis_tvalid
 );
     //localparam DATAOUT_WIDTH = (DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE;  // size of the dataOut produces by the pe_wrapper.
     localparam DATAIN_WIDTH = DATA_WIDTH * KERNEL_SIZE ;  // size of the dataIn of the pe_wrapper
@@ -29,28 +29,7 @@ module top #(
     localparam CROSSBAR_LATENCY = 2; // crossbar latency Input reg + Output reg
     localparam TOTAL_DONE_DELAY =(2 * KERNEL_SIZE) + ADDER_LATENCY + CROSSBAR_LATENCY; // KERNEL_SIZE : latency of The last pixel needs to reach the very last PE
                                                                                        // KERNEL_SIZE : the last row might have to wait for the other rows to be "read" before its final pixel can exit
-    // Clock buffer
-/*wire clk_buf;
 
-BUFR #(
-    .BUFR_DIVIDE("BYPASS"),
-    .SIM_DEVICE("7SERIES")
-) clk_IBUF_BUFG_inst (
-    .O(clk_buf),
-    .I(clk),
-    .CE(1'b1),
-    .CLR(1'b0)
-);
-
-
-
-  BUFGCE bufgce_inst (
-    .I  (clk),
-    .CE (1'b1),     // always enabled — same as BUFG
-    .O  (clk_buffered)
-);
-
-*/
 
     // Weight loader signals
     wire weight_loader_ready;

@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Mar 11 20:41:16 2026
-# Process ID         : 427357
+# Start of session at: Thu Mar 12 17:20:34 2026
+# Process ID         : 407856
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl
 # Command line       : vivado synth_place_route/final_checkpoint.dcp
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/vivado.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3577.123 MHz
+# CPU Frequency      : 3697.739 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 11099 MB
+# Available Virtual  : 11692 MB
 #-----------------------------------------------------------
 start_gui
 open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardware_impl/synth_place_route/final_checkpoint.dcp
@@ -27,7 +27,7 @@ Command: open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardwa
 
 Starting open_checkpoint Task
 
-Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7486.641 ; gain = 8.906 ; free physical = 4605 ; free virtual = 9956
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7485.020 ; gain = 5.938 ; free physical = 3302 ; free virtual = 10561
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
@@ -35,49 +35,127 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
 INFO: [Device 21-403] Loading part xc7s50csga324-2
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7783.945 ; gain = 0.000 ; free physical = 4374 ; free virtual = 9679
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7789.590 ; gain = 0.000 ; free physical = 3049 ; free virtual = 10268
 INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2024.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7819.945 ; gain = 0.000 ; free physical = 4300 ; free virtual = 9604
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7847.434 ; gain = 0.000 ; free physical = 2955 ; free virtual = 10174
 INFO: [Timing 38-478] Restoring timing data from binary archive.
 INFO: [Timing 38-479] Binary timing data restore complete.
 INFO: [Project 1-856] Restoring constraints from binary archive.
 INFO: [Project 1-853] Binary constraint restore complete.
 INFO: [Designutils 20-5722] Start Reading Physical Databases.
 Reading placement.
-Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3921 ; free virtual = 9212
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
 Reading placer database...
-Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3921 ; free virtual = 9212
-Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
-Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
+Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
 Reading routing.
-Read RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
-Read Physdb Files: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
-Restored from archive | CPU: 0.140000 secs | Memory: 2.524918 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.11 . Memory (MB): peak = 8284.422 ; gain = 16.938 ; free physical = 3924 ; free virtual = 9215
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Read RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
+Read Physdb Files: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
+Restored from archive | CPU: 0.140000 secs | Memory: 2.638748 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.11 . Memory (MB): peak = 8273.910 ; gain = 5.938 ; free physical = 2603 ; free virtual = 9822
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8273.910 ; gain = 0.000 ; free physical = 2603 ; free virtual = 9822
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 18 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
 
 INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
-open_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 8664.801 ; gain = 1212.941 ; free physical = 3593 ; free virtual = 8894
-report_utilization -file /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/3X3/resource_utilization.txt -name utilization_1_3x3
-set my_path [get_timing_paths -max_paths 1 -nworst 1 -setup]
-{unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C --> unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE}
-show_schematic -objects [get_nodes -of_objects $my_path]
-ERROR: [Common 17-679] Invalid object type, 'timing_path', used with '-of_objects' switch. Supported types are: 'net tile node bel_pin site_pin wire pip speed_model pin'.
-set start_point [get_property STARTPOINT_PIN $my_path]
-unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C
-set end_point [get_property ENDPOINT_PIN $my_path]
-unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE
-show_schematic -name timing_path_schematic -from $start_point -to $end_point
-ERROR: [Common 17-170] Unknown option '-from', please type 'show_schematic -help' for usage info.
-set path_objects [get_objects -of_objects $my_path]
-ERROR: [Common 17-170] Unknown option '-of_objects', please type 'get_objects -help' for usage info.
-set my_path [get_timing_paths -max_paths 1 -nworst 1 -setup]
-{unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C --> unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE}
-show_schematic -objects $my_path
+open_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 8649.633 ; gain = 1193.426 ; free physical = 2280 ; free virtual = 9526
+report_drc
+Command: report_drc
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Thu Mar 12 17:22:29 2026
+| Host         : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_drc
+| Design       : top
+| Device       : xc7s50csga324-2
+| Speed File   : -2
+| Design State : Partially Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_final_checkpoint
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 1
++----------+----------+-----------------------------------------------------+--------+
+| Rule     | Severity | Description                                         | Checks |
++----------+----------+-----------------------------------------------------+--------+
+| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
++----------+----------+-----------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+
+report_drc completed successfully
+0
+report_route_status
+Design Route Status
+                                               :      # nets :
+   ------------------------------------------- : ----------- :
+   # of logical nets.......................... :        1545 :
+       # of nets not needing routing.......... :         507 :
+           # of internally routed nets........ :         441 :
+           # of nets with no loads............ :          30 :
+           # of implicitly routed ports....... :          36 :
+       # of routable nets..................... :        1038 :
+           # of fully routed nets............. :        1037 :
+       # of nets with routing errors.......... :          36 :
+           # of nets with antennas/islands.... :          36 :
+   ------------------------------------------- : ----------- :
+
+
+Nets with Routing Errors: (only the first 10 nets are listed)
+  m_axis_tready
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  rstn
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[0]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[10]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[11]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[12]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[13]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[14]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[15]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+  s_axis_tdata[16]
+    Islands reason: This net has no logical drivers but has route data or routable drivers.
+

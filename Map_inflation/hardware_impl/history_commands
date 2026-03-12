@@ -43,6 +43,25 @@ get_nets -of [get_drc_violations RTSTAT-2#1]
 join [get_nets -of [get_drc_violations RTSTAT-2#1]] \n
 highlight_objects -color red [get_nets -of [get_drc_violations RTSTAT-2#1]]
 
+get_tiles -filter {NAME =~ *INT_R*}
+mark_objects [get_nets -hierarchical -filter {ROUTE_STATUS =~  "ANTENNAS" }]
+report_drc -file timing_summary.txt
+report_route_status -file route.txt
+report_route_status -return_nets -route_type ANTENNAS
+show_objects [report_route_status -return_nets -route_type PARTIAL]
+show_objects [report_route_status -return_nets -route_type ANTENNAS]
+show_objects [report_route_status -return_nets -route_type PARTIAL]
+show_objects [report_route_status -return_nets -route_type ANTENNAS ]
+show_objects [report_route_status -return_nets -route_type ROUTED ]
+show_objects [report_route_status -return_nets -route_type ANTENNAS ]
+clear
+show_objects [report_route_status -return_nets -route_type ANTENNAS ]
+report_route_status
+get_ports -filter {NAME =~ m_axis_tdata*}
+# See what is driving the port
+show_objects [get_driver_pins -of_objects [get_nets m_axis_tdata[0]]]
+get_pins -filter {DIRECTION == OUT} -of_objects [get_nets m_axis_tdata[0]]
+
 
 report_drc
 get_drc_violations

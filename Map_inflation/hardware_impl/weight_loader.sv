@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module weight_loader #(
-    parameter KERNEL_SIZE  = 16,
+    parameter KERNEL_SIZE  = 3,
     parameter WEIGHT_WIDTH = 8,
     parameter BUS_WIDTH    = 32
 )(
@@ -11,7 +11,7 @@ module weight_loader #(
     // AXI Stream Slave Interface (Weight input)
     input  [BUS_WIDTH - 1 : 0]  s_axis_tdata,
     input                       s_axis_tvalid,
-    output                      s_axis_tready,
+    output reg                     s_axis_tready,
     
     // Weight output interface
     output [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weights_out,
@@ -33,12 +33,12 @@ module weight_loader #(
     //reg state;
 
     // State definition
-    typedef enum {IDLE, LOAD_WEIGHTS} state_t;
+    typedef enum logic [0:0] {IDLE, LOAD_WEIGHTS} state_t;
     state_t state;
 
     // FSM State Outputs
     assign loading = (state == LOAD_WEIGHTS); // the loading is high as far as we are in the LOAD WEIGHTs state, otherwise, it goes low.
-    assign s_axis_tready = loading;  // Only accept data when loading
+   // assign s_axis_tready = loading;  // Only accept data when loading
     //assign weights_out = weight_storage[REQUIRED_BITS - 1 : 0]; // Slice only the required bits for the output, ignoring the padding at the top
     assign weights_out = weight_storage[PADDED_SIZE - 1 : PADDED_SIZE - REQUIRED_BITS];
 
@@ -48,7 +48,9 @@ module weight_loader #(
             state <= LOAD_WEIGHTS;
             transfer_counter <= 0;
             weight_storage <= {PADDED_SIZE{1'b0}};
+            s_axis_tready <= loading;
         end else begin
+        s_axis_tready <= loading;  // just added
             
             case (state)
                 LOAD_WEIGHTS: begin

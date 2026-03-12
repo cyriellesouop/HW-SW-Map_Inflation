@@ -10,7 +10,7 @@ module tb_top2;
     parameter PTR_WIDTH    = 3;
     parameter BUS_WIDTH    = 32;
     
-    localparam PERIOD = 4; //250 MHZ
+    localparam PERIOD = 5; //250 MHZ
     // Calculated parameters
     localparam SUM_WIDTH      = DATA_WIDTH + WEIGHT_WIDTH + $clog2(KERNEL_SIZE);
     localparam DATAOUT_WIDTH  = SUM_WIDTH ;

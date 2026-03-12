@@ -1,7 +1,7 @@
-`timescale 1ns/1ps;
+`timescale 1ns/1ps
 
 module data_accumulator #(
-    parameter KERNEL_SIZE = 5,
+    parameter KERNEL_SIZE = 3,
     parameter DATA_WIDTH  = 8,
     parameter BUS_WIDTH   = 32
 )(
@@ -12,7 +12,7 @@ module data_accumulator #(
     // AXI-Stream input : one BUS_WIDTH word
     input  [BUS_WIDTH-1:0] s_axis_tdata,
     input  s_axis_tvalid,
-    output s_axis_tready,
+    output  s_axis_tready,
 
     // AXI-Stream output : one full row (KERNEL_SIZE elements)
     output reg [KERNEL_SIZE*DATA_WIDTH-1:0] m_axis_tdata,

@@ -3,82 +3,76 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Feb 10 05:17:58 2026
-# Process ID         : 184490
+# Start of session at: Wed Mar 11 20:16:21 2026
+# Process ID         : 420187
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
-# Command line       : xsim -mode tcl -source {xsim.dir/work.tb_top2/xsim_script.tcl}
+# Command line       : xsim -mode tcl -source {xsim.dir/sim_snapshot/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
 # Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.jou
 # Running On         : audrey-Precision-5520
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3514.726 MHz
+# CPU Frequency      : 3692.859 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 11329 MB
+# Available Virtual  : 10750 MB
 #-----------------------------------------------------------
-source xsim.dir/work.tb_top2/xsim_script.tcl
-# xsim {work.tb_top2} -autoloadwcfg -tclbatch {./../../sim.tcl}
+source xsim.dir/sim_snapshot/xsim_script.tcl
+# xsim {sim_snapshot} -autoloadwcfg -tclbatch {./../../sim.tcl}
 Time resolution is 1 ps
 source ./../../sim.tcl
 ## open_saif myTop.saif
 ## log_saif /tb_top2/DUT/*
 ## log_wave -r *
 ## run -all
-34000 first weights value is 1020310
-42000 second weights value is 4050611
-50000 second weights value is 7080912
-54000 second weights value is 7080912
-74000 first data value is a0d1000
-82000 first data value is b0e1100
-Time=90000 | Output Handshake! Result=     x (decimal:x)
-90000 first data value is c0f1200
-Time=94000 | Output Handshake! Result=     x (decimal:x)
-Time=98000 | Output Handshake! Result=     x (decimal:x)
-Time=102000 | Output Handshake! Result=     x (decimal:x)
-Time=106000 | Output Handshake! Result=     x (decimal:x)
-Time=110000 | Output Handshake! Result=     x (decimal:x)
-Time=114000 | Output Handshake! Result=     x (decimal:x)
-Time=118000 | Output Handshake! Result=   189 (decimal:189)
-Time=122000 | Output Handshake! Result=   241 (decimal:241)
-Time=126000 | Output Handshake! Result=    50 (decimal:50)
-Time=130000 | Output Handshake! Result=   189 (decimal:189)
-Time=134000 | Output Handshake! Result=   241 (decimal:241)
-Time=138000 | Output Handshake! Result=    50 (decimal:50)
-Time=142000 | Output Handshake! Result=   292 (decimal:292)
-Time=146000 | Output Handshake! Result=   393 (decimal:393)
-Time=150000 | Output Handshake! Result=    84 (decimal:84)
-Time=154000 | Output Handshake! Result=   317 (decimal:317)
-Time=158000 | Output Handshake! Result=   423 (decimal:423)
-Time=162000 | Output Handshake! Result=    90 (decimal:90)
-Time=166000 | Output Handshake! Result=   317 (decimal:317)
-Time=170000 | Output Handshake! Result=   423 (decimal:423)
-Time=174000 | Output Handshake! Result=    90 (decimal:90)
-Time=178000 | Output Handshake! Result=   342 (decimal:342)
-Time=182000 | Output Handshake! Result=   453 (decimal:453)
-Time=186000 | Output Handshake! Result=    96 (decimal:96)
-Time=190000 | Output Handshake! Result=   342 (decimal:342)
-Time=194000 | Output Handshake! Result=   453 (decimal:453)
-Time=198000 | Output Handshake! Result=    96 (decimal:96)
-Time=202000 | Output Handshake! Result=   342 (decimal:342)
-Time=206000 | Output Handshake! Result=   453 (decimal:453)
-Time=210000 | Output Handshake! Result=    96 (decimal:96)
-Time=214000 | Output Handshake! Result=   342 (decimal:342)
-Time=218000 | Output Handshake! Result=   453 (decimal:453)
-Time=222000 | Output Handshake! Result=    96 (decimal:96)
-Time=226000 | Output Handshake! Result=   342 (decimal:342)
-Time=230000 | Output Handshake! Result=   453 (decimal:453)
-Time=234000 | Output Handshake! Result=    96 (decimal:96)
-Time=238000 | Output Handshake! Result=   342 (decimal:342)
-Time=242000 | Output Handshake! Result=   453 (decimal:453)
-Time=246000 | Output Handshake! Result=    96 (decimal:96)
-Time=250000 | Output Handshake! Result=   342 (decimal:342)
-Time=254000 | Output Handshake! Result=   453 (decimal:453)
-Time=258000 | Output Handshake! Result=    96 (decimal:96)
-$finish called at time : 3094 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 170
+34000 first weights value is 1020304
+42000 second weights value is 5060708
+50000 second weights value is 9000000
+70000 first data value is a0d100b
+78000 first data value is e110c0f
+86000 first data value is 12000000
+Time=118000 | Output Handshake! Result=     x (decimal:x)
+Time=122000 | Output Handshake! Result=     x (decimal:x)
+Time=126000 | Output Handshake! Result=     x (decimal:x)
+Time=130000 | Output Handshake! Result=     x (decimal:x)
+Time=134000 | Output Handshake! Result=     x (decimal:x)
+Time=138000 | Output Handshake! Result=     x (decimal:x)
+Time=142000 | Output Handshake! Result=     x (decimal:x)
+Time=146000 | Output Handshake! Result=   201 (decimal:201)
+Time=150000 | Output Handshake! Result=   318 (decimal:318)
+Time=154000 | Output Handshake! Result=    84 (decimal:84)
+Time=158000 | Output Handshake! Result=   216 (decimal:216)
+Time=162000 | Output Handshake! Result=   342 (decimal:342)
+Time=166000 | Output Handshake! Result=    90 (decimal:90)
+Time=170000 | Output Handshake! Result=   216 (decimal:216)
+Time=174000 | Output Handshake! Result=   342 (decimal:342)
+Time=178000 | Output Handshake! Result=    90 (decimal:90)
+Time=182000 | Output Handshake! Result=   231 (decimal:231)
+Time=186000 | Output Handshake! Result=   366 (decimal:366)
+Time=190000 | Output Handshake! Result=    96 (decimal:96)
+Time=194000 | Output Handshake! Result=     0 (decimal:0)
+Time=198000 | Output Handshake! Result=     0 (decimal:0)
+Time=202000 | Output Handshake! Result=     0 (decimal:0)
+Time=206000 | Output Handshake! Result=     0 (decimal:0)
+Time=210000 | Output Handshake! Result=     0 (decimal:0)
+Time=214000 | Output Handshake! Result=     0 (decimal:0)
+Time=218000 | Output Handshake! Result=     0 (decimal:0)
+Time=222000 | Output Handshake! Result=     0 (decimal:0)
+Time=226000 | Output Handshake! Result=     0 (decimal:0)
+Time=230000 | Output Handshake! Result=     0 (decimal:0)
+Time=234000 | Output Handshake! Result=     0 (decimal:0)
+Time=238000 | Output Handshake! Result=     0 (decimal:0)
+Time=242000 | Output Handshake! Result=     0 (decimal:0)
+Time=246000 | Output Handshake! Result=     0 (decimal:0)
+Time=250000 | Output Handshake! Result=     0 (decimal:0)
+Time=254000 | Output Handshake! Result=     0 (decimal:0)
+Time=258000 | Output Handshake! Result=     0 (decimal:0)
+Time=262000 | Output Handshake! Result=     0 (decimal:0)
+$finish called at time : 3090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 158
+## close_saif
 ## quit
-INFO: [Common 17-206] Exiting xsim at Tue Feb 10 05:18:01 2026...
+INFO: [Common 17-206] Exiting xsim at Wed Mar 11 20:16:24 2026...

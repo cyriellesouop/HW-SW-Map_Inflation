@@ -22,7 +22,7 @@ xvlog -sv axim_reg.sv
 
 xvlog  -sv weight_loader.sv
 
-xvlog  -sv data_accumulator.sv
+xvlog  data_accumulator.v
 
 #xvlog  tb_weight_loader.v
 

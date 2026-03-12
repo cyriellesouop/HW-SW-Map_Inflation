@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Wed Mar 11 20:18:09 2026
+| Date         : Wed Mar 11 20:44:22 2026
 | Host         : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
-| Command      : report_utilization -file utilization.rpt
+| Command      : report_utilization -file /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/3X3/resource_utilization.txt -name utilization_1_3x3
 | Design       : top
 | Device       : xc7s50csga324-2
 | Speed File   : -2
 | Design State : Routed
----------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -212,5 +212,8 @@ Table of Contents
 +----------+------+
 | Ref Name | Used |
 +----------+------+
+
+
+
 
 

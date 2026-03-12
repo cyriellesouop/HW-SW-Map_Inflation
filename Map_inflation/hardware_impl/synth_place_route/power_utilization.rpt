@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Tue Feb 10 05:20:40 2026
+| Date             : Wed Mar 11 20:18:10 2026
 | Host             : audrey-Precision-5520 running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file power_utilization.rpt
 | Design           : top
@@ -30,18 +30,18 @@ Table of Contents
 ----------
 
 +--------------------------+--------------------------+
-| Total On-Chip Power (W)  | 0.082                    |
+| Total On-Chip Power (W)  | 0.095                    |
 | Design Power Budget (W)  | Unspecified*             |
 | Power Budget Margin (W)  | NA                       |
-| Dynamic (W)              | 0.011                    |
-| Device Static (W)        | 0.070                    |
+| Dynamic (W)              | 0.027                    |
+| Device Static (W)        | 0.068                    |
 | Effective TJA (C/W)      | 4.9                      |
-| Max Ambient (C)          | 84.6                     |
-| Junction Temperature (C) | 25.4                     |
+| Max Ambient (C)          | 84.5                     |
+| Junction Temperature (C) | 25.5                     |
 | Confidence Level         | Medium                   |
 | Setting File             | ---                      |
 | Simulation Activity File | ./../sim/work/myTop.saif |
-| Design Nets Matched      | 7%   (181/2652)          |
+| Design Nets Matched      | 10%   (148/1451)         |
 +--------------------------+--------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
@@ -52,18 +52,18 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.008 |        3 |       --- |             --- |
-| Slice Logic              |    <0.001 |     2246 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |      898 |     32600 |            2.75 |
+| Clocks                   |     0.023 |        3 |       --- |             --- |
+| Slice Logic              |     0.002 |     1204 |       --- |             --- |
+|   LUT as Logic           |     0.002 |      349 |     32600 |            1.07 |
+|   Register               |    <0.001 |      582 |     65200 |            0.89 |
+|   CARRY4                 |    <0.001 |       38 |      8150 |            0.47 |
 |   LUT as Distributed RAM |    <0.001 |       54 |      9600 |            0.56 |
-|   Register               |    <0.001 |      908 |     65200 |            1.39 |
-|   CARRY4                 |    <0.001 |      113 |      8150 |            1.39 |
-|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |     0.000 |       56 |       --- |             --- |
-| Signals                  |     0.001 |     1792 |       --- |             --- |
-| I/O                      |     0.001 |       56 |       210 |           26.67 |
-| Static Power             |     0.070 |          |           |                 |
-| Total                    |     0.082 |          |           |                 |
+|   F7/F8 Muxes            |    <0.001 |        8 |     32600 |            0.02 |
+|   Others                 |     0.000 |       62 |       --- |             --- |
+| Signals                  |     0.002 |      962 |       --- |             --- |
+| DSPs                     |    <0.001 |        9 |       120 |            7.50 |
+| Static Power             |     0.068 |          |           |                 |
+| Total                    |     0.095 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,11 +73,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.010 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.036 |       0.027 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -127,7 +127,7 @@ Table of Contents
 +-------+--------+-----------------+
 | Clock | Domain | Constraint (ns) |
 +-------+--------+-----------------+
-| clk   | clk    |             4.0 |
+| clk   | clk    |             3.5 |
 +-------+--------+-----------------+
 
 
@@ -140,13 +140,20 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| top                          |     0.011 |
-|   pe_engine                  |     0.008 |
-|     crossbar_inst            |     0.001 |
-|     genblk1[0].row_sum_adder |     0.001 |
-|     genblk1[1].row_sum_adder |     0.001 |
-|     genblk1[2].row_sum_adder |     0.001 |
-|   weight_loader_inst         |     0.001 |
+| top                          |     0.027 |
+|   accumulator_inst           |     0.004 |
+|   pe_engine                  |     0.015 |
+|     crossbar_inst            |     0.004 |
+|     genblk1[0].row_sum_adder |     0.004 |
+|       fifo_axis_inst         |     0.002 |
+|     genblk1[1].row_sum_adder |     0.004 |
+|       fifo_axis_inst         |     0.002 |
+|     genblk1[2].row_sum_adder |     0.004 |
+|       fifo_axis_inst         |     0.002 |
+|   unpacker                   |     0.003 |
+|     genblk1[1].fifo_inst     |     0.001 |
+|       fifo_inst              |     0.001 |
+|   weight_loader_inst         |     0.004 |
 +------------------------------+-----------+
 
 

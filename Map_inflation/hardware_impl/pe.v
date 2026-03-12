@@ -29,20 +29,22 @@ module pe
 	    pe_input_reg  <= 0;
             pe_weight_reg <= 0;
             pe_output     <= 0;
-           // pe_pixel_out  <= 0;
             pe_done    <= 1'b0;
 	    pe_en_reg <= 0;
         end
         else begin
 	    // register  inputs
+	   
 	    pe_input_reg <= pe_input;
 	    pe_weight_reg <= pe_weight;       
             pe_en_reg <= pe_en;
+            
 
             if (pe_en_reg) begin
              //  pe_pixel_out <= pe_input; // to allow differents row pe to get an input at the same clock cyle
                 
 		//(* use_dsp = "yes" *) // to Map the multiplication below to a DSP block
+	
                 pe_output <= pe_input_reg * pe_weight_reg;
                pe_done    <= 1'b1;
             end
@@ -52,6 +54,6 @@ module pe
             	end           
        end
    end
-   
-   assign pe_pixel_out = (pe_en_reg) ? pe_input : pe_pixel_out;
+   assign pe_pixel_out = pe_input;
+   //assign pe_pixel_out = (pe_en_reg) ? pe_input : pe_pixel_out;
 endmodule

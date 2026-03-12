@@ -21,6 +21,15 @@ module top #(
    // output  [BUS_WIDTH - 1 : 0]               m_axis_tdata,
     output                                    m_axis_tvalid
 );
+
+ wire clk_delayed;
+
+  BUFG clk_IBUF_BUFG_inst (
+	.O(clk_delayed), // 1-bit output: clock output
+//	.CE(c),  // 1-bit input: clock enable input for IO
+	.I(clk) // 1-bit input : Primary clock
+     );
+
     //localparam DATAOUT_WIDTH = (DATA_WIDTH+WEIGHT_WIDTH+KERNEL_SIZE) * KERNEL_SIZE;  // size of the dataOut produces by the pe_wrapper.
     localparam DATAIN_WIDTH = DATA_WIDTH * KERNEL_SIZE ;  // size of the dataIn of the pe_wrapper
     localparam WEIGHTIN_WIDTH = WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE;   // size of the input weights 
@@ -29,28 +38,6 @@ module top #(
     localparam CROSSBAR_LATENCY = 2; // crossbar latency Input reg + Output reg
     localparam TOTAL_DONE_DELAY =(2 * KERNEL_SIZE) + ADDER_LATENCY + CROSSBAR_LATENCY; // KERNEL_SIZE : latency of The last pixel needs to reach the very last PE
                                                                                        // KERNEL_SIZE : the last row might have to wait for the other rows to be "read" before its final pixel can exit
-    // Clock buffer
-/*wire clk_buf;
-
-BUFR #(
-    .BUFR_DIVIDE("BYPASS"),
-    .SIM_DEVICE("7SERIES")
-) clk_IBUF_BUFG_inst (
-    .O(clk_buf),
-    .I(clk),
-    .CE(1'b1),
-    .CLR(1'b0)
-);
-
-
-
-  BUFGCE bufgce_inst (
-    .I  (clk),
-    .CE (1'b1),     // always enabled — same as BUFG
-    .O  (clk_buffered)
-);
-
-*/
 
     // Weight loader signals
     wire weight_loader_ready;
@@ -77,12 +64,12 @@ BUFR #(
     wire [(WEIGHT_WIDTH * KERNEL_SIZE * KERNEL_SIZE) - 1 : 0] weight_for_pe;// Define the correctly ordered weight bus
     
     reg pe_en_delayed;
-    always @(posedge clk) pe_en_delayed <= (&fifo_m_tvalid || pipe_flushing);
+    always @(posedge clk_delayed) pe_en_delayed <= (&fifo_m_tvalid || pipe_flushing);
 
     // During weight loading: route input to weight loader
     // During streaming: route input to data accumulator
     reg s_axis_tready_r;
-    always @(posedge clk) s_axis_tready_r <= is_loading_weights ? weight_loader_ready : accumulator_ready;
+    always @(posedge clk_delayed) s_axis_tready_r <= is_loading_weights ? weight_loader_ready : accumulator_ready;
     assign s_axis_tready = s_axis_tready_r;
    // assign s_axis_tready = is_loading_weights ? weight_loader_ready : accumulator_ready;
 
@@ -110,7 +97,7 @@ BUFR #(
         .WEIGHT_WIDTH(WEIGHT_WIDTH),
         .BUS_WIDTH(BUS_WIDTH)
     ) weight_loader_inst (
-        .clk(clk),
+        .clk(clk_delayed),
         .rstn(rstn),
         
         // Input interface
@@ -135,7 +122,7 @@ BUFR #(
         .DATA_WIDTH(DATA_WIDTH),
         .BUS_WIDTH(BUS_WIDTH)
     ) accumulator_inst (
-        .clk(clk),
+        .clk(clk_delayed),
         .rstn(rstn),
         
         // Enable only when NOT loading weights
@@ -162,7 +149,7 @@ BUFR #(
         .DEPTH(DEPTH),
         .PTR_WIDTH(PTR_WIDTH)
     ) unpacker (
-        .clk(clk),
+        .clk(clk_delayed),
         .rstn(rstn),
         
         // Slave interface (receives full rows from accumulator)
@@ -183,7 +170,7 @@ BUFR #(
         .DATA_WIDTH(DATA_WIDTH),
         .WEIGHT_WIDTH(WEIGHT_WIDTH)
     ) pe_engine (
-        .clk(clk),
+        .clk(clk_delayed),
         .rstn(rstn),
 
 	// control
@@ -206,7 +193,7 @@ BUFR #(
         .LATENCY(TOTAL_DONE_DELAY), 
         .WIDTH(1)
     ) flush_delay_inst (
-        .clk(clk),
+        .clk(clk_delayed),
         .rstn(rstn),
         .dataIn(&fifo_m_tvalid), 
         .dataOut(pipe_flushing)

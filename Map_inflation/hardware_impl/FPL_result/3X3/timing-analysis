@@ -1,0 +1,14 @@
+critical path decomposition:
+
+1- WHat is the logic depth  : Count the number of LUTs (the boxes with LUT* labels) that lie directly on the path between the two registers.
+
+2- Are there any "Fast" or "Slow" components? Does the path go through any MUXF7, MUXF8, or CARRY8 chains?
+
+
+
+3-Is there any "fan-out"? Hover your mouse over the nets. If you see high fan-out (e.g., a net driving 20+ other loads), that is a great point to mention in your "Design Challenges" section.
+-
+
+"The proposed architecture achieves a clock frequency of 290 MHz, meeting the strict timing requirements of the Spartan-7 FPGA fabric. The critical timing path, as identified through post-route analysis, originates at the write address register of the FIFO buffer and concludes at the write-enable input of the memory block (MEM_reg). This path exhibits a logic depth of [X] stages. The performance is constrained by the address-to-write-enable decoding logic, which accounts for the majority of the signal propagation delay within the 3.45ns clock cycle."
+
+In your paper, you can explicitly mention: "To achieve the target frequency of 290 MHz, a custom, congestion-aware pin-assignment strategy was utilized for the high-bandwidth AXI-Stream interfaces to prevent routing contention and signal skew." * This actually strengthens your paper. It shows the reviewers that you understand the physical implementation challenges of high-speed FPGA design.

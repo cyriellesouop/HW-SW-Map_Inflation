@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Mar 11 20:41:16 2026
+# Process ID         : 427357
+# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl
+# Command line       : vivado synth_place_route/final_checkpoint.dcp
+# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/vivado.log
+# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/vivado.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3577.123 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 11099 MB
+#-----------------------------------------------------------
+start_gui
+open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardware_impl/synth_place_route/final_checkpoint.dcp
+Command: open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardware_impl/synth_place_route/final_checkpoint.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7486.641 ; gain = 8.906 ; free physical = 4605 ; free virtual = 9956
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [Device 21-403] Loading part xc7s50csga324-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7783.945 ; gain = 0.000 ; free physical = 4374 ; free virtual = 9679
+INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7819.945 ; gain = 0.000 ; free physical = 4300 ; free virtual = 9604
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3921 ; free virtual = 9212
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3921 ; free virtual = 9212
+Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Read Physdb Files: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+Restored from archive | CPU: 0.140000 secs | Memory: 2.524918 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.11 . Memory (MB): peak = 8284.422 ; gain = 16.938 ; free physical = 3924 ; free virtual = 9215
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8284.422 ; gain = 0.000 ; free physical = 3924 ; free virtual = 9215
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+open_checkpoint: Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 8664.801 ; gain = 1212.941 ; free physical = 3593 ; free virtual = 8894
+report_utilization -file /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/3X3/resource_utilization.txt -name utilization_1_3x3
+set my_path [get_timing_paths -max_paths 1 -nworst 1 -setup]
+{unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C --> unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE}
+show_schematic -objects [get_nodes -of_objects $my_path]
+ERROR: [Common 17-679] Invalid object type, 'timing_path', used with '-of_objects' switch. Supported types are: 'net tile node bel_pin site_pin wire pip speed_model pin'.
+set start_point [get_property STARTPOINT_PIN $my_path]
+unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C
+set end_point [get_property ENDPOINT_PIN $my_path]
+unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE
+show_schematic -name timing_path_schematic -from $start_point -to $end_point
+ERROR: [Common 17-170] Unknown option '-from', please type 'show_schematic -help' for usage info.
+set path_objects [get_objects -of_objects $my_path]
+ERROR: [Common 17-170] Unknown option '-of_objects', please type 'get_objects -help' for usage info.
+set my_path [get_timing_paths -max_paths 1 -nworst 1 -setup]
+{unpacker/genblk1[2].fifo_inst/fifo_inst/wr_addr_reg[1]/C --> unpacker/genblk1[0].fifo_inst/fifo_inst/MEM_reg_0_3_6_7/DP/WE}
+show_schematic -objects $my_path

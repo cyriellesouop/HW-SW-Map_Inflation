@@ -10,8 +10,8 @@ module data_accumulator #(
     input  enable,
 
     // AXI-Stream input : one BUS_WIDTH word
-    input  [BUS_WIDTH-1:0] s_axis_tdata,
-    input  s_axis_tvalid,
+    (* DONT_TOUCH = "TRUE"*) input  [BUS_WIDTH-1:0] s_axis_tdata,
+    (* DONT_TOUCH = "TRUE"*) input  s_axis_tvalid,
     output  s_axis_tready,
 
     // AXI-Stream output : one full row (KERNEL_SIZE elements)
@@ -28,8 +28,8 @@ module data_accumulator #(
 
     reg [SR_BITS-1:0] shift_reg;
     reg [CNT_W-1:0]   elem_count;
-    (* DONT_TOUCH = "TRUE"*) reg [BUS_WIDTH-1:0] in_buf_data;  // One-word input buffer
-    (* DONT_TOUCH = "TRUE"*) reg                 in_buf_valid;
+    reg [BUS_WIDTH-1:0] in_buf_data;  // One-word input buffer
+    reg                 in_buf_valid;
 
     assign s_axis_tready = enable && !in_buf_valid; //Accept new words only when enabled AND the input buffer is free.
 

@@ -1,0 +1,80 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Mar 15 13:32:36 2026
+# Process ID         : 38231
+# Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/7x7
+# Command line       : vivado final_checkpointDSP.dcp
+# Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/7x7/vivado.log
+# Journal file       : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/7x7/vivado.jou
+# Running On         : audrey-Precision-5520
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+# CPU Frequency      : 3504.416 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16612 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18760 MB
+# Available Virtual  : 13648 MB
+#-----------------------------------------------------------
+start_gui
+open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/7x7/final_checkpointDSP.dcp
+Command: open_checkpoint /home/audrey/Documents/convolution/Map_inflation/hardware_impl/FPL_result/7x7/final_checkpointDSP.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7486.117 ; gain = 9.906 ; free physical = 3803 ; free virtual = 12434
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/audrey/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/audrey/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [Device 21-403] Loading part xc7s50csga324-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 7791.953 ; gain = 0.000 ; free physical = 3532 ; free virtual = 12123
+INFO: [Netlist 29-17] Analyzing 325 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7823.953 ; gain = 1.000 ; free physical = 3473 ; free virtual = 12064
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3075 ; free virtual = 11658
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3075 ; free virtual = 11658
+Read PlaceDB: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3067 ; free virtual = 11650
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3067 ; free virtual = 11650
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3067 ; free virtual = 11650
+Read Physdb Files: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.18 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3067 ; free virtual = 11650
+Restored from archive | CPU: 0.290000 secs | Memory: 6.251526 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.23 . Memory (MB): peak = 8301.305 ; gain = 8.906 ; free physical = 3067 ; free virtual = 11650
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8301.305 ; gain = 0.000 ; free physical = 3067 ; free virtual = 11650
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 49 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 28 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 21 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+open_checkpoint: Time (s): cpu = 00:00:35 ; elapsed = 00:00:19 . Memory (MB): peak = 8689.152 ; gain = 1237.816 ; free physical = 2714 ; free virtual = 11312
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_power -name {power_1}
+Command: report_power -name power_1
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_utilization -name utilization_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 15 13:37:30 2026...

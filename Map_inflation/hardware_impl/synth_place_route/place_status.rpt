@@ -1,11 +1,11 @@
 Design Place Status
    ---------------------------------------------- : ----------- :
-   # of logical cells............................ :        1243 :
+   # of logical cells............................ :       11412 :
        # of unplaced cells....................... :           0 :
-       # of placed cells......................... :        1243 :
+       # of placed cells......................... :       11412 :
        # of cells with fixed placement........... :           0 :
-   # of used sites............................... :         372 :
-       # of sites with route thrus............... :          13 :
+   # of used sites............................... :        2008 :
+       # of sites with route thrus............... :         154 :
        # of sites with inverted inputs........... :           0 :
        # of sites with tie-off pins.............. :           0 :
        # of sites with errors.................... :           0 :

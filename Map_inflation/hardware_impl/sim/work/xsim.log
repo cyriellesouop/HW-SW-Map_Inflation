@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Mar 12 17:17:39 2026
-# Process ID         : 389739
+# Start of session at: Sat Mar 14 22:20:11 2026
+# Process ID         : 734990
 # Current directory  : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work
 # Command line       : xsim -mode tcl -source {xsim.dir/sim_snapshot/xsim_script.tcl}
 # Log file           : /home/audrey/Documents/convolution/Map_inflation/hardware_impl/sim/work/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
-# CPU Frequency      : 3689.769 MHz
+# CPU Frequency      : 3595.853 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16612 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18760 MB
-# Available Virtual  : 9396 MB
+# Available Virtual  : 6133 MB
 #-----------------------------------------------------------
 source xsim.dir/sim_snapshot/xsim_script.tcl
 # xsim {sim_snapshot} -autoloadwcfg -tclbatch {./../../sim.tcl}
@@ -29,50 +29,146 @@ source ./../../sim.tcl
 ## log_saif /tb_top2/DUT/*
 ## log_wave -r *
 ## run -all
-34000 first weights value is 1020304
-42000 second weights value is 5060708
-50000 second weights value is 9000000
-70000 first data value is a0d100b
-78000 first data value is e110c0f
-86000 first data value is 12000000
-Time=118000 | Output Handshake! Result=     x (decimal:x)
-Time=122000 | Output Handshake! Result=     x (decimal:x)
-Time=126000 | Output Handshake! Result=     x (decimal:x)
-Time=130000 | Output Handshake! Result=     x (decimal:x)
-Time=134000 | Output Handshake! Result=     x (decimal:x)
-Time=138000 | Output Handshake! Result=     x (decimal:x)
-Time=142000 | Output Handshake! Result=     x (decimal:x)
-Time=146000 | Output Handshake! Result=   201 (decimal:201)
-Time=150000 | Output Handshake! Result=   318 (decimal:318)
-Time=154000 | Output Handshake! Result=    84 (decimal:84)
-Time=158000 | Output Handshake! Result=   216 (decimal:216)
-Time=162000 | Output Handshake! Result=   342 (decimal:342)
-Time=166000 | Output Handshake! Result=    90 (decimal:90)
-Time=170000 | Output Handshake! Result=   216 (decimal:216)
-Time=174000 | Output Handshake! Result=   342 (decimal:342)
-Time=178000 | Output Handshake! Result=    90 (decimal:90)
-Time=182000 | Output Handshake! Result=   231 (decimal:231)
-Time=186000 | Output Handshake! Result=   366 (decimal:366)
-Time=190000 | Output Handshake! Result=    96 (decimal:96)
-Time=194000 | Output Handshake! Result=     0 (decimal:0)
-Time=198000 | Output Handshake! Result=     0 (decimal:0)
-Time=202000 | Output Handshake! Result=     0 (decimal:0)
-Time=206000 | Output Handshake! Result=     0 (decimal:0)
-Time=210000 | Output Handshake! Result=     0 (decimal:0)
-Time=214000 | Output Handshake! Result=     0 (decimal:0)
-Time=218000 | Output Handshake! Result=     0 (decimal:0)
-Time=222000 | Output Handshake! Result=     0 (decimal:0)
-Time=226000 | Output Handshake! Result=     0 (decimal:0)
-Time=230000 | Output Handshake! Result=     0 (decimal:0)
-Time=234000 | Output Handshake! Result=     0 (decimal:0)
-Time=238000 | Output Handshake! Result=     0 (decimal:0)
-Time=242000 | Output Handshake! Result=     0 (decimal:0)
-Time=246000 | Output Handshake! Result=     0 (decimal:0)
-Time=250000 | Output Handshake! Result=     0 (decimal:0)
-Time=254000 | Output Handshake! Result=     0 (decimal:0)
-Time=258000 | Output Handshake! Result=     0 (decimal:0)
-Time=262000 | Output Handshake! Result=     0 (decimal:0)
-$finish called at time : 3090 ns : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 158
+49000 first weights value is 1020304
+61000 second weights value is 5060708
+73000 second weights value is 90a0b0c
+84000 second weights value is d0e0f10
+96000 second weights value is 11121314
+107000 second weights value is 15161718
+119000 second weights value is 191a1b1c
+131000 second weights value is 1d1e1f20
+142000 second weights value is 21222324
+154000 second weights value is 25262728
+165000 second weights value is 292a2b2c
+177000 second weights value is 2d2e2f30
+189000 second weights value is 31000000
+223000 first data value is 32333435
+235000 first data value is 36373839
+247000 first data value is 3a3b3c3d
+258000 first data value is 3e3f4041
+270000 first data value is 42434445
+281000 first data value is 46474849
+293000 first data value is 4a4b4c4d
+305000 first data value is 4e4f5051
+Time=310000 | Output Handshake! Result=     x (decimal:x)
+316000 first data value is 52535455
+Time=316000 | Output Handshake! Result=     x (decimal:x)
+Time=322000 | Output Handshake! Result=     x (decimal:x)
+328000 first data value is 56575859
+Time=328000 | Output Handshake! Result=     x (decimal:x)
+Time=334000 | Output Handshake! Result=     x (decimal:x)
+339000 first data value is 5a5b5c5d
+Time=339000 | Output Handshake! Result=     x (decimal:x)
+Time=345000 | Output Handshake! Result=     x (decimal:x)
+351000 first data value is 5e5f6061
+Time=351000 | Output Handshake! Result=     x (decimal:x)
+Time=357000 | Output Handshake! Result=     x (decimal:x)
+363000 first data value is 62000000
+Time=363000 | Output Handshake! Result=     x (decimal:x)
+Time=368000 | Output Handshake! Result=     x (decimal:x)
+Time=374000 | Output Handshake! Result=     x (decimal:x)
+Time=380000 | Output Handshake! Result=     x (decimal:x)
+Time=386000 | Output Handshake! Result=     x (decimal:x)
+Time=392000 | Output Handshake! Result=     x (decimal:x)
+Time=397000 | Output Handshake! Result=  4109 (decimal:4109)
+Time=403000 | Output Handshake! Result=  6706 (decimal:6706)
+Time=409000 | Output Handshake! Result=  9303 (decimal:9303)
+Time=415000 | Output Handshake! Result= 11900 (decimal:11900)
+Time=421000 | Output Handshake! Result= 14497 (decimal:14497)
+Time=426000 | Output Handshake! Result= 17094 (decimal:17094)
+Time=432000 | Output Handshake! Result=  1512 (decimal:1512)
+Time=438000 | Output Handshake! Result=  4109 (decimal:4109)
+Time=444000 | Output Handshake! Result=  6706 (decimal:6706)
+Time=450000 | Output Handshake! Result=  9303 (decimal:9303)
+Time=455000 | Output Handshake! Result= 11900 (decimal:11900)
+Time=461000 | Output Handshake! Result= 14497 (decimal:14497)
+Time=467000 | Output Handshake! Result= 17094 (decimal:17094)
+Time=473000 | Output Handshake! Result=  1512 (decimal:1512)
+Time=479000 | Output Handshake! Result=  4648 (decimal:4648)
+Time=484000 | Output Handshake! Result=  7588 (decimal:7588)
+Time=490000 | Output Handshake! Result= 10528 (decimal:10528)
+Time=496000 | Output Handshake! Result= 13468 (decimal:13468)
+Time=502000 | Output Handshake! Result= 16408 (decimal:16408)
+Time=508000 | Output Handshake! Result= 19348 (decimal:19348)
+Time=513000 | Output Handshake! Result=  1708 (decimal:1708)
+Time=519000 | Output Handshake! Result=  4648 (decimal:4648)
+Time=525000 | Output Handshake! Result=  7588 (decimal:7588)
+Time=531000 | Output Handshake! Result= 10528 (decimal:10528)
+Time=537000 | Output Handshake! Result= 13468 (decimal:13468)
+Time=542000 | Output Handshake! Result= 16408 (decimal:16408)
+Time=548000 | Output Handshake! Result= 19348 (decimal:19348)
+Time=554000 | Output Handshake! Result=  1708 (decimal:1708)
+Time=560000 | Output Handshake! Result=  5187 (decimal:5187)
+Time=566000 | Output Handshake! Result=  8470 (decimal:8470)
+Time=571000 | Output Handshake! Result= 11753 (decimal:11753)
+Time=577000 | Output Handshake! Result= 15036 (decimal:15036)
+Time=583000 | Output Handshake! Result= 18319 (decimal:18319)
+Time=589000 | Output Handshake! Result= 21602 (decimal:21602)
+Time=595000 | Output Handshake! Result=  1904 (decimal:1904)
+Time=600000 | Output Handshake! Result=  5726 (decimal:5726)
+Time=606000 | Output Handshake! Result=  9352 (decimal:9352)
+Time=612000 | Output Handshake! Result= 12978 (decimal:12978)
+Time=618000 | Output Handshake! Result= 16604 (decimal:16604)
+Time=624000 | Output Handshake! Result= 20230 (decimal:20230)
+Time=629000 | Output Handshake! Result= 23856 (decimal:23856)
+Time=635000 | Output Handshake! Result=  2100 (decimal:2100)
+Time=641000 | Output Handshake! Result=  5726 (decimal:5726)
+Time=647000 | Output Handshake! Result=  9352 (decimal:9352)
+Time=653000 | Output Handshake! Result= 12978 (decimal:12978)
+Time=658000 | Output Handshake! Result= 16604 (decimal:16604)
+Time=664000 | Output Handshake! Result= 20230 (decimal:20230)
+Time=670000 | Output Handshake! Result= 23856 (decimal:23856)
+Time=676000 | Output Handshake! Result=  2100 (decimal:2100)
+Time=682000 | Output Handshake! Result=  6265 (decimal:6265)
+Time=687000 | Output Handshake! Result= 10234 (decimal:10234)
+Time=693000 | Output Handshake! Result= 14203 (decimal:14203)
+Time=699000 | Output Handshake! Result= 18172 (decimal:18172)
+Time=705000 | Output Handshake! Result= 22141 (decimal:22141)
+Time=711000 | Output Handshake! Result= 26110 (decimal:26110)
+Time=716000 | Output Handshake! Result=  2296 (decimal:2296)
+Time=722000 | Output Handshake! Result=  6265 (decimal:6265)
+Time=728000 | Output Handshake! Result= 10234 (decimal:10234)
+Time=734000 | Output Handshake! Result= 14203 (decimal:14203)
+Time=740000 | Output Handshake! Result= 18172 (decimal:18172)
+Time=745000 | Output Handshake! Result= 22141 (decimal:22141)
+Time=751000 | Output Handshake! Result= 26110 (decimal:26110)
+Time=757000 | Output Handshake! Result=  2296 (decimal:2296)
+Time=763000 | Output Handshake! Result=  6804 (decimal:6804)
+Time=769000 | Output Handshake! Result= 11116 (decimal:11116)
+Time=774000 | Output Handshake! Result= 15428 (decimal:15428)
+Time=780000 | Output Handshake! Result= 19740 (decimal:19740)
+Time=786000 | Output Handshake! Result= 24052 (decimal:24052)
+Time=792000 | Output Handshake! Result= 28364 (decimal:28364)
+Time=798000 | Output Handshake! Result=  2492 (decimal:2492)
+Time=803000 | Output Handshake! Result=  6804 (decimal:6804)
+Time=809000 | Output Handshake! Result= 11116 (decimal:11116)
+Time=815000 | Output Handshake! Result= 15428 (decimal:15428)
+Time=821000 | Output Handshake! Result= 19740 (decimal:19740)
+Time=827000 | Output Handshake! Result= 24052 (decimal:24052)
+Time=832000 | Output Handshake! Result= 28364 (decimal:28364)
+Time=838000 | Output Handshake! Result=  2492 (decimal:2492)
+Time=844000 | Output Handshake! Result=  6804 (decimal:6804)
+Time=850000 | Output Handshake! Result= 11116 (decimal:11116)
+Time=856000 | Output Handshake! Result= 15428 (decimal:15428)
+Time=861000 | Output Handshake! Result= 19740 (decimal:19740)
+Time=867000 | Output Handshake! Result= 24052 (decimal:24052)
+Time=873000 | Output Handshake! Result= 28364 (decimal:28364)
+Time=879000 | Output Handshake! Result=  2492 (decimal:2492)
+Time=885000 | Output Handshake! Result=  7343 (decimal:7343)
+Time=890000 | Output Handshake! Result= 11998 (decimal:11998)
+Time=896000 | Output Handshake! Result= 16653 (decimal:16653)
+Time=902000 | Output Handshake! Result= 21308 (decimal:21308)
+Time=908000 | Output Handshake! Result= 25963 (decimal:25963)
+Time=914000 | Output Handshake! Result= 30618 (decimal:30618)
+Time=919000 | Output Handshake! Result=  2688 (decimal:2688)
+Time=925000 | Output Handshake! Result=  7343 (decimal:7343)
+Time=931000 | Output Handshake! Result= 11998 (decimal:11998)
+Time=937000 | Output Handshake! Result= 16653 (decimal:16653)
+Time=943000 | Output Handshake! Result= 21308 (decimal:21308)
+Time=948000 | Output Handshake! Result= 25963 (decimal:25963)
+Time=954000 | Output Handshake! Result= 30618 (decimal:30618)
+Time=960000 | Output Handshake! Result=  2688 (decimal:2688)
+$finish called at time : 8368300 ps : File "/home/audrey/Documents/convolution/Map_inflation/hardware_impl/tb_top2.v" Line 336
 ## close_saif
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Mar 12 17:17:43 2026...
+INFO: [Common 17-206] Exiting xsim at Sat Mar 14 22:20:14 2026...

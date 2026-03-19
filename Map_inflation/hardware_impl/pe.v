@@ -14,7 +14,7 @@ module pe
         input pe_en,                                         // when this is asserted,  the PE start
 	// outpute interface
 	output  [(DATA_WIDTH-1):0] pe_pixel_out,          // output pixel = input pixel transfered to the next PE
-	(* use_dsp = "yes" *)  output reg [(DATA_WIDTH+WEIGHT_WIDTH)-1 :0] pe_output,  // this is the result currently computed
+	output reg [(DATA_WIDTH+WEIGHT_WIDTH)-1 :0] pe_output,  // this is the result currently computed (* use_dsp = "yes" *) 
 	output reg pe_done
      );
 
@@ -23,6 +23,12 @@ module pe
     reg [(WEIGHT_WIDTH-1):0] pe_weight_reg;
 
     reg  pe_en_reg;
+    (* DONT_TOUCH = "TRUE"*) reg rstn_reg;
+    
+    
+   always @(posedge clk) begin
+       rstn_reg <= rstn;
+    end
 
     always @(posedge clk) begin
         if (!rstn) begin
@@ -54,6 +60,47 @@ module pe
             	end           
        end
    end
-   assign pe_pixel_out = pe_input;
+   assign pe_pixel_out = pe_input; 
+   
+
+// Register reset — breaks the long rstn fanout path to DSP
+/*always @(posedge clk) begin
+    rstn_reg <= rstn;
+end
+
+// Input registration — uses rstn (fast, non-DSP flops)
+always @(posedge clk) begin
+    if (!rstn) begin
+        pe_input_reg  <= 0;
+        pe_weight_reg <= 0;
+        pe_en_reg     <= 0;
+    end
+    else begin
+        pe_input_reg  <= pe_input;
+        pe_weight_reg <= pe_weight;
+        pe_en_reg     <= pe_en;
+    end
+end
+
+// DSP output stage — uses rstn_reg (registered, low fanout)
+always @(posedge clk) begin
+    if (!rstn_reg) begin
+        pe_output <= 0;
+        pe_done   <= 1'b0;
+    end
+    else begin
+        if (pe_en_reg) begin
+            pe_output <= pe_input_reg * pe_weight_reg;
+            pe_done   <= 1'b1;
+        end
+        else begin
+            pe_done   <= 1'b0;
+        end
+    end
+end
+
+assign pe_pixel_out = pe_input; */
+   
+   
    //assign pe_pixel_out = (pe_en_reg) ? pe_input : pe_pixel_out;
 endmodule

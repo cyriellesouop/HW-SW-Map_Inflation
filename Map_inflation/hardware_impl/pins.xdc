@@ -359,4 +359,17 @@ set_property DONT_TOUCH TRUE [get_nets s_axis_tdata[31]]
 
 
 
+create_pblock pblock_top
+resize_pblock [get_pblocks pblock_top] \
+    -add {SLICE_X6Y0:SLICE_X65Y75 \
+          DSP48_X0Y0:DSP48_X1Y29 \
+          RAMB18_X0Y0:RAMB18_X2Y29 \
+          RAMB36_X0Y0:RAMB36_X2Y14} -locs keep_all
+
+add_cells_to_pblock [get_pblocks pblock_top] \
+    [get_cells [list accumulator_inst flush_delay_inst \
+    pe_en_delayed_reg pe_engine s_axis_tready_r_reg \
+    unpacker weight_loader_inst]]
+
+
 

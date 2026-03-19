@@ -90,7 +90,7 @@ catch {close_design}
 file mkdir synth_place_route
 cd  synth_place_route
 
-#load design sources
+#load design sources  
 read_verilog ./../pe.v
 read_verilog ./../adder_tree.v
 read_verilog  ./../data_accumulator.v
@@ -104,7 +104,6 @@ read_verilog ./../delay.v
 read_verilog ./../pe_wrapper.v
 read_verilog ./../crossbar.v
 read_verilog ./../top.v
-read_verilog ./../top_ooc_wrapper.v
 
 
 #load constraints files
@@ -123,7 +122,8 @@ opt_design  -remap -resynth_remap
 place_design 
 
 # post-placement optimization
-phys_opt_design  -insert_negative_edge_ffs -placement_opt -dsp_register_opt -hold_fix
+phys_opt_design  -placement_opt -fanout_opt -casc_opt -lut_opt -dsp_register_opt -hold_fix -aggressive_hold_fix
+#-insert_negative_edge_ffs 
 
 #routing
 route_design -tns_cleanup -directive AggressiveExplore 
@@ -131,7 +131,7 @@ route_design -tns_cleanup -directive AggressiveExplore
 
 #post routing optimization
 #phys_opt_design -routing_opt -hold_fix
-phys_opt_design -hold_fix
+phys_opt_design -routing_opt  -hold_fix
 
 write_checkpoint -force final_checkpoint.dcp
 #reports

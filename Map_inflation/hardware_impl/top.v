@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module top #(
-    parameter KERNEL_SIZE  = 3, // 16x16 Matrix
+    parameter KERNEL_SIZE  = 7, // 16x16 Matrix
     parameter DATA_WIDTH   = 8,
     parameter WEIGHT_WIDTH = 8,
     parameter DEPTH        = 4, // FIFO depth

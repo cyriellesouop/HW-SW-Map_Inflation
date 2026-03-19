@@ -9,8 +9,8 @@ module weight_loader #(
     input  rstn,
     
     // AXI Stream Slave Interface (Weight input)
-    input  [BUS_WIDTH - 1 : 0]  s_axis_tdata,
-    input                       s_axis_tvalid,
+    (* DONT_TOUCH = "TRUE"*) input  [BUS_WIDTH - 1 : 0]  s_axis_tdata,
+    (* DONT_TOUCH = "TRUE"*) input                       s_axis_tvalid,
     output reg                     s_axis_tready,
     
     // Weight output interface
@@ -28,7 +28,7 @@ module weight_loader #(
     localparam IDLE         = 1'b1;*/
 
     // Internal Signals
-    (* DONT_TOUCH = "TRUE"*) reg [PADDED_SIZE - 1 : 0] weight_storage;
+    reg [PADDED_SIZE - 1 : 0] weight_storage;
     integer transfer_counter; //to count the number of transfer done
     //reg state;
 

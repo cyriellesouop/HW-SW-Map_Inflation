@@ -16,7 +16,8 @@ module fifo
 
     // read interface
     input RD,
-    output reg [DATAWIDTH-1:0]  dataOut,
+   // output reg [DATAWIDTH-1:0]  dataOut,
+   output [DATAWIDTH-1:0]  dataOut,
     output   empty
   );
 
@@ -71,7 +72,7 @@ module fifo
 
 		if(RD && ~empty) begin
 		   //if(~empty) begin
-                      dataOut <=  MEM[rd_addr];
+                //      dataOut <=  MEM[rd_addr];
                       
 		      if (rd_addr == DEPTH-1) begin
 			      rd_addr <=0;
@@ -84,20 +85,11 @@ module fifo
         end
    end
    
-   //intialization
-/*     always @(posedge clk ) begin
-        if(!rstn) begin
-           wr_cnt <= 0;
-           rd_cnt <= 0;
-           wr_addr <= 0;
-           rd_addr <= 0;
-        end
-     end
-     */
 
    //full and empty signal
 
-          assign empty =(wr_addr == rd_addr) && (wr_cnt == rd_cnt) ;
+      assign dataOut =  MEM[rd_addr];    
+      assign empty =(wr_addr == rd_addr) && (wr_cnt == rd_cnt) ;
 	  assign full = (wr_addr == rd_addr) &&  (wr_cnt != rd_cnt );
                   
    endmodule

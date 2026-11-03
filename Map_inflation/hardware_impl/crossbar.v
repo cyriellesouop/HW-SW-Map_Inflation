@@ -26,7 +26,7 @@ module crossbar
     reg [KERNEL_SIZE-1:0] reg_s_tvalid;
     reg [$clog2(KERNEL_SIZE)-1:0] count;
 
-    wire output_fire = m_axis_tvalid && m_axis_tready;
+   // wire output_fire = m_axis_tvalid && m_axis_tready;
     wire can_update = m_axis_tready || !m_axis_tvalid;
 
     // Pre-compute next count to avoids long combinational chain in the always block
@@ -38,7 +38,8 @@ module crossbar
     generate
         for (i = 0; i < KERNEL_SIZE; i = i + 1) begin 
             wire slot_selected = (count == i[$clog2(KERNEL_SIZE)-1:0]);
-            wire slot_being_read = slot_selected && output_fire;
+            //wire slot_being_read = slot_selected && output_fire;
+            wire slot_being_read = slot_selected && can_update && reg_s_tvalid[i]; 
             assign s_axis_tready[i] = !reg_s_tvalid[i] || slot_being_read; // Accept new data if slot is empty or being drained right now
 
             always @(posedge clk) begin

@@ -3,8 +3,8 @@
 module axis_unpack_data #(
     parameter KERNEL_SIZE = 3,         // Number of FIFOs
     parameter DATA_WIDTH   = 8,         // Width of each slice
-    parameter DEPTH       = 4,        // Depth of each FIFO
-    parameter PTR_WIDTH   = 2          // Log2 of DEPTH
+    parameter DEPTH       = 2,        // Depth of each FIFO
+    parameter PTR_WIDTH   = 1          // Log2 of DEPTH
     
 )(
     input clk,

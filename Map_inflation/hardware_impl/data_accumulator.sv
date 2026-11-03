@@ -31,10 +31,12 @@ module data_accumulator #(
     reg [BUS_WIDTH-1:0] in_buf_data;  // One-word input buffer
     reg                 in_buf_valid;
 
-    assign s_axis_tready = enable && !in_buf_valid; //Accept new words only when enabled AND the input buffer is free.
+   
 
     wire can_output = (elem_count >= KERNEL_SIZE);  // We can output a row when there are at least KERNEL_SIZE elements available.
-    wire doing_output = can_output && m_axis_tready; // we output a full row when downstream is ready AND we have enough data
+    //wire doing_output = can_output && m_axis_tready; // we output a full row when downstream is ready AND we have enough data
+    
+    wire doing_output = can_output && (!m_axis_tvalid || m_axis_tready); // The output register can take a new row when it is empty, or when its current row is being taken this cycle
     wire [CNT_W-1:0] count_after_output = doing_output ? (elem_count - KERNEL_SIZE) : elem_count; // count element  after output to check whether the shift register has room for a fill
 
     // We can fill the shift register when there is a buffered word to consume, AND the shift register has room for WORD_ELEMS more elements
@@ -43,6 +45,10 @@ module data_accumulator #(
     // To slice it (shift_reg[high -: low]), we need an index variable wide enough to point to the highest bit.
     wire [IDX_W-1:0] safe_high_bit = (elem_count * DATA_WIDTH) - 1; // Calculate the high bit to guaranteed that (elem_count * DATA_WIDTH) - 1 is >=0 even for elem_count= 0 to avoid linter
 
+     //assign s_axis_tready = enable && !in_buf_valid; //Accept new words only when enabled AND the input buffer is free.
+    // Accept a word when the buffer is empty OR is being emptied into the shift register this cycle
+   assign s_axis_tready = enable && (!in_buf_valid || can_fill);
+   
     always @(posedge clk) begin
         if (!rstn) begin
             shift_reg     <= {SR_BITS{1'b0}};
@@ -52,23 +58,43 @@ module data_accumulator #(
             in_buf_data   <= {BUS_WIDTH {1'b0}};
             in_buf_valid  <= 1'b0;
         end else begin
-            m_axis_tvalid <= 1'b0;// by default, we de-assert output valid , we will re-asserted if outputting
-
-            // Input buffer capture input data whenever upstream presents valid data AND we are ready.
+                          // 1. Output register: keep the row until the unpacker actually takes it
+            if (doing_output) begin
+                m_axis_tdata  <= shift_reg[safe_high_bit -: (KERNEL_SIZE*DATA_WIDTH)];
+                m_axis_tvalid <= 1'b1;
+            end else if (m_axis_tready) begin
+                m_axis_tvalid <= 1'b0;   // row taken and nothing new to send
+            end
+    
+            // 2. Move the buffered word into the shift register
+            if (can_fill) begin
+                shift_reg    <= {shift_reg[SR_BITS-BUS_WIDTH-1:0], in_buf_data};
+                in_buf_valid <= 1'b0;
+            end
+    
+            // 3. Capture a new word. This comes after (2) on purpose: when a word is captured
+            //    and the buffer drains on the same edge, the last assignment wins, so in_buf_valid stays 1
             if (s_axis_tvalid && s_axis_tready) begin
                 in_buf_data  <= s_axis_tdata;
                 in_buf_valid <= 1'b1;
             end
+//            m_axis_tvalid <= 1'b0;// by default, we de-assert output valid , we will re-asserted if outputting
 
-            if (can_fill) begin
-                shift_reg    <= {shift_reg[SR_BITS-BUS_WIDTH-1:0], in_buf_data}; // Push buffered word into shift register : New data appended at LSB(shift_reg[DATA_WIDTH-1 : 0]) older data shifts toward MSB.
-                in_buf_valid <= 1'b0;   // word consumed
-            end
-            if (doing_output) begin
-                //m_axis_tdata  <= shift_reg[(elem_count*DATA_WIDTH)-1 -: (KERNEL_SIZE*DATA_WIDTH)]; // Selects the top KERNEL_SIZE elements of the current valid region
-                m_axis_tdata  <= shift_reg[safe_high_bit -: (KERNEL_SIZE*DATA_WIDTH)]; // Selects the top KERNEL_SIZE elements of the current valid region
-		m_axis_tvalid <= 1'b1;  // we have a valid row element.
-            end
+//            // Input buffer capture input data whenever upstream presents valid data AND we are ready.
+//            if (s_axis_tvalid && s_axis_tready) begin
+//                in_buf_data  <= s_axis_tdata;
+//                in_buf_valid <= 1'b1;
+//            end
+
+//            if (can_fill) begin
+//                shift_reg    <= {shift_reg[SR_BITS-BUS_WIDTH-1:0], in_buf_data}; // Push buffered word into shift register : New data appended at LSB(shift_reg[DATA_WIDTH-1 : 0]) older data shifts toward MSB.
+//                in_buf_valid <= 1'b0;   // word consumed
+//            end
+//            if (doing_output) begin
+//                //m_axis_tdata  <= shift_reg[(elem_count*DATA_WIDTH)-1 -: (KERNEL_SIZE*DATA_WIDTH)]; // Selects the top KERNEL_SIZE elements of the current valid region
+//                m_axis_tdata  <= shift_reg[safe_high_bit -: (KERNEL_SIZE*DATA_WIDTH)]; // Selects the top KERNEL_SIZE elements of the current valid region
+//		m_axis_tvalid <= 1'b1;  // we have a valid row element.
+//            end
 
             //elem_count is updated atomically for all combinations : fill only / output only / fill+output simultaneously
             case ({can_fill, doing_output})

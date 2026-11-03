@@ -20,12 +20,21 @@ module fifo_axis
     output   m_tvalid
   );
 
+//  wire full;
+//  wire empty;
+
+//  assign m_tvalid = ~empty;
+
+//  assign s_tready = ~full;
+  
   wire full;
   wire empty;
 
+  // AXI-Stream Handshake Logic
   assign m_tvalid = ~empty;
-
   assign s_tready = ~full;
+
+
 
     fifo #(.DATAWIDTH(DATAWIDTH), .DEPTH(DEPTH), .PTR_WIDTH(PTR_WIDTH ) )
 
@@ -35,11 +44,11 @@ module fifo_axis
 
          .dataIn(s_tdata),
          .full(full),
-         .WR(s_tvalid),
+         .WR(s_tvalid && s_tready),
 
          .dataOut( m_tdata),
          .empty(empty),
-         .RD(m_tready)
+         .RD(m_tvalid && m_tready)
   );
 
 

@@ -26,7 +26,7 @@
     
     // Bus for vertical pixel propagation
     wire [ROW_STRIDE * (KERNEL_SIZE + 1) - 1 : 0] vertical_pixel_bus;
-    wire [KERNEL_SIZE - 1 : 0] row_ready_signals;
+   // wire [KERNEL_SIZE - 1 : 0] row_ready_signals;
     
     // --- Intermediate AXI-Stream signals to collect results from all rows ---
     wire [KERNEL_SIZE-1:0] row_tvalid;
@@ -46,7 +46,7 @@
             
             // This row's adder is active when its PEs are done
             wire row_adder_en = &row_pe_dones;
-            assign row_ready_signals[r] = row_adder_en;
+          //  assign row_ready_signals[r] = row_adder_en;
             //always @(posedge clk) row_adder_en_delay <= row_adder_en;
             
             for (c = 0; c < KERNEL_SIZE; c = c + 1) begin 
@@ -82,9 +82,9 @@
                 .adder_en(row_adder_en),
                 .adder_dataIn(products),
                 // read interface
-		.m_axis_tready(row_tready[r]),
-		.m_axis_tvalid(row_tvalid[r]),
-		.m_axis_tdata(row_tdata[r * PARTIAL_SUM_WIDTH +: PARTIAL_SUM_WIDTH])
+		          .m_axis_tready(row_tready[r]),
+		          .m_axis_tvalid(row_tvalid[r]),
+		          .m_axis_tdata(row_tdata[r * PARTIAL_SUM_WIDTH +: PARTIAL_SUM_WIDTH])
                // .adder_dataOut(dataOut[r*SUM_WIDTH +: SUM_WIDTH]) // Connect to intermediate wire, NOT final output
             );
         end

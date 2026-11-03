@@ -38,3 +38,14 @@ Thumbs.db
 .idea/
 *~
 
+
+# Vivado scratch folders
+.Xil/
+
+# Logs
+*.log
+
+# Editor swap and lock files
+*.swp
+*.swo
+.~lock.*

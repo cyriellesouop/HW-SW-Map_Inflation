@@ -1,7 +1,7 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.2
-| Date         : Sat Mar 14 22:21:37 2026
-| Host         : audrey-Precision-5520
+| Date         : Mon Nov  2 09:12:13 2026
+| Host         : cyrielle-Dell-16-Plus-DB16255
 | Design       : design_1
 | Device       : xc7s50-csga324-2--
 -------------------------------------

@@ -1,4 +1,4 @@
 #!/bin/sh
 
 rm -f *.log *.jou *.wdb
-vivado -mode batch -source script.tcl
+vivado2022 -mode batch -source script.tcl

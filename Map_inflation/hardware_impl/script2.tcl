@@ -27,7 +27,9 @@ cd sim
 file mkdir work
 cd work
 
-exec xvlog /home/audrey/Xilinx/Vivado/2024.2/data/verilog/src/glbl.v
+#exec xvlog /home/audrey/Xilinx/Vivado/2024.2/data/verilog/src/glbl.v
+#exec xvlog /home/cyrielle/tools/Xilinx/Vivado/2024.2/data/verilog/src/glbl.v
+exec xvlog [file join $::env(XILINX_VIVADO) data verilog src glbl.v]
 
 # compile design and testbench
 exec xvlog ./../../pe.v
@@ -122,8 +124,8 @@ opt_design  -remap -resynth_remap
 place_design 
 
 # post-placement optimization
-phys_opt_design  -placement_opt -fanout_opt -casc_opt -lut_opt -dsp_register_opt -hold_fix -aggressive_hold_fix
-#-insert_negative_edge_ffs 
+phys_opt_design  -casc_opt -lut_opt -placement_opt -fanout_opt -dsp_register_opt -hold_fix -aggressive_hold_fix
+#-insert_negative_edge_ffs -casc_opt -lut_opt -insert_negative_edge_ffs
 
 #routing
 route_design -tns_cleanup -directive AggressiveExplore 

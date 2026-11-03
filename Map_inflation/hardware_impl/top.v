@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module top #(
-    parameter KERNEL_SIZE  = 7, // 16x16 Matrix
+    parameter KERNEL_SIZE  = 3, // 16x16 Matrix
     parameter DATA_WIDTH   = 8,
     parameter WEIGHT_WIDTH = 8,
     parameter DEPTH        = 4, // FIFO depth
@@ -34,7 +34,7 @@ module top #(
     // Weight loader signals
     wire weight_loader_ready;
     wire is_loading_weights;
-    wire weights_loaded;
+  //  wire weights_loaded;
     wire [WEIGHTIN_WIDTH - 1 : 0] flat_weights;
     
      // Data accumulator signals (32-bit to full row)
@@ -60,10 +60,10 @@ module top #(
 
     // During weight loading: route input to weight loader
     // During streaming: route input to data accumulator
-    reg s_axis_tready_r;
-    always @(posedge clk) s_axis_tready_r <= is_loading_weights ? weight_loader_ready : accumulator_ready;
-    assign s_axis_tready = s_axis_tready_r;
-   // assign s_axis_tready = is_loading_weights ? weight_loader_ready : accumulator_ready;
+ //  reg s_axis_tready_r;
+  // always @(posedge clk) s_axis_tready_r <= is_loading_weights ? weight_loader_ready : accumulator_ready;
+  // assign s_axis_tready = s_axis_tready_r;
+   assign s_axis_tready = is_loading_weights ? weight_loader_ready : accumulator_ready;
 
 
     // FULLY PIPELINED: PE processes whenever data is available

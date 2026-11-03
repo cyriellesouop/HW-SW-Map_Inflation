@@ -1,10 +1,20 @@
 
-create_clock -name clk -period 5.8 [get_ports clk]
+create_clock -name clk -period 5 [get_ports clk]
 set_property HD.CLK_SRC BUFGCTRL_X0Y31 [get_ports clk]
 
 
 
+create_pblock pblock_top
+resize_pblock [get_pblocks pblock_top] \
+    -add {SLICE_X36Y1:SLICE_X65Y38 \
+          DSP48_X1Y2:DSP48_X1Y13 \
+          RAMB18_X1Y2:RAMB18_X2Y13 \
+          RAMB36_X1Y1:RAMB36_X2Y6} -locs keep_all
 
+add_cells_to_pblock [get_pblocks pblock_top] \
+    [get_cells [list accumulator_inst flush_delay_inst \
+    pe_en_delayed_reg pe_engine s_axis_tready_r_reg \
+    unpacker weight_loader_inst]]
 
 # DONT_TOUCH on reset
 
@@ -72,4 +82,4 @@ set_output_delay -clock clk 1 [get_ports {m_axis_tdata[*] m_axis_tvalid}]
 
 set_output_delay -clock clk 1 [get_ports {s_axis_tready}]
 
-#set_property MAX_FANOUT 64 [get_nets pe_engine/crossbar_inst/SR[0]]
+set_property MAX_FANOUT 64 [get_nets pe_engine/crossbar_inst/SR[0]]

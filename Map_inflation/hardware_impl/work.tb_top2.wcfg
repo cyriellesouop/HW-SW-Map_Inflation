@@ -3,24 +3,26 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="work.tb_top2.wdb" id="1">
+      <db_ref path="tb_top2_behav.wdb" id="1">
          <top_modules>
+            <top_module name="glbl" />
             <top_module name="tb_top2" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="128.201 ns"></ZoomEndTime>
-      <Cursor1Time time="86.000 ns"></Cursor1Time>
+      <ZoomStartTime time="88.533 ns"></ZoomStartTime>
+      <ZoomEndTime time="136.484 ns"></ZoomEndTime>
+      <Cursor1Time time="108.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="222"></NameColumnWidth>
-      <ValueColumnWidth column_width="75"></ValueColumnWidth>
+      <NameColumnWidth column_width="177"></NameColumnWidth>
+      <ValueColumnWidth column_width="173"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="19" />
    <wave_markers>
       <marker label="" time="66000" />
+      <marker label="" time="88800" />
    </wave_markers>
    <wvobject type="group" fp_name="group135">
       <obj_property name="label">tb_top</obj_property>
@@ -76,6 +78,7 @@
    <wvobject type="group" fp_name="group171">
       <obj_property name="label">top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/tb_top2/DUT/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
@@ -184,6 +187,8 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/accumulator_inst/m_axis_tdata">
          <obj_property name="ElementShortName">m_axis_tdata[23:0]</obj_property>
          <obj_property name="ObjectShortName">m_axis_tdata[23:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/accumulator_inst/m_axis_tvalid">
          <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
@@ -210,17 +215,143 @@
       <obj_property name="label">UNPACKER</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="group" fp_name="group98">
-      <obj_property name="label">unpacker</obj_property>
+   <wvobject type="group" fp_name="group312">
+      <obj_property name="label">UNPACKER</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/tb_top2/clk">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
+      <wvobject type="group" fp_name="group313">
+         <obj_property name="label">FIFO-DATA-COL2</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tvalid">
+            <obj_property name="ElementShortName">s_tvalid</obj_property>
+            <obj_property name="ObjectShortName">s_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tdata">
+            <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tready">
+            <obj_property name="ElementShortName">s_tready</obj_property>
+            <obj_property name="ObjectShortName">s_tready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /m_tready">
+            <obj_property name="ElementShortName">m_tready</obj_property>
+            <obj_property name="ObjectShortName">m_tready</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /m_tdata">
+            <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /m_tvalid">
+            <obj_property name="ElementShortName">m_tvalid</obj_property>
+            <obj_property name="ObjectShortName">m_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /full">
+            <obj_property name="ElementShortName">full</obj_property>
+            <obj_property name="ObjectShortName">full</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /empty">
+            <obj_property name="ElementShortName">empty</obj_property>
+            <obj_property name="ObjectShortName">empty</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /fifo_inst/MEM">
+            <obj_property name="ElementShortName">MEM[7:0][7:0]</obj_property>
+            <obj_property name="ObjectShortName">MEM[7:0][7:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group327">
+         <obj_property name="label">FIFO-DATA-COL1</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /s_tvalid">
+            <obj_property name="ElementShortName">s_tvalid</obj_property>
+            <obj_property name="ObjectShortName">s_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /s_tdata">
+            <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /s_tready">
+            <obj_property name="ElementShortName">s_tready</obj_property>
+            <obj_property name="ObjectShortName">s_tready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /m_tready">
+            <obj_property name="ElementShortName">m_tready</obj_property>
+            <obj_property name="ObjectShortName">m_tready</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /m_tdata">
+            <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /m_tvalid">
+            <obj_property name="ElementShortName">m_tvalid</obj_property>
+            <obj_property name="ObjectShortName">m_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /full">
+            <obj_property name="ElementShortName">full</obj_property>
+            <obj_property name="ObjectShortName">full</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /empty">
+            <obj_property name="ElementShortName">empty</obj_property>
+            <obj_property name="ObjectShortName">empty</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[1].fifo_inst /fifo_inst/MEM">
+            <obj_property name="ElementShortName">MEM[7:0][7:0]</obj_property>
+            <obj_property name="ObjectShortName">MEM[7:0][7:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group341">
+         <obj_property name="label">FIFO-DATA-COL0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /s_tvalid">
+            <obj_property name="ElementShortName">s_tvalid</obj_property>
+            <obj_property name="ObjectShortName">s_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /s_tdata">
+            <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /s_tready">
+            <obj_property name="ElementShortName">s_tready</obj_property>
+            <obj_property name="ObjectShortName">s_tready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /m_tready">
+            <obj_property name="ElementShortName">m_tready</obj_property>
+            <obj_property name="ObjectShortName">m_tready</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /m_tdata">
+            <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
+            <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /m_tvalid">
+            <obj_property name="ElementShortName">m_tvalid</obj_property>
+            <obj_property name="ObjectShortName">m_tvalid</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /full">
+            <obj_property name="ElementShortName">full</obj_property>
+            <obj_property name="ObjectShortName">full</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /empty">
+            <obj_property name="ElementShortName">empty</obj_property>
+            <obj_property name="ObjectShortName">empty</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[2].fifo_inst /fifo_inst/MEM">
+            <obj_property name="ElementShortName">MEM[7:0][7:0]</obj_property>
+            <obj_property name="ObjectShortName">MEM[7:0][7:0]</obj_property>
+         </wvobject>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[23:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/s_axis_tvalid">
          <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
@@ -230,21 +361,18 @@
          <obj_property name="ElementShortName">s_axis_tready</obj_property>
          <obj_property name="ObjectShortName">s_axis_tready</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/m_axis_tready">
-         <obj_property name="ElementShortName">m_axis_tready[2:0]</obj_property>
-         <obj_property name="ObjectShortName">m_axis_tready[2:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/m_axis_tdata">
          <obj_property name="ElementShortName">m_axis_tdata[23:0]</obj_property>
          <obj_property name="ObjectShortName">m_axis_tdata[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/m_axis_tvalid">
          <obj_property name="ElementShortName">m_axis_tvalid[2:0]</obj_property>
          <obj_property name="ObjectShortName">m_axis_tvalid[2:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/fifo_s_tready">
-         <obj_property name="ElementShortName">fifo_s_tready[2:0]</obj_property>
-         <obj_property name="ObjectShortName">fifo_s_tready[2:0]</obj_property>
+      <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/m_axis_tready">
+         <obj_property name="ElementShortName">m_axis_tready[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_tready[2:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="divider86" type="divider">
@@ -254,7 +382,6 @@
    <wvobject type="group" fp_name="group87">
       <obj_property name="label">weight_loader</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/tb_top2/DUT/weight_loader_inst/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
@@ -286,8 +413,8 @@
          <obj_property name="ObjectShortName">transfer_counter[31:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/weight_loader_inst/state">
-         <obj_property name="ElementShortName">state[31:0]</obj_property>
-         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+         <obj_property name="ElementShortName">state[0:0]</obj_property>
+         <obj_property name="ObjectShortName">state[0:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="divider348" type="divider">
@@ -299,6 +426,10 @@
       <obj_property name="label">fifo0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].row_sum_adder /clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tvalid">
          <obj_property name="ElementShortName">s_tvalid</obj_property>
          <obj_property name="ObjectShortName">s_tvalid</obj_property>
@@ -306,6 +437,8 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tdata">
          <obj_property name="ElementShortName">s_tdata[7:0]</obj_property>
          <obj_property name="ObjectShortName">s_tdata[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /s_tready">
          <obj_property name="ElementShortName">s_tready</obj_property>
@@ -318,6 +451,9 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /m_tdata">
          <obj_property name="ElementShortName">m_tdata[7:0]</obj_property>
          <obj_property name="ObjectShortName">m_tdata[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /m_tvalid">
          <obj_property name="ElementShortName">m_tvalid</obj_property>
@@ -326,6 +462,10 @@
       <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /full">
          <obj_property name="ElementShortName">full</obj_property>
          <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /fifo_inst/empty">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/unpacker/\genblk1[0].fifo_inst /fifo_inst/MEM">
          <obj_property name="ElementShortName">MEM[7:0][7:0]</obj_property>
@@ -340,6 +480,7 @@
    <wvobject type="group" fp_name="group313">
       <obj_property name="label">fifo1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="divider350" type="divider">
       <obj_property name="label">fifo2</obj_property>
@@ -374,6 +515,7 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/weightsIn">
          <obj_property name="ElementShortName">weightsIn[71:0]</obj_property>
          <obj_property name="ObjectShortName">weightsIn[71:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/m_axis_tready">
          <obj_property name="ElementShortName">m_axis_tready</obj_property>
@@ -396,10 +538,6 @@
          <obj_property name="ElementShortName">vertical_pixel_bus[95:0]</obj_property>
          <obj_property name="ObjectShortName">vertical_pixel_bus[95:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/row_ready_signals">
-         <obj_property name="ElementShortName">row_ready_signals[2:0]</obj_property>
-         <obj_property name="ObjectShortName">row_ready_signals[2:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/row_tvalid">
          <obj_property name="ElementShortName">row_tvalid[2:0]</obj_property>
          <obj_property name="ObjectShortName">row_tvalid[2:0]</obj_property>
@@ -421,7 +559,6 @@
       <wvobject type="group" fp_name="group131">
          <obj_property name="label">PE(0,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].genblk1[0].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -558,7 +695,6 @@
       <wvobject type="group" fp_name="group150">
          <obj_property name="label">sum0</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].row_sum_adder /adder_en">
             <obj_property name="ElementShortName">adder_en</obj_property>
             <obj_property name="ObjectShortName">adder_en</obj_property>
@@ -576,6 +712,8 @@
             <obj_property name="ElementShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="ObjectShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[0].row_sum_adder /m_axis_tvalid">
             <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
@@ -599,7 +737,6 @@
       <wvobject type="group" fp_name="group162">
          <obj_property name="label">pe(1,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="logic" fp_name="/tb_top2/clk">
             <obj_property name="ElementShortName">clk</obj_property>
             <obj_property name="ObjectShortName">clk</obj_property>
@@ -646,7 +783,6 @@
       <wvobject type="group" fp_name="group180">
          <obj_property name="label">pe(1,1)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="logic" fp_name="/tb_top2/clk">
             <obj_property name="ElementShortName">clk</obj_property>
             <obj_property name="ObjectShortName">clk</obj_property>
@@ -733,7 +869,6 @@
       <wvobject type="group" fp_name="group210">
          <obj_property name="label">sum1</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].row_sum_adder /adder_en">
             <obj_property name="ElementShortName">adder_en</obj_property>
             <obj_property name="ObjectShortName">adder_en</obj_property>
@@ -750,6 +885,8 @@
             <obj_property name="ElementShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="ObjectShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[1].row_sum_adder /m_axis_tvalid">
             <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
@@ -773,7 +910,6 @@
       <wvobject type="group" fp_name="group217">
          <obj_property name="label">pe(2,0)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[0].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -817,7 +953,6 @@
       <wvobject type="group" fp_name="group231">
          <obj_property name="label">pe(2,1)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[1].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -860,7 +995,6 @@
       <wvobject type="group" fp_name="group245">
          <obj_property name="label">pe(2,2)</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].genblk1[2].pe_inst /pe_input">
             <obj_property name="ElementShortName">pe_input[7:0]</obj_property>
             <obj_property name="ObjectShortName">pe_input[7:0]</obj_property>
@@ -918,6 +1052,8 @@
             <obj_property name="ElementShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="ObjectShortName">m_axis_tdata[17:0]</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/\genblk1[2].row_sum_adder /m_axis_tvalid">
             <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
@@ -931,48 +1067,8 @@
             <obj_property name="ElementShortName">MEM[7:0][17:0]</obj_property>
             <obj_property name="ObjectShortName">MEM[7:0][17:0]</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="isExpanded"></obj_property>
          </wvobject>
-      </wvobject>
-      <wvobject type="group" fp_name="group320">
-         <obj_property name="label">PE(7,0)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group330">
-         <obj_property name="label">PE(7,1)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group340">
-         <obj_property name="label">PE(7,2)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group350">
-         <obj_property name="label">PE(7,3)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group360">
-         <obj_property name="label">PE(7,4)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group345">
-         <obj_property name="label">PE(7,5)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="group271">
-            <obj_property name="label">delay</obj_property>
-            <obj_property name="DisplayName">label</obj_property>
-         </wvobject>
-      </wvobject>
-      <wvobject type="group" fp_name="group355">
-         <obj_property name="label">PE(7,6)</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject fp_name="divider304" type="divider">
-         <obj_property name="label">sum4</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-      </wvobject>
-      <wvobject type="group" fp_name="group305">
-         <obj_property name="label">sum7</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
       </wvobject>
       <wvobject fp_name="divider311" type="divider">
          <obj_property name="label">CROSS_BAR</obj_property>
@@ -996,12 +1092,13 @@
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/s_axis_tdata">
          <obj_property name="ElementShortName">s_axis_tdata[53:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tdata[53:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/s_axis_tready">
          <obj_property name="ElementShortName">s_axis_tready[2:0]</obj_property>
          <obj_property name="ObjectShortName">s_axis_tready[2:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/m_axis_tvalid">
          <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
@@ -1020,7 +1117,6 @@
          <obj_property name="ElementShortName">reg_s_tdata[0:2][17:0]</obj_property>
          <obj_property name="ObjectShortName">reg_s_tdata[0:2][17:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/reg_s_tvalid">
          <obj_property name="ElementShortName">reg_s_tvalid[2:0]</obj_property>
@@ -1030,7 +1126,6 @@
          <obj_property name="ElementShortName">count[1:0]</obj_property>
          <obj_property name="ObjectShortName">count[1:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_top2/DUT/pe_engine/crossbar_inst/output_fire">
          <obj_property name="ElementShortName">output_fire</obj_property>
